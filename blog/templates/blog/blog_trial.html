@@ -1,0 +1,41 @@
+<!doctype html>
+{% load staticfiles %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Nellie's Noodles</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+</head>
+
+<body style="background-color: #D7D3DC; display: inline-block;">
+
+      <div class="container" style="margin: auto;">
+
+          <a href="/"><button type="button" class="btn btn-secondary">Home</button></a>
+            <a href="https://tutorial.djangogirls.org/en/django_templates/"><button type="button" class="btn btn-secondary">Django Girls Tutorial</button></a>
+
+      </div>
+      <div class="banner" style="text-align: center; background-color: #CDD9EC">
+<h1>Blog Posts</h1>
+</div>
+
+{% for post in posts %}
+    <div class='jumbotron'>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+
+<br>
+
+
+
+
+
+</body>
+
+</html>
