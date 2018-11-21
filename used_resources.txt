@@ -1,0 +1,10 @@
+# //  Documentations
+
+
+##   Helpful websites   ##
+# //  Django girls website --
+    # // https://tutorial.djangogirls.org/en/
+
+# //  Stack overflow help
+    # //  Running a python script in Django--
+    # // https://stackoverflow.com/questions/16853649/how-to-execute-a-python-script-from-the-django-shell
