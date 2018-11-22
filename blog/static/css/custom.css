@@ -1,0 +1,37 @@
+/* static custom css -- Nellie Tobey -- nelliesnoodles */
+
+h1, h2 {
+  color: #073F5D;
+}
+#image.container{
+  border-style: solid;
+  background-image: linear-gradient(#D7D3DC, #489076);
+}
+#nav_bar.banner{
+  position: absolute;
+  padding-top: 0px;
+  top: 0;
+  left: 0;
+  background-color: #DDEEEE; /* pale blue */
+  width: 100%;
+}
+
+.banner {
+  text-align: center;
+  padding-top: 30px;
+  margin: auto;
+  width: 100%;
+  background-color: #CDD9EC   /* grey blue */
+}
+#gradiant.banner {
+  background-image: linear-gradient(#CDD9EC, #A7D9C7);
+}
+
+h3 {
+  color: #489076; /* grey green */
+  align: center;
+}
+
+a {
+  font-size: 2em;
+}

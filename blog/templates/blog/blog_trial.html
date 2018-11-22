@@ -1,5 +1,5 @@
 <!doctype html>
-{% load staticfiles %}
+{% load static %}
 <html>
 
 <head>
@@ -7,6 +7,7 @@
     <title>Nellie's Noodles</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 
 </head>
 
@@ -20,6 +21,7 @@
       </div>
       <div class="banner" style="text-align: center; background-color: #CDD9EC">
 <h1>Blog Posts</h1>
+<h3>Information about this site</h3>
 </div>
 
 {% for post in posts %}

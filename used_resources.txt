@@ -4,7 +4,12 @@
 ##   Helpful websites   ##
 # //  Django girls website --
     # // https://tutorial.djangogirls.org/en/
+# // Other:  CSS bootstrap HTML design
+    # // https://css-tricks.com/multiple-class-id-selectors/
 
 # //  Stack overflow help
     # //  Running a python script in Django--
     # // https://stackoverflow.com/questions/16853649/how-to-execute-a-python-script-from-the-django-shell
+    # // css styling
+    # // https://stackoverflow.com/questions/1572701/css-thin-banner-on-top-of-page-like-the-orange-one-on-this-page
+    
