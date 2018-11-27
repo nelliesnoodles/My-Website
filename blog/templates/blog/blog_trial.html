@@ -25,15 +25,14 @@
 </div>
 
 {% for post in posts %}
-    <div class='jumbotron'>
-        <p>published: {{ post.publish_date }}</p>
-        <h2><a href="">{{ post.title }}</a></h2>
+    <div class="jumbotron">
+        <h4>published: {{ post.publish_date }}</h4>
+        <h4><a href="">{{ post.title }}</a></h4>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
 {% endfor %}
 
 <br>
-
 
 
 
