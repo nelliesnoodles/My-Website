@@ -1,0 +1,37 @@
+<!doctype html>
+{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Nellie's Noodles</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static '/css/custom.css' %}">
+
+</head>
+
+<body style="background-color: #D7D3DC;">
+
+  <div id="nav_bar" class="banner">
+    <a href="/blog"><button type="button"class="btn btn-outline-primary" style="float: left;">Blog</button></a>
+    <a href="/"><button type="button"class="btn btn-outline-primary" style="float: left;">Home</button></a>
+    <p style="float: right;"> Created by Nellie Tobey </p>
+  </div>
+  <div id="gradient2" class="banner">
+    <h1>Whispering Wall work in Progress</h1>
+  </div>
+
+  <h3 align="center">Talk with Wiwa</h3>
+  <div class="jumbotron">
+      <h3>Currently a NLTK.wordnet definition retrieval</h3>
+  <h6> Wiwa form to go here </h6>
+    <h4> NLTK's response (Wiwa is not active yet) :</h4>
+    <h4> {{ wiwa_answer }} </h4>
+  <form method="GET" action="wiwa_respond">
+     <h3> Word to get from NLTK wordnet: </h3>
+    <input type="text" name="user_words" maxlength="27">
+    <button type="submit">Retrieve Definition</button>
+  </form>
+
+</html>

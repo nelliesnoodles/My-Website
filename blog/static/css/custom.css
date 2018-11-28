@@ -26,6 +26,9 @@ h1, h2 {
 #gradiant.banner {
   background-image: linear-gradient(#CDD9EC, #A7D9C7);
 }
+#gradiant2.banner {
+  background-image: linear-gradient(#CDD9EC, #7C7A76);
+}
 
 h3 {
   color: #489076; /* grey green */

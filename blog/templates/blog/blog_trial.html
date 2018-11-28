@@ -16,7 +16,8 @@
       <div class="container" style="margin: auto;">
 
           <a href="/"><button type="button" class="btn btn-secondary">Home</button></a>
-            <a href="https://tutorial.djangogirls.org/en/django_templates/"><button type="button" class="btn btn-secondary">Django Girls Tutorial</button></a>
+            <a href="https://tutorial.djangogirls.org/en/django_templates/"><button type="button" class="btn btn-secondary" style="float: right;">Django Girls Tutorial</button></a>
+              <a href="/wiwa"><button type="button"class="btn btn-secondary">Wiwa</button></a>
 
       </div>
       <div class="banner" style="text-align: center; background-color: #CDD9EC">
@@ -25,14 +26,15 @@
 </div>
 
 {% for post in posts %}
-    <div class="jumbotron">
-        <h4>published: {{ post.publish_date }}</h4>
-        <h4><a href="">{{ post.title }}</a></h4>
+    <div class='jumbotron'>
+        <p>published: {{ post.publish_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
 {% endfor %}
 
 <br>
+
 
 
 
