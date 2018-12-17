@@ -1,6 +1,6 @@
 *.pyc
 *~
-settings.py
+mysite/settings.py
 __pycache__
 noodles
 db.sqlite3
