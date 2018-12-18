@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from django.utils import timezone
 from .models import Post
-import nltk
+import nltk as nltk
 from nltk.corpus import wordnet
+import re
+import enchant
+from .WW_online import Wiwa
 
 def post_list(request):
     return render(request, 'blog/under_construction.html', {})
@@ -14,19 +17,16 @@ def blog_list(request):
 
 def return_answer(arg):
     if arg != None and arg != '':
-        alist = arg.split(' ')
-        first = alist[0]
-        syn = wordnet.synsets(first)
-        if len(syn) != 0:
-            defi_nition = (syn[0].definition())
-            if len(defi_nition) == 0:
-                no_words = "No results found in NLTK search"
-                return no_words
+        try:
+            wiwa = Wiwa()
+            response = wiwa.run_wiwa(arg)
+            if response:
+                return response
             else:
-                return defi_nition
-        else:
-            no_words = "No results found in NLTK search"
-            return no_words
+                return "Something went wrong with Wiwa interface."
+        except:
+            broken = "Whispering wall is being modified or is broken."
+            return broken
     else:
         no_words = "No search results to give."
         return no_words
@@ -37,14 +37,17 @@ def wiwa_page(request):
 def wiwa_answer(request):
     if request.method == "GET":
         user_input = request.GET.get('user_words', None)
-        if len(user_input) > 0:
-            alist = user_input.split(' ')
-            search_word = alist[0]
-            answer = return_answer(search_word)
-            completed = search_word + ' : ' + answer
-            return render(request, 'blog/wiwa_experiment.html', {'wiwa_answer' : completed})
+        if user_input != None and len(user_input) > 0:
+            if type(user_input) == list:
+                user_input = ' '.join(user_input)
+                answer = return_answer(user_input)
+            else:
+                answer = return_answer(user_input)
+
+
+            return render(request, 'blog/wiwa_experiment.html', {'wiwa_answer' : answer})
         else:
-            answer = "Not enough input for NLTK to process"
+            answer = "Not enough input for Whispering Wall to process"
             return render(request, 'blog/wiwa_experiment.html', {'wiwa_answer' : answer})
     else:
         answer = "No definition found -- No GET given"

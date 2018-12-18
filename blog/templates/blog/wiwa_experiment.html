@@ -19,22 +19,25 @@
     <p style="float: right;"> Created by Nellie Tobey </p>
   </div>
   <div id="gradient2" class="banner">
-    <h1>Whispering Wall work in Progress</h1>
-    <div class="container" id="image" style="float: right; width: 300px; height: 300px;">
-      <img src="{% static 'images/WiwaLogo2.png' %}" alt="A simple my_painter in python using draw.circle" border="8" style="width: 100%; height: 100%;">
-    </div>
-  </div>
 
-  <h3 align="center">Talk with Wiwa</h3>
-  <div class="jumbotron">
-      <h3>Currently a NLTK.wordnet definition retrieval</h3>
-  <h6> Wiwa form to go here </h6>
-    <h4> NLTK's response (Wiwa is not active yet) :</h4>
-    <h4> {{ wiwa_answer }} </h4>
-  <form method="GET" action="wiwa_respond">
-     <h3> Word to get from NLTK wordnet: </h3>
-    <input type="text" name="user_words" maxlength="27">
-    <button type="submit">Retrieve Definition</button>
+    <h1>Whispering Wall</h1>
+    <h3>A python chatbot using NLTK</h3>
+  </div>
+   <h2 align="left">Talk with Wiwa</h2>
+   <div class="container" id="image" style="float: right; width: 200px; height: 200px; padding-left: 10px;">
+      <img src="{% static 'images/WiwaLogo2.png' %}" alt="A calm faced lady with a python contemplating a keyboard" border="8" style="width: 100%; height: 100%;">
+    </div>
+    <div class="flex-container" style="float: left; flex-direction: column; align-items: center; padding-right: 10px; padding-left: 10px;">
+    <h4><strong> Whispering Wall : </strong></h4>
+    <h3> {{ wiwa_answer }} </h3>
+
+
+  <form method="GET" action="wiwa_respond" id="wiwa_form" style="padding-top: 20px;">
+       <textarea form="wiwa_form" rows="3" cols="40" name="user_words"></textarea>
+    <button type="submit">Talk to the Wall</button>
   </form>
+
+</div>
+
 
 </html>
