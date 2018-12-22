@@ -1,10 +1,10 @@
 #!usr/bin/python3
 # -*- coding: utf-8 -*-
 
-import re
 import enchant
+import re
 from nltk.corpus import wordnet
-from random import randint
+import random
 import nltk as nltk
 
 
@@ -25,83 +25,151 @@ import nltk as nltk
     verb responses -- verbs.txt
     yes responses -- yes_no.txt
     questionable -- queries.txt
+    adjectives -- adjectives.txt
     Interject -- interjections.txt
 """
 
 
 class Wiwa(object):
-  def __init__(self):
-    self.nounscript = "/home/NelliesNoodles/nelliesnoodles_mysite/nouns.txt"
-    self.verbscript = "/home/NelliesNoodles/nelliesnoodles_mysite/verbs.txt"
-    self.simplescript = "/home/NelliesNoodles/nelliesnoodles_mysite/yes_no.txt"
-    self.questionable = "/home/NelliesNoodles/nelliesnoodles_mysite/queries.txt"
-    self.dictionary = enchant.Dict("en_US")
+    def __init__(self):
+        self.nounscript = "/home/NelliesNoodles/nelliesnoodles_mysite/nouns.txt"
+        self.noun_script_order = create_script_line_order(self.nounscript)
+        self.verbscript = "/home/NelliesNoodles/nelliesnoodles_mysite/verbs.txt"
+        self.verb_script_order = create_script_line_order(self.verbscript)
+        self.simplescript = "/home/NelliesNoodles/nelliesnoodles_mysite/yes_no.txt"
+        self.simple_script_order = create_script_line_order(self.simplescript)
+        self.questionable = "/home/NelliesNoodles/nelliesnoodles_mysite/queries.txt"
+        self.question_script_order = create_script_line_order(self.questionable)
+        self.adjectives = "/home/NelliesNoodles/nelliesnoodles_mysite/adjectives.txt"
+        self.adj_script_order = create_script_line_order(self.adjectives)
+        self.dictionary = enchant.Dict("en_US")
+        self.line_get = 0
 
-  def run_wiwa(self, user_input):
-    """intro = Welcome to the whispering wall, Wiwa is here to respond
-    and question your perspective. She is just a program, and
-    will respond according to her script.
-    If you wish to stop program, type EXIT or QUIT.
-    Have fun! *Used in bash run*"""
-    make = user_input
-    if make in ['QUIT', 'EXIT', 'exit', 'quit', 'q']:
-        return "Goodbye, thanks for stopping in!"
-    else:
-      make = make.lower()
-      nouns, verbs, adj, adv, errors = self.make_tag_lists(make)
-      n = len(nouns)
-      v = len(verbs)
-      aj = len(adj)
-      av = len(adv)
-      er = len(errors)
-      question = self.check_question(make)
-      if question:
-        # Maybe use simple script for these too?
-        print("Wiwa:")
-        discusanswer = self.get_script_line(self.questionable)
-        return discusanswer
-      elif make in ['yes', 'no', 'maybe']:
-        response = self.get_script_line(self.simplescript)
-        return response
-      elif n < 1 and v < 1 and er > 0:
-        response = (f" I do not know this: {errors[0]}, is the cat on the keyboard?")
-        #print(f" I do not know this: {errors[0]}, is the cat on the keyboard?")
-        return response
-      elif v > 0:
-        response = self.get_script_line(self.verbscript)
-        verbosity = response.format(verbs[0])
-        return verbosity
-      elif n > 0:
-        response = self.get_script_line(self.nounscript)
-        nountacular = response.format(nouns[0])
-        return nountacular
-      elif v > 0:
-        response = self.get_script_line(self.verbscript)
-        verbasity = response.format(verbs[0])
-        return verbasity
-      elif aj > 0:
-        adjective = ("Can a chatbot be: %s")
-        response = adjective.format(adj[0])
-        return response
-      elif av > 0:
-        adverbs = ("It would be nifty to see it done -- %s")
-        response = adverbs.format(adv[0])
-      else:
-        return "The Whispering Wall is confused."
+    def run_wiwa(self, user_input):
+        """intro = Welcome to the whispering wall, Wiwa is here to respond
+        and question your perspective. She is just a program, and
+        will respond according to her script.
+        If you wish to stop program, type EXIT or QUIT.
+        Have fun! *Used in bash run*"""
+        make = user_input
+        stripped = make.lower()
+        newstring = re.sub("[^a-zA-Z| |]+", "", stripped)
+        if make in ['QUIT', 'EXIT', 'exit', 'quit', 'q']:
+            return "Goodbye, thanks for stopping in!"
+        else:
+            choice = self.pick_response(make)
+            #print(choice)
+            question = self.check_question(make)
+            if question:
+                discusanswer = self.get_script_line(self.questionable)
+                return discusanswer
+            elif newstring in ['yes', 'no', 'maybe']:
+                response = self.get_script_line(self.simplescript)
+                return response
+            else:
+                if choice[0] == 'noun':
+                    response = self.get_script_line(self.nounscript)
+                    return response.format(choice[1])
+                elif choice[0] =='verb':
+                    response = self.get_script_line(self.verbscript)
+                    verbasity = response.format(choice[1])
+                    return verbasity
+                elif choice[0] == 'adv':
+                    response = "I don't have a script for adverbs yet."
+                    return response
+                elif choice[0] == 'adj':
+                    response = self.get_script_line(self.adjectives)
 
-  def get_script_line(self, arg):
-    with open(arg) as f:
-      for i, l in enumerate(f):
-        pass
-      count = i
-    if count != None:
-      with open(arg) as f:
-        lines = f.readlines()
-        x = randint(0, count)
-        return lines[x]
+                    if '{}' in response:
+                        adjective = response.format(choice[1])
+                        return adjective
+                    else:
+                        return response
+                else:
 
-  def strip_stop_words(self, arg):
-    stops = ['the', 'of', 'he', 'she', 'it', 'some', 'all', 'a', 'lot',
+                    return("Wiwa:  ... ... ")
+
+
+    def pick_response(self, raw_input):
+        """ Create lists of possible valid words for response mechanism,
+            Then uses random to choose one to send back to run_wiwa() """
+        make = raw_input.lower()
+        nouns, verbs, adj, adv, errors = self.make_tag_lists(make)
+        n = len(nouns)
+        v = len(verbs)
+        aj = len(adj)
+        av = len(adv)
+        er = len(errors)
+        words_found = False
+        options = {'noun': [], 'verb': [], 'adj': [], 'adv': [], 'err': []}
+        if n > 0:
+            words_found = True
+            for item in nouns:
+                options['noun'].append(item)
+        if v > 0:
+            words_found = True
+            for item in verbs:
+                options['verb'].append(item)
+        if aj > 0:
+            words_found = True
+            for item in adj:
+                options['adj'].append(item)
+        if av > 0:
+            words_found = True
+            for item in adv:
+                options['adv'].append(item)
+        if er > 0:
+            words_found = True
+            for item in errors:
+                options['err'].append(item)
+
+        done = False
+        if words_found == True:
+            while not done:
+                # it might be bad to trust random.choice to not run idle while finding a choice in the list
+                # the options dict is tiny so it shouldn't get stuck picking one
+                word_type = random.choice(list(options.keys()))
+                word_list = options[word_type]
+                if len(word_list) > 0:
+                    choice_tup = (word_type, word_list[0])
+                    done = True
+                    return choice_tup
+        else:
+            return ('error', 'not identified')
+
+    def get_script_line(self, arg):
+        """ Chooses a random script line to give back to user """
+        # is often not random *sad face*
+        #print(self.line_get)
+
+        if arg == "/home/NelliesNoodles/nelliesnoodles_mysite/nouns.txt":
+            order = self.noun_script_order
+        elif arg == "/home/NelliesNoodles/nelliesnoodles_mysite/queries.txt":
+            order = self.question_script_order
+        elif arg ==  "/home/NelliesNoodles/nelliesnoodles_mysite/verbs.txt":
+            order = self.verb_script_order
+        elif arg == "/home/NelliesNoodles/nelliesnoodles_mysite/yes_no.txt":
+            order = self.simple_script_order
+        elif arg == "/home/NelliesNoodles/nelliesnoodles_mysite/adjectives.txt":
+            order = self.adj_script_order
+        else:
+            order = None
+        if order != None:
+            if self.line_get >= len(order):
+                self.line_get = 0
+            get_line = order[self.line_get]
+            with open(arg) as f:
+                lines = f.readlines()
+                x = int(get_line)
+                #print(lines[x])
+                self.line_get += 1
+                return lines[x]
+
+        else:
+            return "script file could not be found"
+
+    def strip_stop_words(self, arg):
+        stops = ['I', 'me', 'you', 'of', 'he', 'she', 'it', 'some', 'all', 'a', 'lot',
         'have', 'about', 'been', 'to', 'too', 'from', 'an', 'at',
         'above', 'before', 'across', 'against', 'almost', 'along', 'aslo',
         'although', 'always', 'am', 'among', 'amongst', 'amount', 'and',
@@ -113,77 +181,109 @@ class Wiwa(object):
         'it', 'its', 'keep', 'last', 'latter', 'many', 'may', 'more', 'most',
         'much', 'name', 'next', 'none', 'not', 'nothing', 'now', 'nowhere',
         'often', 'other', 'others', 'over', 'rather', 'perhaps', 'seems', 'then',
-        'there', 'these', 'they', 'though', 'thru', 'too', 'under', 'until',
+        'there', 'these', 'they', 'though', 'the', 'this', 'thru', 'too', 'to', 'under', 'until',
         'upon', 'very', 'was', 'were' 'which', 'while', 'will', 'with', 'ill', 'lets']
-    new_arg = []
-    for item in arg:
-      if item in stops:
-        pass
-      else:
-        new_arg.append(item)
-    #print(new_arg)
-    return new_arg
+        new_arg = []
+        for item in arg:
+            if item in stops:
+                pass
+            else:
+                new_arg.append(item)
+        #print(new_arg)
+        return new_arg
 
-  def make_tag_lists(self, arg):
-  #With string as arg, return lists of Adj, adv, noun, verb
-  #    Empty lists mean no found type-noun(verb, adv, adj)
-    clean_arg, errors = self.clean_string(arg)
-    tokens = nltk.word_tokenize(clean_arg)
-    tags = nltk.pos_tag(tokens)
-    nouns = []
-    verbs = []
-    adj = []
-    adv = []
-    for item in tags:
-      x = item[1]
-      #print(item)
-      if x == ("VB"):
-        verbs.append(item[0])
-      elif x.startswith("NN"):
-        nouns.append(item[0])
-      elif x.startswith("JJ"):
-        adj.append(item[0])
-      elif x.startswith("RB"):
-        adv.append(item[0])
-      else:
-        pass
-    nouns = self.strip_stop_words(nouns)
-    verbs = self.strip_stop_words(verbs)
-    adj = self.strip_stop_words(adj)
-    adv = self.strip_stop_words(adv)
-    return nouns, verbs, adj, adv, errors
+    def make_tag_lists(self, arg):
+        """
+           Use nltk to tag the input, then clean up the lists to return
+           A mechanism that will chose one of the items at random to return to
+           Whispering walls response loop.
+        """
+        tokens = nltk.word_tokenize(arg)
+        tags = nltk.pos_tag(tokens)
+        errors, clean_tags = self.remove_bad_tags(tags)
+        nouns = []
+        verbs = []
+        adj = []
+        adv = []
+        for item in clean_tags:
+          x = item[1]
+          #print(item)
+          if x.startswith("VB"):
+            verbs.append(item[0])
+          elif x.startswith("NN"):
+            nouns.append(item[0])
+          elif x.startswith("JJ"):
+            adj.append(item[0])
+          elif x.startswith("RB"):
+            adv.append(item[0])
+          else:
+            pass
+        nouns = self.strip_stop_words(nouns)
+        verbs = self.strip_stop_words(verbs)
+        adj = self.strip_stop_words(adj)
+        adv = self.strip_stop_words(adv)
+        return nouns, verbs, adj, adv, errors
 
-  def clean_string(self, astring):
-    """ Take the string and clear out all irrelevant data.
-    Goal: to identify main verbs and nouns, any adjectives, adverbs
-    Only tag words that are in the PyEnchant English dictionary. """
-    astring = str(astring)
-    #astring = astring.lower() put in main _run_wiwa loop
-    #print(astring)
-    newstring = re.sub("[^a-zA-Z| |]+", "", astring)
-    stringlist = newstring.split()
-    cleaned = ""
-    errors = []
-    for word in stringlist:
-      if self.enchant_check(word) == True:
-        cleaned = cleaned + word + " "
-      else:
-        #print(f"word not found {word}")
-        errors.append(word)
+    def remove_bad_tags(self, tags_list):
+        """ Use pyEnchant to remove unidentifiable words from tags list"""
+        new_tags = []
+        errors = []
+        for item in tags_list:
+            word = item[0]
 
-    return cleaned, errors
+            if self.enchant_check(word):
+                new_tags.append(item)
+            else:
+                errors.append(word)
 
-  def enchant_check(self, arg):
-    """ using the PyEnchant English dictionary to check validity of a word."""
-    x = self.dictionary.check(arg)
-    return x
+        return errors, new_tags
 
-  def check_question(self, arg):
-    questions = ['why', '?']
-    if questions[0] in arg or questions[1] in arg:
-      return True
+    def enchant_check(self, arg):
+        """ using the PyEnchant English dictionary to check validity of a word."""
+        x = self.dictionary.check(arg)
+        return x
+
+    def check_question(self, arg):
+        questions = ['why', '?']
+        if questions[0] in arg or questions[1] in arg:
+          return True
+        else:
+          return False
+
+
+
+
+#########   get count for number of lines in the txt file  ############
+#################  make a list with range of number of lines in file ##
+#########################              random.shuffle and return     ##
+
+def create_script_line_order(somescript):
+    """ make a list with randomized order of line numbers from script."""
+    # get count:
+    count = None
+    #print(somescript)
+    if somescript.endswith('.txt'):
+        try:
+            with open(somescript) as f:
+                for i, l in enumerate(f):
+                    pass
+                    count = i
+        except:
+            print("file is Empty.")
+            raise ValueError
     else:
-      return False
+        print("***file is not a txt file***")
+        print("\t file=", somescript)
+        raise ValueError
+    if count != None:
+        first_list = []
+        # create a list with all line numbers in it
+        for x in range(1, i):
+            first_list.append(x)
+        # shuffle those items:
+        random.shuffle(first_list)
+    return first_list
+
 
 
 
