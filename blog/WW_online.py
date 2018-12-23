@@ -42,6 +42,8 @@ class Wiwa(object):
         self.question_script_order = create_script_line_order(self.questionable)
         self.adjectives = "/home/NelliesNoodles/nelliesnoodles_mysite/adjectives.txt"
         self.adj_script_order = create_script_line_order(self.adjectives)
+        self.error_script = "/home/NelliesNoodles/nelliesnoodles_mysite/to_err.txt"
+        self.err_script_order = create_script_line_order(self.error_script)
         self.dictionary = enchant.Dict("en_US")
         self.line_get = 0
 
@@ -85,6 +87,15 @@ class Wiwa(object):
                         return adjective
                     else:
                         return response
+                elif choice[0] == 'err':
+                    response = self.get_script_line(self.error_script)
+
+                    if '{}' in response:
+                        too_error = response.format(choice[1])
+                        return too_error
+                    else:
+                        return response
+
                 else:
 
                     return("Wiwa:  ... ... ")
@@ -152,6 +163,8 @@ class Wiwa(object):
             order = self.simple_script_order
         elif arg == "/home/NelliesNoodles/nelliesnoodles_mysite/adjectives.txt":
             order = self.adj_script_order
+        elif arg == "/home/NelliesNoodles/nelliesnoodles_mysite/to_err.txt":
+            order = self.err_script_order
         else:
             order = None
         if order != None:
@@ -169,7 +182,7 @@ class Wiwa(object):
             return "script file could not be found"
 
     def strip_stop_words(self, arg):
-        stops = ['I', 'me', 'you', 'of', 'he', 'she', 'it', 'some', 'all', 'a', 'lot',
+        stops = ['i', 'me', 'you', 'of', 'he', 'she', 'it', 'some', 'all', 'a', 'lot',
         'have', 'about', 'been', 'to', 'too', 'from', 'an', 'at',
         'above', 'before', 'across', 'against', 'almost', 'along', 'aslo',
         'although', 'always', 'am', 'among', 'amongst', 'amount', 'and',
@@ -178,11 +191,11 @@ class Wiwa(object):
         'but', 'by', 'can', 'could', 'done', 'during', 'each', 'either',
         'else', 'even', 'every', 'everyone', 'everything', 'everywhere',
         'except', 'few', 'for', 'had', 'has', 'hence', 'here', 'in', 'into', 'is',
-        'it', 'its', 'keep', 'last', 'latter', 'many', 'may', 'more', 'most',
+        'it', 'its', 'it\'s', 'keep', 'last', 'latter', 'many', 'may', 'more', 'most',
         'much', 'name', 'next', 'none', 'not', 'nothing', 'now', 'nowhere',
         'often', 'other', 'others', 'over', 'rather', 'perhaps', 'seems', 'then',
         'there', 'these', 'they', 'though', 'the', 'this', 'thru', 'too', 'to', 'under', 'until',
-        'upon', 'very', 'was', 'were' 'which', 'while', 'will', 'with', 'ill', 'lets']
+        'upon', 'very', 'was', 'were' 'which', 'while', 'will', 'with', 'i\'ll', 'lets']
         new_arg = []
         for item in arg:
             if item in stops:

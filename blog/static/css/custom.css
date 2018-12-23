@@ -1,10 +1,14 @@
 /* static custom css -- Nellie Tobey -- nelliesnoodles */
+html, body {
+    height: 100%;
+}
+
 
 h1, h2 {
   color: #073F5D;
 }
 #image.container{
-  border-style: solid;
+  /*border-style: solid;*/
   background-image: linear-gradient(#D7D3DC, #489076);
 }
 #nav_bar.banner{
@@ -36,5 +40,6 @@ h3 {
 }
 
 a {
+  color: #2D4C27; /*dark green*/
   font-size: 30px;
 }
