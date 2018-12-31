@@ -1,11 +1,14 @@
 /* static custom css -- Nellie Tobey -- nelliesnoodles */
 
 
+
 h4 {
-  color: blue;
+  color:  #2d1c44;
 }
 
-
+#wiwa_bg  {
+    background-image: url('/static/images/unicorn4_12-22-18.png');
+}
 
 h1, h2 {
   color: #073F5D;
@@ -31,6 +34,7 @@ h1, h2 {
   width: 100%;
   background-color: #D7D3DC;
   opacity: 0.95;
+  position: fixed;
   }
 
 #grey-image.div {

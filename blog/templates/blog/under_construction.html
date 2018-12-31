@@ -12,7 +12,25 @@
 
 </head>
 
-<body style="background-image: url('/static/images/unicorn1_12-22-18.png'); background-repeat: no-repeat; background-size: 100% 100%;">
+<body style="background-repeat: no-repeat;  background-position: center; background-size: cover; padding-bottom: 50px;">
+
+<script>
+    bg_image = "url('/static/images/bubbles.png')";
+    bg_color =  'white';
+    bg_on = true;
+    if(!(bg_on)){
+    document.body.style.backgroundImage = none;
+    document.body.style.backgroundColor = bg_color;}
+    else{
+    document.body.style.backgroundColor = '#d3ced7';  <!-- grey violet -->
+    document.body.style.backgroundImage = bg_image;
+
+    }
+
+</script>
+
+
+
 
   <div id="nav_bar" class="banner">
     <a href="/blog"><button type="button"class="btn btn-outline-primary" style="float: left;">Blog</button></a>
@@ -27,7 +45,7 @@
   <div class="jumbotron" style="opacity: 0.75;">
     <font style="value: initial;">
 
-    <a href="https://camelcasenoodles.blogspot.com/2018/11/django-mysitesettings-import-errors.html" target="_blank">My coding blog:  CamelCaseNoodles</a>
+    <a href="https://camelcasenoodles.blogspot.com/2018/12/getting-random-lines-from-txt-files.html" target="_blank">My coding blog:  CamelCaseNoodles</a>
     <br>
       <a href="https://sarahssmiling.blogspot.com/2018/11/how-to-capture-fartmoodle-introduction.html" target="_blank">My fiction blog: sarah is laughing</a>
     <br>
@@ -50,5 +68,15 @@
 
 
 </body>
+
+<footer style = "text-align: center;
+  background: #DDEEEE;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;"> <!-- color = ligth blue -->
+    <h2> Moving forward, even if it's one step back. </h2>
+</footer>
 
 </html>

@@ -195,7 +195,7 @@ class Wiwa(object):
         'much', 'name', 'next', 'none', 'not', 'nothing', 'now', 'nowhere',
         'often', 'other', 'others', 'over', 'rather', 'perhaps', 'seems', 'then',
         'there', 'these', 'they', 'though', 'the', 'this', 'thru', 'too', 'to', 'under', 'until',
-        'upon', 'very', 'was', 'were' 'which', 'while', 'will', 'with', 'i\'ll', 'lets']
+        'upon', 'very', 'was', 'were' 'which', 'while', 'will', 'with', 'i\'ll', 'lets', 'n\'t']
         new_arg = []
         for item in arg:
             if item in stops:
