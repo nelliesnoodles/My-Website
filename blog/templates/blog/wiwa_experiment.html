@@ -13,8 +13,7 @@
 
 </head>
 
-<body id="wiwa_bg"  style = "background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.85; font-family: Tahoma, Verdana, Segoe, sans-serif;">
-  <!-- need a way to check onload if background is active, or requested off -->
+<body id="wiwa_bg"  style = "{{ bg_preference }}" >
   <!--<font style="value: initial;"> -->
 
   <div id="nav_bar" class="banner">
@@ -42,7 +41,7 @@
 
 </div>
 </font>
-<!--Not working on refresh yet -->
+<!--
 <script>
 
 function remove_bg(){
@@ -55,7 +54,7 @@ function add_bg(){
 document.getElementById("rm_button").addEventListener("click", remove_bg);
 document.getElementById("add_image_button").addEventListener("click", add_bg);
 </script>
-
+-->
 
 </body>
 <div class="banner" style="margin-top: 300px; margin-bottom: 100px;">
@@ -64,14 +63,14 @@ document.getElementById("add_image_button").addEventListener("click", add_bg);
     <a href="https://github.com/nelliesnoodles" target="_blank"> <i><u>Whispering Wall in Github</u></i></a>
     <h5> Github version may be more advanced then online version </h5>
     </font>
-
-    <button id="rm_button" class="btn btn-primary btn-lg btn-block" onclick= "remove_bg()">
-        remove image
+    <form method="GET" action="rm_background" id="remove_background"></form>
+    <button form="remove_background" class="btn btn-primary btn-lg btn-block" type='submit'>
+        remove  -(image)
     </button>
-    <button id="add_image_button" class="btn btn-primary btn-lg btn-block" onclick= "add_bg()">
-        bring back image
+    <form method="GET" action="add_image" id="add_image"></form>
+    <button form="add_image" class="btn btn-primary btn-lg btn-block" type='submit'>
+        add +(image)
     </button>
-
 
 
 </div>

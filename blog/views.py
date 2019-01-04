@@ -32,6 +32,42 @@ def blog_list(request):
     posts = Post.objects.filter(publish_date__lte=timezone.now()).order_by('-publish_date')
     return render(request, 'blog/blog_trial.html', {'posts':posts})
 
+def get_preference(request): #used in Wiwa page
+    if 'bg_preference' not in request.session:
+        bg_string = "background-image: url('/static/images/unicorn4_12-22-18.png'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.85; font-family: Tahoma, Verdana, Segoe, sans-serif;"
+        request.session['bg_preference'] = bg_string
+        bg_preference = bg_string
+    else:
+        bg_preference = request.session['bg_preference']
+    return bg_preference
+
+def remove_bg(request):
+    if 'bg_preference' not in request.session:
+        bg_string = "background: white;"  #<-- change to something like blue to see definite change
+        request.session['bg_preference'] = bg_string
+    else:
+        bg_string = 'background: white;' #<-- make sure you have what you want here.
+        request.session['bg_preference'] = bg_string
+
+    bg_preference = request.session['bg_preference']
+    #print("bg preference changed to:", bg_preference)
+    return render(request, 'blog/wiwa_experiment.html', {'bg_preference': bg_preference})
+
+def bg_replace(request):
+    if 'bg_preference' not in request.session:
+        bg_string = "background-image: url('/static/images/unicorn4_12-22-18.png'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.85; font-family: Tahoma, Verdana, Segoe, sans-serif;"
+        request.session['bg_preference'] = bg_string
+        bg_preference = bg_string
+    else:
+        bg_string = "background-image: url('/static/images/unicorn4_12-22-18.png'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.85; font-family: Tahoma, Verdana, Segoe, sans-serif;"
+        request.session['bg_preference'] = bg_string
+        bg_preference = bg_string
+
+    bg_preference = request.session['bg_preference']
+    #print("bg preference changed to:", bg_preference)
+    return render(request, 'blog/wiwa_experiment.html', {'bg_preference': bg_preference})
+
+
 def return_answer(arg):
     if arg != None and arg != '':
         try:
@@ -49,9 +85,11 @@ def return_answer(arg):
         return no_words
 
 def wiwa_page(request):
-    return render(request, 'blog/wiwa_experiment.html', {})
+    bg_preference = get_preference(request)
+    return render(request, 'blog/wiwa_experiment.html', {'bg_preference': bg_preference})
 
 def wiwa_answer(request):
+    bg_preference = get_preference(request)
     if request.method == "GET":
         user_input = request.GET.get('user_words', None)
         if user_input != None and len(user_input) > 0:
@@ -62,10 +100,10 @@ def wiwa_answer(request):
                 answer = return_answer(user_input)
 
 
-            return render(request, 'blog/wiwa_experiment.html', {'wiwa_answer' : answer})
+            return render(request, 'blog/wiwa_experiment.html', {'wiwa_answer' : answer, 'bg_preference': bg_preference})
         else:
             answer = "Not enough input for Whispering Wall to process"
-            return render(request, 'blog/wiwa_experiment.html', {'wiwa_answer' : answer})
+            return render(request, 'blog/wiwa_experiment.html', {'wiwa_answer' : answer, 'bg_preference': bg_preference})
     else:
         answer = "No definition found -- No GET given"
-        return render(request, 'blog/wiwa_experiment.html', {'wiwa_answer' : answer})
+        return render(request, 'blog/wiwa_experiment.html', {'wiwa_answer' : answer, 'bg_preference': bg_preference})

@@ -8,4 +8,6 @@ urlpatterns = [
     path('wiwa', views.wiwa_page, name='wiwa'),
     path('wiwa_respond', views.wiwa_answer, name='responses'),
     re_path(r'^language/(?P<language>[a-z\-]+)/$', views.language, name="re-matchSETlanguage"), #<---session change 10
+    path('rm_background', views.remove_bg, name='rm_background'),
+    path('add_image', views.bg_replace, name="add_image"),
 ]
