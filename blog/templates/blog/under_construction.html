@@ -12,7 +12,7 @@
 
 </head>
 
-<body style="background-repeat: no-repeat;  background-position: center; background-size: cover; padding-bottom: 50px;">
+<body style="background-repeat: no-repeat;  background-position: center; background-size: cover; margin-bottom: 50px; font-family: Tahoma, Verdana, Segoe, sans-serif;">
 
 <script>
     bg_image = "url('/static/images/bubbles.png')";
@@ -35,32 +35,38 @@
   <div id="nav_bar" class="banner">
     <a href="/blog"><button type="button"class="btn btn-outline-primary" style="float: left;">Blog</button></a>
       <a href="/wiwa"><button type="button"class="btn btn-outline-primary" style="float: left;">Wiwa</button></a>
-    <p style="float: right;"> Created by Nellie Tobey </p>
+    <p style="float: right; padding-right: 10px;"> Created by Nellie Tobey </p>
+
+
   </div>
   <div class="banner">
+      <h6 style="float: right; padding-right: 10px;"><b>Language = {{language}} </b></h6>
     <h1>Links to my work</h1>
+
   </div>
 
 
-  <div class="jumbotron" style="opacity: 0.75;">
-    <font style="value: initial;">
-
+  <div class="jumbotron" style="opacity: 0.75; margin-bottom: 10px;">
+    <!--<font style="value: initial;">-->
+    <div id="line"></div>
     <a href="https://camelcasenoodles.blogspot.com/2018/12/getting-random-lines-from-txt-files.html" target="_blank">My coding blog:  CamelCaseNoodles</a>
     <br>
+    <div id="line"></div>
       <a href="https://sarahssmiling.blogspot.com/2018/11/how-to-capture-fartmoodle-introduction.html" target="_blank">My fiction blog: sarah is laughing</a>
     <br>
-
-    <h6>Pinterest will only grant so many images before insisting you sign up, or sign in. <br>
-      Future plan to make a page just for images.</h6>
-
+    <div id="line"></div>
       <a href="https://www.pinterest.com/nellietobey/my-art/" target="_blank">My art on Pinterest</a>
     <br>
+    <div id="line"></div>
     <a href="https://docs.google.com/document/d/1OksZXv4SCJCmRufT6n86rQYnryTB4uyqSJFVhIW1-tk/edit?usp=sharing" target="_blank"> My Resume</a>
     <br>
+    <div id="line"></div>
     <a href="https://www.linkedin.com/in/nellie-tobey-creator-michigan/" target="_blank">My LinkedIn Profile</a>
     <br>
+    <div id="line"></div>
     <a href="https://github.com/nelliesnoodles" target="_blank">Github Repositories</a>
     <br>
+    <div id="line"></div>
     </font>
   </div>
 
@@ -71,7 +77,7 @@
 
 <footer style = "text-align: center;
   background: #DDEEEE;
-  position: absolute;
+  position: bottom;
   right: 0;
   bottom: 0;
   left: 0;

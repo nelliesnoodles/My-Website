@@ -1,14 +1,31 @@
 from django.shortcuts import render
 from django.utils import timezone
+from django.http import HttpResponse  #<-- session change 1
 from .models import Post
-import nltk as nltk
-from nltk.corpus import wordnet
-import re
-import enchant
+#import nltk as nltk
+#from nltk.corpus import wordnet
+#import re
+#import enchant
 from .WW_online import Wiwa
 
-def post_list(request):
-    return render(request, 'blog/under_construction.html', {})
+def post_list(request):  #home page
+    language = 'en-gb'   # <-- session change 2
+    session_language = 'en-gb'  #<-- session change 2
+    if 'lang' in request.COOKIES:  #<--session change 3
+        language = request.COOKIES['lang']
+    if 'lang' in request.session:  #<--session change 7
+        session_language = request.session['lang']
+
+
+    return render(request, 'blog/under_construction.html',
+                 {'language': language,
+                  'session_language' : session_language }) #<-- session change 8
+
+def language(request, language='en-gb'):  #<-- session change 5 change 6 in (urls.py)
+    response = HttpResponse('setting language to: %s' % language)
+    response.set_cookie('lang', language)
+    request.session['lang'] = language #<-- session change 9
+    return response
 
 def blog_list(request):
     #Use this on separate html link
