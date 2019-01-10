@@ -33,19 +33,13 @@ import nltk as nltk
 class Wiwa(object):
     def __init__(self): # added a initiated value for session to access (line_numb) 1-9-18
         self.nounscript = "/home/NelliesNoodles/nelliesnoodles_mysite/nouns.txt"
-        self.noun_script_order = create_script_line_order(self.nounscript)
         self.verbscript = "/home/NelliesNoodles/nelliesnoodles_mysite/verbs.txt"
-        self.verb_script_order = create_script_line_order(self.verbscript)
         self.simplescript = "/home/NelliesNoodles/nelliesnoodles_mysite/yes_no.txt"
-        self.simple_script_order = create_script_line_order(self.simplescript)
         self.questionable = "/home/NelliesNoodles/nelliesnoodles_mysite/queries.txt"
-        self.question_script_order = create_script_line_order(self.questionable)
         self.adjectives = "/home/NelliesNoodles/nelliesnoodles_mysite/adjectives.txt"
-        self.adj_script_order = create_script_line_order(self.adjectives)
         self.error_script = "/home/NelliesNoodles/nelliesnoodles_mysite/to_err.txt"
-        self.err_script_order = create_script_line_order(self.error_script)
         self.dictionary = enchant.Dict("en_US")
-        self.line_get = 0
+        self.line_get = 1
 
     def run_wiwa(self, user_input):
         """intro = Welcome to the whispering wall, Wiwa is here to respond
@@ -152,28 +146,13 @@ class Wiwa(object):
         """ Chooses a random script line to give back to user """
         # is often not random *sad face*
         #print(self.line_get)
-
-        if arg == "/home/NelliesNoodles/nelliesnoodles_mysite/nouns.txt":
-            order = self.noun_script_order
-        elif arg == "/home/NelliesNoodles/nelliesnoodles_mysite/queries.txt":
-            order = self.question_script_order
-        elif arg ==  "/home/NelliesNoodles/nelliesnoodles_mysite/verbs.txt":
-            order = self.verb_script_order
-        elif arg == "/home/NelliesNoodles/nelliesnoodles_mysite/yes_no.txt":
-            order = self.simple_script_order
-        elif arg == "/home/NelliesNoodles/nelliesnoodles_mysite/adjectives.txt":
-            order = self.adj_script_order
-        elif arg == "/home/NelliesNoodles/nelliesnoodles_mysite/to_err.txt":
-            order = self.err_script_order
-        else:
-            order = None
-        if order != None:
-            if self.line_get >= len(order):
+        #return "getting line"
+        if arg.startswith("/home/NelliesNoodles/nelliesnoodles_mysite/"):
+            if self.line_get > 22:
                 self.line_get = 0
-            get_line = order[self.line_get]
             with open(arg) as f:
                 lines = f.readlines()
-                x = int(get_line)
+                x = int(self.line_get)
                 #print(lines[x])
                 #self.line_get += 1 ##  Views.py and sessions handles the line_get attribute
                 return lines[x]
@@ -264,38 +243,6 @@ class Wiwa(object):
           return False
 
 
-
-
-#########   get count for number of lines in the txt file  ############
-#################  make a list with range of number of lines in file ##
-#########################              random.shuffle and return     ##
-
-def create_script_line_order(somescript):
-    """ make a list with randomized order of line numbers from script."""
-    # get count:
-    count = None
-    #print(somescript)
-    if somescript.endswith('.txt'):
-        try:
-            with open(somescript) as f:
-                for i, l in enumerate(f):
-                    pass
-                    count = i
-        except:
-            print("file is Empty.")
-            raise ValueError
-    else:
-        print("***file is not a txt file***")
-        print("\t file=", somescript)
-        raise ValueError
-    if count != None:
-        first_list = []
-        # create a list with all line numbers in it
-        for x in range(1, i):
-            first_list.append(x)
-        # shuffle those items:
-        random.shuffle(first_list)
-    return first_list
 
 
 

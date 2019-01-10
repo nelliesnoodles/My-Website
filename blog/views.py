@@ -64,77 +64,67 @@ def bg_replace(request):
     #print("bg preference changed to:", bg_preference)
     return render(request, 'blog/wiwa_experiment.html', {'bg_preference': bg_preference})
 
-def make_list():
+def reset_session(request):
+    print("setting session wiwa keys")
     a_list = []
-    for x in range(1, 22):
+    session_keys = list(request.session.keys())
+    if len(session_keys) > 1:
+        for key in session_keys:
+            if key == 'bg_preference':
+                pass
+            else:
+                del request.session[key]
+    for x in range(0, 24):
         a_list.append(x)
+
     random.shuffle(a_list)
+
     request.session['list_index'] = a_list
+    request.session['line_numb'] = 0
+    request.session.modified = True
+
 
 def return_answer(arg, request):
+
+    if request.session['line_numb'] > 22:
+        reset_session(request)
+
     if arg != None and arg != '':
-        if 'line_numb' not in request.session:
-            request.session['line_numb'] = 0
-
-        if 'list_index' not in request.session:
-            a_list = []
-            for x in range(1, 21):
-                a_list.append(x)
-            random.shuffle(a_list)
-            request.session['list_index'] = a_list
-
-
+        line_numb = request.session['line_numb']
+        the_list = request.session['list_index']
+        print('line_numb =', line_numb)
+        print('the_list = ', the_list)
+        new_line = the_list[line_numb]
+        print('session item retrieved')
+        print('line_numb = ', line_numb)
         try:
-
-
-            wiwa = Wiwa() #
-            #return "line 85"
-            alist = request.session['list_index']
-            #rep = str(alist)
-            #return rep
-            line_numb = request.session['line_numb']
-            #return "line_numb, before if block"
-            #astring = str(alist) + "line_numb =" + str(line_numb)
-            #return astring
-            if line_numb > 21:
-                #return "if block"
-                request.session['line_numb'] = 0
-                line_numb = 0
-                make_list()
-                alist = request.session['list_index']
-            #rep_2 = str(line_numb)
-            #return rep_2
-            new_line = alist[line_numb]
-            #return new_line
-
-            #wiwa.line_get = request.session['line_numb']
+            print('try block')
+            wiwa = Wiwa()
+            print('wiwa initiated')
             wiwa.line_get = new_line
-            #return new_line
+            print("****  getting wiwa_response *****")
             response = wiwa.run_wiwa(arg)
+            #print("response =", response)
             if response:
-
                 request.session['line_numb'] += 1
-                cap = request.session['line_numb']
-                if cap > 22:  #shortest script file is 22 lines
-                    request.session['line_get'] = 0
-
                 return response
             else:
-                return "Something went wrong with Wiwa interface."
+                broken = "Wiwa's code is broken"
+                return broken
         except:
-            broken = "Whispering wall is being modified or is broken."
-            return broken
+            return "something is wrong with Wiwa's code."
     else:
-        no_words = "No search results to give."
+        no_words = "that is not enough information"
         return no_words
 
 def wiwa_page(request):
-    if 'line_numb' not in request.session:
-        request.session['line_numb'] = 0
+    reset_session(request)
     bg_preference = get_preference(request)
     return render(request, 'blog/wiwa_experiment.html', {'bg_preference': bg_preference})
 
 def wiwa_answer(request):
+    if 'line_numb' not in request.session and 'list_index' not in request.session:
+        reset_session(request)
     bg_preference = get_preference(request)
     if request.method == "GET":
         user_input = request.GET.get('user_words', None)

@@ -21,3 +21,5 @@
 " ... fancy a cup of tea?"
 " I really wish my programmer had written better scripts."
 "You only say {}, because no one ever did."
+"But could a ::  {}   :: make a chatbot?"
+"Index out of range, again?  Humanity is a pain in the butt."

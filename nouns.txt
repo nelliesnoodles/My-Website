@@ -20,3 +20,6 @@
 "May I see a {}?"
 "Is the {} the one that says MOOOO?"
 "I have a subroutine that can look up banannas... does {} like banannas?"
+"Malicious use of {} is not allowed."
+"Is the cake in a {}?"
+"Oh the humanity!  Or is it the :  {} ?"
