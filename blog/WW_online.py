@@ -31,7 +31,7 @@ import nltk as nltk
 
 
 class Wiwa(object):
-    def __init__(self):
+    def __init__(self): # added a initiated value for session to access (line_numb) 1-9-18
         self.nounscript = "/home/NelliesNoodles/nelliesnoodles_mysite/nouns.txt"
         self.noun_script_order = create_script_line_order(self.nounscript)
         self.verbscript = "/home/NelliesNoodles/nelliesnoodles_mysite/verbs.txt"
@@ -175,7 +175,7 @@ class Wiwa(object):
                 lines = f.readlines()
                 x = int(get_line)
                 #print(lines[x])
-                self.line_get += 1
+                #self.line_get += 1 ##  Views.py and sessions handles the line_get attribute
                 return lines[x]
 
         else:

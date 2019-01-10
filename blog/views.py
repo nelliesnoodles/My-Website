@@ -2,10 +2,7 @@ from django.shortcuts import render
 from django.utils import timezone
 from django.http import HttpResponse  #<-- session change 1
 from .models import Post
-#import nltk as nltk
-#from nltk.corpus import wordnet
-#import re
-#import enchant
+import random
 from .WW_online import Wiwa
 
 def post_list(request):  #home page
@@ -67,13 +64,60 @@ def bg_replace(request):
     #print("bg preference changed to:", bg_preference)
     return render(request, 'blog/wiwa_experiment.html', {'bg_preference': bg_preference})
 
+def make_list():
+    a_list = []
+    for x in range(1, 22):
+        a_list.append(x)
+    random.shuffle(a_list)
+    request.session['list_index'] = a_list
 
-def return_answer(arg):
+def return_answer(arg, request):
     if arg != None and arg != '':
+        if 'line_numb' not in request.session:
+            request.session['line_numb'] = 0
+
+        if 'list_index' not in request.session:
+            a_list = []
+            for x in range(1, 21):
+                a_list.append(x)
+            random.shuffle(a_list)
+            request.session['list_index'] = a_list
+
+
         try:
-            wiwa = Wiwa()
+
+
+            wiwa = Wiwa() #
+            #return "line 85"
+            alist = request.session['list_index']
+            #rep = str(alist)
+            #return rep
+            line_numb = request.session['line_numb']
+            #return "line_numb, before if block"
+            #astring = str(alist) + "line_numb =" + str(line_numb)
+            #return astring
+            if line_numb > 21:
+                #return "if block"
+                request.session['line_numb'] = 0
+                line_numb = 0
+                make_list()
+                alist = request.session['list_index']
+            #rep_2 = str(line_numb)
+            #return rep_2
+            new_line = alist[line_numb]
+            #return new_line
+
+            #wiwa.line_get = request.session['line_numb']
+            wiwa.line_get = new_line
+            #return new_line
             response = wiwa.run_wiwa(arg)
             if response:
+
+                request.session['line_numb'] += 1
+                cap = request.session['line_numb']
+                if cap > 22:  #shortest script file is 22 lines
+                    request.session['line_get'] = 0
+
                 return response
             else:
                 return "Something went wrong with Wiwa interface."
@@ -85,6 +129,8 @@ def return_answer(arg):
         return no_words
 
 def wiwa_page(request):
+    if 'line_numb' not in request.session:
+        request.session['line_numb'] = 0
     bg_preference = get_preference(request)
     return render(request, 'blog/wiwa_experiment.html', {'bg_preference': bg_preference})
 
@@ -95,9 +141,9 @@ def wiwa_answer(request):
         if user_input != None and len(user_input) > 0:
             if type(user_input) == list:
                 user_input = ' '.join(user_input)
-                answer = return_answer(user_input)
+                answer = return_answer(user_input, request)
             else:
-                answer = return_answer(user_input)
+                answer = return_answer(user_input, request)
 
 
             return render(request, 'blog/wiwa_experiment.html', {'wiwa_answer' : answer, 'bg_preference': bg_preference})
