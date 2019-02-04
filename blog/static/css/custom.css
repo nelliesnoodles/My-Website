@@ -48,6 +48,11 @@ h1, h2 {
   background-image: url('/static/images/unicorn2_12-22-18.png');
 
 }
+#github-image.a{
+    color: #4a3e54;
+    font-size: initial;
+
+}
 
 .banner {
   text-align: center;
@@ -65,6 +70,6 @@ h1, h2 {
 
 
 a {
-  color: #2D4C27; /*dark green*/
+  color: #553b6c;
   font-size: 30px;
 }

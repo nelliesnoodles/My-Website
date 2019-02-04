@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="{% static '/css/custom.css' %}">
+    <!-- from buttons.github.io github button  -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 
 </head>
@@ -26,10 +28,14 @@
     <h1>Whispering Wall</h1>
     <h3>A python chatbot using NLTK</h3>
 
+<a id="github-image" class="github-button" href="https://github.com/nelliesnoodles" aria-label="Follow @nelliesnoodles on GitHub">Follow @nelliesnoodles</a>
+
+
   </div>
+
    <h2 align="left"><font color="white">Talk with Wiwa</font></h2>
 
-    <div class="flex-container" id="text-area">
+    <div id="text-area" style= "padding-bottom: 50px; padding-top: 50px; padding-left: 10px; background-color: white; opacity: 0.7;">
     <h3><strong> Whispering Wall : </strong></h3>
     <h4><strong> {{ wiwa_answer }} </strong></h4>
 
@@ -57,7 +63,7 @@ document.getElementById("add_image_button").addEventListener("click", add_bg);
 -->
 
 </body>
-<div class="banner" style="margin-top: 300px; margin-bottom: 100px;">
+<div class="banner" style="margin-top: 300px; margin-bottom: 100px; position: auto; background-color: white; opacity: 0.7;">
 
     <font size="3">
     <a href="https://github.com/nelliesnoodles" target="_blank"> <i><u>Whispering Wall in Github</u></i></a>

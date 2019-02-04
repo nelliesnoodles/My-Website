@@ -170,15 +170,18 @@ class Wiwa(object):
         'but', 'by', 'can', 'could', 'done', 'during', 'each', 'either',
         'else', 'even', 'every', 'everyone', 'everything', 'everywhere',
         'except', 'few', 'for', 'had', 'has', 'hence', 'here', 'in', 'into', 'is',
-        'it', 'its', 'it\'s', 'keep', 'last', 'latter', 'many', 'may', 'more', 'most',
+        'it', 'its', "it's", 'keep', 'last', 'latter', 'many', 'may', 'more', 'most',
         'much', 'name', 'next', 'none', 'not', 'nothing', 'now', 'nowhere',
         'often', 'other', 'others', 'over', 'rather', 'perhaps', 'seems', 'then',
         'there', 'these', 'they', 'though', 'the', 'this', 'thru', 'too', 'to', 'under', 'until',
-        'upon', 'very', 'was', 'were' 'which', 'while', 'will', 'with', 'i\'ll', 'lets', 'n\'t']
+        'upon', 'very', 'was', 'were' 'which', 'while', 'will', 'with', "'s"]
         new_arg = []
         for item in arg:
+            item_list = list(item)
             if item in stops:
                 pass
+            elif "'" in item_list:  # 1-12-19  removing contractions
+                pass                # can not get it to ignore/remove contractions.  Might have to fiddle with NLTK
             else:
                 new_arg.append(item)
         #print(new_arg)

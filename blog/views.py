@@ -40,10 +40,10 @@ def get_preference(request): #used in Wiwa page
 
 def remove_bg(request):
     if 'bg_preference' not in request.session:
-        bg_string = "background: white;"  #<-- change to something like blue to see definite change
+        bg_string = "background: #c3c2c4;"  #<-- change to something like blue to see definite change
         request.session['bg_preference'] = bg_string
     else:
-        bg_string = 'background: white;' #<-- make sure you have what you want here.
+        bg_string = 'background: #c3c2c4;' #<-- make sure you have what you want here.
         request.session['bg_preference'] = bg_string
 
     bg_preference = request.session['bg_preference']
