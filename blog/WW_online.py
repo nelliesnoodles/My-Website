@@ -3,7 +3,7 @@
 
 import enchant
 import re
-from nltk.corpus import wordnet
+#from nltk.corpus import wordnet
 import random
 import nltk as nltk
 
@@ -26,7 +26,12 @@ import nltk as nltk
     yes responses -- yes_no.txt
     questionable -- queries.txt
     adjectives -- adjectives.txt
-    Interject -- interjections.txt
+    Interject -- interjections.txt <-- not used yet
+    Adverbs -- adverbs.txt
+
+    Testing
+        >>> import WW_online
+        >>> WW_test()
 """
 
 
@@ -38,6 +43,7 @@ class Wiwa(object):
         self.questionable = "/home/NelliesNoodles/nelliesnoodles_mysite/queries.txt"
         self.adjectives = "/home/NelliesNoodles/nelliesnoodles_mysite/adjectives.txt"
         self.error_script = "/home/NelliesNoodles/nelliesnoodles_mysite/to_err.txt"
+        self.adverbs = "/home/NelliesNoodles/nelliesnoodles_mysite/adverbs.txt"
         self.dictionary = enchant.Dict("en_US")
         self.line_get = 1
 
@@ -47,6 +53,7 @@ class Wiwa(object):
         will respond according to her script.
         If you wish to stop program, type EXIT or QUIT.
         Have fun! *Used in bash run*"""
+
         make = user_input
         stripped = make.lower()
         newstring = re.sub("[^a-zA-Z| |]+", "", stripped)
@@ -71,8 +78,12 @@ class Wiwa(object):
                     verbasity = response.format(choice[1])
                     return verbasity
                 elif choice[0] == 'adv':
-                    response = "I don't have a script for adverbs yet."
-                    return response
+                    response = self.get_script_line(self.adverbs)
+                    if '{}' in response:
+                        adverb = response.format(choice[1])
+                        return adverb
+                    else:
+                        return response
                 elif choice[0] == 'adj':
                     response = self.get_script_line(self.adjectives)
 
@@ -93,6 +104,59 @@ class Wiwa(object):
                 else:
 
                     return("Wiwa:  ... ... ")
+
+    def _test_response_making(self, test_sentence):
+            make = test_sentence
+            stripped = make.lower()
+            newstring = re.sub("[^a-zA-Z| |]+", "", stripped)
+            if make in ['QUIT', 'EXIT', 'exit', 'quit', 'q']:
+                return "Goodbye, thanks for stopping in!"
+            else:
+                choice = self.pick_response(make)
+                #print(choice)
+                question = self.check_question(make)
+                if question:
+                    discusanswer = self.get_script_line(self.questionable)
+                    return discusanswer
+                elif newstring in ['yes', 'no', 'maybe']:
+                    response = self.get_script_line(self.simplescript)
+                    return response
+                else:
+                    if choice[0] == 'noun':
+                        response = self.get_script_line(self.nounscript)
+                        return response.format(choice[1])
+                    elif choice[0] =='verb':
+                        response = self.get_script_line(self.verbscript)
+                        verbasity = response.format(choice[1])
+                        return verbasity
+                    elif choice[0] == 'adv':
+                        response = self.get_script_line(self.adverbs)
+                        if '{}' in response:
+                            adverb = response.format(choice[1])
+                            return adverb
+                        else:
+                            return response
+                    elif choice[0] == 'adj':
+                        response = self.get_script_line(self.adjectives)
+
+                        if '{}' in response:
+                            adjective = response.format(choice[1])
+                            return adjective
+                        else:
+                            return response
+                    elif choice[0] == 'err':
+                        response = self.get_script_line(self.error_script)
+
+                        if '{}' in response:
+                            too_error = response.format(choice[1])
+                            return too_error
+                        else:
+                            return response
+
+                    else:
+
+                        return("Wiwa:  ... ... ")
+
 
 
     def pick_response(self, raw_input):
@@ -245,8 +309,61 @@ class Wiwa(object):
         else:
           return False
 
+    def _test_attributes(self):
+        scripts = [self.nounscript, self.verbscript, self.adjectives, self.simplescript, self.questionable, self.error_script, self.adverbs]
+        index = 0
+        for script in scripts:
+            try:
+                with open(script) as f:
+                    print('SUCCESS')
+                    print('script index: ', index)
+                    index += 1
+            except:
+                message = "unable to open file at index {} in scripts of test_attributes"
+                error_message = message.format(index)
+                print(error_message)
+
+        index = 0
+        for script in scripts:
+            result = self.get_script_line(script)
+            if result == "script file could not be found":
+                message = "unable to open file at index {} in scripts of test_attributes"
+                error_message = message.format(index)
+                print(error_message)
+            else:
+                print('get line success @ :', index)
+                index += 1
 
 
 
-
+def WW_test():
+    test_sentences = [
+        "Where are the goats?", #questionable.txt
+        "The goats are jumping", #Noun, verb
+        "The frog jumped.", #noun, verb
+        "No", #simpleScript.txt
+        "Tree.", #Noun
+        "Kill it", # Verb
+        "Pretty Octopus.", #Adjective
+        "Edible button.", #adjective
+        "Beautifully done.", #adverb
+        "It is simply magnificent.", #adverb
+        "fjskdflskjdflsjjslkfj", #error script
+        ]
+    WW = Wiwa()
+    WW._test_attributes()
+    ###  run testing of sentences  ###
+    ### should produce any result except: "Wiwa:  ... ... " ###
+    index = 0
+    for data in test_sentences:
+        try:
+            response = WW._test_response_making(data)
+            if response != "Wiwa:  ... ... ":
+                print("successful sentence response, index= ", index)
+                index += 1
+            else:
+                print("Unsuccessful test sentence response, index= ", index)
+                index += 1
+        except:
+            print("Whispering wall failed to process sentence at index= ", index)
 
