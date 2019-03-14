@@ -31,7 +31,7 @@ def blog_list(request):
 
 def get_preference(request): #used in Wiwa page
     if 'bg_preference' not in request.session:
-        bg_string = "background-image: url('/static/images/unicorn4_12-22-18.png'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.85; font-family: Tahoma, Verdana, Segoe, sans-serif;"
+        bg_string = "background-image: url('/static/images/card_3.png'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.85; font-family: Tahoma, Verdana, Segoe, sans-serif;"
         request.session['bg_preference'] = bg_string
         bg_preference = bg_string
     else:
@@ -52,11 +52,11 @@ def remove_bg(request):
 
 def bg_replace(request):
     if 'bg_preference' not in request.session:
-        bg_string = "background-image: url('/static/images/unicorn4_12-22-18.png'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.85; font-family: Tahoma, Verdana, Segoe, sans-serif;"
+        bg_string = "background-image: url('/static/images/card_3.png'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.85; font-family: Tahoma, Verdana, Segoe, sans-serif;"
         request.session['bg_preference'] = bg_string
         bg_preference = bg_string
     else:
-        bg_string = "background-image: url('/static/images/unicorn4_12-22-18.png'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.85; font-family: Tahoma, Verdana, Segoe, sans-serif;"
+        bg_string = "background-image: url('/static/images/card_3.png'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.85; font-family: Tahoma, Verdana, Segoe, sans-serif;"
         request.session['bg_preference'] = bg_string
         bg_preference = bg_string
 
