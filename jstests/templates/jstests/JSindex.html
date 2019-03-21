@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+   <title> Testing JavaScript Files</title>
+     <script type="text/JavaScript" src="{% static 'js/jsScript1.js' %}"> </script>
+
+ </head>
+<body text="blue">
+
+<h1> It's running </h1>
+<button id="clickme" onclick="doSomething();"> click me </button>
+<button id="moveright" onclick="move_right();">move right </button>
+<button id="moveleft" onclick="move_left();">move left </button>
+<button id="movedown" onclick="move_down();">move down </button>
+<button id="moveup" onclick="move_up();">move up </button>
+<button id="reset" onclick="reset();"> reset ascii </button>
+
+<div id="tardisbox" style="marginTop: 10px; padding-left: 10px;">
+Tardis
+</div>
+
+</body>
+</html>
