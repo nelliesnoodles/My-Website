@@ -1,0 +1,44 @@
+<!-- Client_Requests/templates/index.html -->
+
+{% load static %}
+
+
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+      <title>Word Finder</title>
+
+    </head>
+    <body style="margin: 20px 20px 20px 20px;">
+      <p style="float: left; margin-right: 50px;"> created by: Nellie Tobey </p>
+      <h1 style="float: center;  margin-left: 20px; padding-top: 40px;"> Word finder </h1>
+      <!--  color:   light blue =  8caac3   -->
+      <div style="padding-bottom: 20px; margin-left: 20px; border-bottom: solid; border-color: #8caac3; ">
+        <h5> Using python enchant </h5>
+        <h4><strong> {{ error }} </strong></h4>
+        <h4> {{ correction }} </h4>
+      </div>
+      <div style="padding: 25px 25px 25px 25px;">
+      <form method="GET" action="find_word" id="check_form" style="padding-top: 20px;">
+
+           <textarea form="check_form" rows="1" cols="40" maxlength="27" name="user_input"></textarea>
+
+        <button type="submit">check your word</button>
+
+      </form>
+
+    </div>
+    <h3 style="margin-left: 20px; border-bottom: solid; border-color: #8caac3; ">Other suggestions</h3>
+    {% for word in args %}
+    <div style="text-align: center; float: left; padding: 20px 20px 20px 20px;">
+    <h4><strong>{{word}}</strong></h4>
+    </div>
+    {% endfor %}
+
+
+    </body>
+</html>

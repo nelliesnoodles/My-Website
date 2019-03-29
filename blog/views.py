@@ -4,6 +4,7 @@ from django.http import HttpResponse  #<-- session change 1
 from .models import Post
 import random
 from .WW_online import Wiwa
+from .speller_web import WordFinder
 
 def post_list(request):  #home page
     language = 'en-gb'   # <-- session change 2
@@ -143,3 +144,36 @@ def wiwa_answer(request):
     else:
         answer = "No definition found -- No GET given"
         return render(request, 'blog/wiwa_experiment.html', {'wiwa_answer' : answer, 'bg_preference': bg_preference})
+
+def spell_checker(request):
+    correction = " "
+    error = " "
+    alist = ['NONE']
+    if request.method == "GET":
+       arg = request.GET.get('user_input', None)
+       wf = WordFinder()
+       valid = wf.validate_string(arg)
+
+
+       if arg != '' and valid:
+           error, correction, alist = wf.get_suggestions(arg)
+       else:
+           correction = " Invalid input from user into text field. "
+
+    return render(request, "blog/word_finder.html", {'correction' : correction, 'error': error, 'args': alist})
+
+def word_finder(request):
+    """
+    Using the speller_web.py class WordFinder
+    return a list of spelling suggestions if a word is misspelled
+    or a message of 'correct', if the word is correct.
+    """
+    correction = " "
+    error = " "
+    alist = ["NONE"]
+    if request.method == "GET":
+        spell_checker(request)
+
+    return render(request, "blog/word_finder.html", {'correction' : correction, 'error': error, 'args': alist})
+
+

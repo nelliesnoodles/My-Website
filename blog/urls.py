@@ -10,5 +10,7 @@ urlpatterns = [
     re_path(r'^language/(?P<language>[a-z\-]+)/$', views.language, name="re-matchSETlanguage"), #<---session change 10
     path('rm_background', views.remove_bg, name='rm_background'),
     path('add_image', views.bg_replace, name="add_image"),
+    path('blog/find_word', views.spell_checker, name="word_finder"),
+    path('blog/word_finder', views.word_finder, name="word_finder_page"),
 
 ]
