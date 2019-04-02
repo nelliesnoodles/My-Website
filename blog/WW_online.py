@@ -47,6 +47,10 @@ class Wiwa(object):
         self.dictionary = enchant.Dict("en_US")
         self.line_get = 1
 
+##--------------------------------------##
+##        Main run                      ##
+##--------------------------------------##
+
     def run_wiwa(self, user_input):
         """intro = Welcome to the whispering wall, Wiwa is here to respond
         and question your perspective. She is just a program, and
@@ -105,6 +109,10 @@ class Wiwa(object):
 
                     return("Wiwa:  ... ... ")
 
+##---------------------------------##
+##    modified for test main run   ##
+##---------------------------------##
+
     def _test_response_making(self, test_sentence):
             make = test_sentence
             stripped = make.lower()
@@ -158,6 +166,9 @@ class Wiwa(object):
                         return("Wiwa:  ... ... ")
 
 
+##----------------------------------------------------##
+##   send back random choice of response tuples       ##
+##----------------------------------------------------##
 
     def pick_response(self, raw_input):
         """ Create lists of possible valid words for response mechanism,
@@ -206,6 +217,10 @@ class Wiwa(object):
         else:
             return ('error', 'not identified')
 
+##----------------------------------------------##
+##       open script, return line from script   ##
+##----------------------------------------------##
+
     def get_script_line(self, arg):
         """ Chooses a random script line to give back to user """
         # is often not random *sad face*
@@ -223,6 +238,10 @@ class Wiwa(object):
 
         else:
             return "script file could not be found"
+
+##  ------------------------------------------- ##
+##        input processing, cleaning            ##
+##----------------------------------------------##
 
     def strip_stop_words(self, arg):
         stops = ['i', 'me', 'you', 'of', 'he', 'she', 'it', 'some', 'all', 'a', 'lot',
@@ -309,6 +328,10 @@ class Wiwa(object):
         else:
           return False
 
+##----------------------------------##
+##  testing WW class attributes     ##
+##----------------------------------##
+
     def _test_attributes(self):
         scripts = [self.nounscript, self.verbscript, self.adjectives, self.simplescript, self.questionable, self.error_script, self.adverbs]
         index = 0
@@ -322,6 +345,7 @@ class Wiwa(object):
                 message = "unable to open file at index {} in scripts of test_attributes"
                 error_message = message.format(index)
                 print(error_message)
+                index += 1
 
         index = 0
         for script in scripts:
@@ -330,11 +354,17 @@ class Wiwa(object):
                 message = "unable to open file at index {} in scripts of test_attributes"
                 error_message = message.format(index)
                 print(error_message)
+                index += 1
             else:
                 print('get line success @ :', index)
                 index += 1
 
 
+## ***********************************  ##
+##      WW python shell test run        ##
+##  >>> import WW_online as ww          ##
+##  >>> ww.WW_test()                    ##
+##--------------------------------------##
 
 def WW_test():
     test_sentences = [
@@ -355,10 +385,11 @@ def WW_test():
     ###  run testing of sentences  ###
     ### should produce any result except: "Wiwa:  ... ... " ###
     index = 0
+    fails = ["Wiwa: ... ... ", "script file could not be found"]
     for data in test_sentences:
         try:
             response = WW._test_response_making(data)
-            if response != "Wiwa:  ... ... ":
+            if response not in fails:
                 print("successful sentence response, index= ", index)
                 index += 1
             else:
@@ -366,4 +397,5 @@ def WW_test():
                 index += 1
         except:
             print("Whispering wall failed to process sentence at index= ", index)
+            index += 1
 
