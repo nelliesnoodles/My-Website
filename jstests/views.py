@@ -3,4 +3,4 @@ from django.shortcuts import render
 
 
 def run_app(request):
-    return render(request, 'JSindex.html')
+    return render(request, 'jstests/JSindex.html')

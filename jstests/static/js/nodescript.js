@@ -1,19 +1,19 @@
 // JavaScript file
 
-var whsp10 = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+var whsp13 = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
 var whsp9 = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
-var whsp8 = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
-var whsp5 =  "&nbsp&nbsp&nbsp&nbsp&nbsp";
-var text1 = "====[]====";
-var text1a ="|=----------------=|";
-var text1b ="|" + whsp10 + "|" + whsp10 + "|";
-var text2 = "|[" + whsp5 + "]=|=[" + whsp5 + "]|";
-var text3 = "|[" + whsp5 + "]=|=[" + whsp5 + "]|";
-var text4 = "|----"+ whsp5 + "&nbsp|..." + whsp5 + "--|";
-var text4a = "|" + whsp8 + "o|" + whsp10 + "|";
-var text4b = "|" + whsp10 + "|" + whsp10 + "|";
-var text4c = "|" + whsp10 + "|" + whsp10 + "|";
-var text5 = "|_____________|";
+var whsp6 = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+var whsp3 =  "&nbsp&nbsp&nbsp";
+var text1 = "--====[]====--";
+var text1a ="|=-----------=|";
+var text1b ="|" + whsp13 + "|";
+var text2 = "|[" + whsp3 + "]=|=[" + whsp3 + "]|";
+var text3 = "|[" + whsp3 + "]=|=[" + whsp3 + "]|";
+var text4 = "|" + whsp6 + "|" + whsp6 + "|";
+var text4a = "|" + whsp6 + "|" + whsp6 + "|";
+var text4b = "|" + whsp6 + "|" + whsp6 + "|";
+var text4c = "|" + whsp6 + "|" + whsp6 + "|";
+var text5 = "|______+______|";
 var alist = [text1, text1a, text1b, text2, text3, text4, text4a, text4b, text4c, text5];
 var topmarginlist = ['50px', '100px', '150px', '200px', '300px'];
 var place_of_margin_top = 0;
