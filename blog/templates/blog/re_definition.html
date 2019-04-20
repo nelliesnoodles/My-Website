@@ -1,0 +1,54 @@
+<!doctype html>
+{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nellie's Noodles</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static '/css/custom.css' %}">
+
+</head>
+
+<body style="background-repeat: no-repeat;  background-position: center; background-size: cover; padding-bottom: 50px;">
+
+
+
+  <div id="nav_bar" class="banner">
+    <a href="blog/word_finder"><button type="button"class="btn btn-outline-primary" style="float: left;">Back to Word Finder</button></a>'
+    <p style="float: right;"> Created by Nellie Tobey </p>
+  </div>
+  <div class="banner">
+    <h1>Definition returned: {{word}}</h1>
+
+  </div>
+
+
+  <div class="jumbotron" style="opacity: 0.75; padding-top: 25px; margin-top: 25px;">
+    <font style="value: initial;">
+    <p>
+   {{result}}
+   </p>
+  </div>
+
+
+
+    <h2> Code: </h2>
+    <p>
+    <pre>
+    result = "No result"<br>
+    if request.method == "GET":<br>
+        word = request.GET.get("get_word", None)<br>
+        syns = wn.synsets(word)<br>
+        if len(syns) > 0:<br>
+            result = syns[0].definition()<br>
+        else:<br>
+            result = "no result for word:" + word<br>
+    return render(request, "blog/re_definition.html", {'result': result, 'word': word})<br>
+    </pre>
+      </p>
+</body>
+
+</html>

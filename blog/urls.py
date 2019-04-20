@@ -12,5 +12,6 @@ urlpatterns = [
     path('add_image', views.bg_replace, name="add_image"),
     path('blog/find_word', views.spell_checker, name="word_finder"),
     path('blog/word_finder', views.word_finder, name="word_finder_page"),
+    path('re_definition', views.get_definition, name="re_definition"),
 
 ]

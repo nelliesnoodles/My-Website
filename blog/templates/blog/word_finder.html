@@ -36,21 +36,31 @@
       </div>
 
       <!--     textarea & form submission -->
-      <div style="padding: 25px 25px 25px 25px;">
+      <div class="container" style="padding: 25px 25px 25px 25px;">
       <form method="GET" action="find_word" id="check_form" style="padding-top: 20px;">
            <textarea form="check_form" rows="1" cols="40" maxlength="27" name="user_input"></textarea>
         <button type="submit">check your word</button>
       </form>
     </div>
-    <div style="padding: 20px, 20px, 20px, 20px;">
-    <!--  Other suggestions from Python enchant -->
     <h3 style="margin-left: 20px; border-bottom: solid; border-color: #8caac3; ">Other suggestions</h3>
+    <div style="text-align: center; float: left; padding-left: 20px; padding-bottom: 10px;">
     {% for word in args %}
-    <div style="text-align: center; float: left; padding: 20px 20px 20px 20px;">
+    <div style="text-align: center; float: left; padding-left: 20px;">
     <h4><strong>{{word}}</strong></h4>
     </div>
     {% endfor %}
     </div>
+
+
+    <div class="container"  style="bottom: 0;">
+    <h2 style="border-bottom: solid; padding-top: 10px; "> get definition </h2>
+    <form method="GET" action="/re_definition" id="defin_form" style="padding-top: 20px;">
+
+         retrieve this = <input type="text" maxlength="27" name="get_word"><br>
+         <input type="submit" value="SUBMIT">
+       </form>
+     </div>
+
 
 
 

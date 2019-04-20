@@ -5,6 +5,7 @@ from .models import Post
 import random
 from .WW_online import Wiwa
 from .speller_web import WordFinder
+from nltk.corpus import wordnet as wn
 
 def post_list(request):  #home page
     language = 'en-gb'   # <-- session change 2
@@ -144,6 +145,21 @@ def wiwa_answer(request):
     else:
         answer = "No definition found -- No GET given"
         return render(request, 'blog/wiwa_experiment.html', {'wiwa_answer' : answer, 'bg_preference': bg_preference})
+
+def get_definition(request):
+    """
+    Use nltk wordnet to check for a word in synsets
+    If word is found in synsets, return first listed definition
+    """
+    result = "No result"
+    if request.method == "GET":
+        word = request.GET.get("get_word", None)
+        syns = wn.synsets(word)
+        if len(syns) > 0:
+            result = syns[0].definition()
+        else:
+            result = "no result for word:" + word
+    return render(request, "blog/re_definition.html", {'result': result, 'word': word})
 
 def spell_checker(request):
     correction = " "
