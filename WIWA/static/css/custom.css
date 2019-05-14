@@ -1,0 +1,88 @@
+/* static custom css -- Nellie Tobey -- nelliesnoodles */
+
+
+
+h4 {
+  color:  #2d1c44;
+}
+#wiwa {
+    font-size: 1.5em;
+}
+
+#line {
+    padding-top: 5px;
+    border-bottom: 5px solid;
+    border-color: white;
+    width: 100%;
+    height: 8px;
+}
+#wiwa_bg  {
+    background-image: url('/static/images/unicorn4_12-22-18.png');
+}
+
+h1, h2 {
+  color: #073F5D;
+}
+#image.container{
+  /*border-style: solid;*/
+  background-image: linear-gradient(#D7D3DC, #489076);
+}
+#nav_bar.banner{
+  position: absolute;
+  padding-top: 0px;
+  top: 0;
+  left: 0;
+  background-color: #DDEEEE; /* pale blue */
+  width: 100%;
+}
+#text-area.flex-container{
+  float: left;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 100%;
+  background-color: #D7D3DC;
+  opacity: 0.95;
+  position: fixed;
+  }
+
+#grey-image.div {
+  background-image: url('/static/images/unicorn2_12-22-18.png');
+
+}
+#github-image.a{
+    color: #4a3e54;
+    font-size: initial;
+
+}
+
+.banner {
+  text-align: center;
+  padding-top: 10px;
+  margin: auto;
+  width: 100%;
+  background-color: #CDD9EC   /* grey blue */
+}
+#gradiant.banner {
+  background-image: linear-gradient(#CDD9EC, #A7D9C7);
+}
+#gradiant2.banner {
+  background-image: linear-gradient(#CDD9EC, #7C7A76);
+}
+
+
+
+#chatbox {
+  border: solid black;
+  background: #c7d1cf;
+  height: 200px;
+  width: 100%;
+  overflow: auto;
+
+}
+
+a {
+  color: #553b6c;
+  font-size: 30px;
+}

@@ -1,0 +1,94 @@
+<!doctype html>
+{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nellie's Noodles</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static '/css/custom.css' %}">
+    <!-- from buttons.github.io github button  -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script type="text/JavaScript" src="{% static 'js/chat_box.js' %}"></script>
+
+
+</head>
+
+<body id="wiwa_bg"  style = "{{ bg_preference }}">
+
+
+
+ <!-- Intro title -->
+ <div style="margin: auto; padding: auto;">
+   <!-- NAVBAR -->
+   <div id="nav_bar" class="banner">
+     <a href="/"><button type="button"class="btn btn-outline-primary" style="float: left;">Home</button></a>
+     <a href="/blog"><button type="button"class="btn btn-outline-primary" style="float: left;">Blog</button></a>
+     <a href="blog/word_finder"><button type="button" class="btn btn-outline-primary" style="float: left;">Word Finder</button></a>
+     <a href="/jstests"><button type="button"class="btn btn-outline-primary" style="float: left;">Learning JS</button></a>
+     <p style="float: right; padding-right: 10px; padding-bottom: 10px;"> Created by Nellie Tobey </p>
+   </div>
+   <!-- Intro title -->
+  <div id="gradient2" class="banner">
+
+    <h3>Whispering Wall</h3>
+    <h4>A python chatbot using NLTK</h4>
+
+<a id="github-image" class="github-button" href="https://github.com/nelliesnoodles" aria-label="Follow @nelliesnoodles on GitHub">Follow @nelliesnoodles</a>
+
+</div>
+  </div>
+
+<!--     ~~~~~~~~~~~~~~~~~~~   -->
+<!--       Whispering Wall     -->
+<!--     ~~~~~~~~~~~~~~~~~~~   -->
+
+
+    <div style="background: #c7d1cf; padding-left: 10%;">
+    <h3><strong> Talk to the Wall </strong></h3>
+    </div>
+    <!--<h4 id="wiwa_words"><strong> {{ wiwa_answer }} </strong></h4>-->
+
+    <input type="hidden" id="wiwa_words" name="wiwa_words" value="{{ wiwa_answer }}">
+<!--            -->
+<!--   CHATBOX  -->
+<!--            -->
+    <div id="chatbox" style="border:solid black; background: #c7d1cf; height: 200px; width: 90%; overflow: auto; font-size: 1.5em;">
+      Chat Log:
+   </div>
+
+
+  <form method="GET" action="wiwa_respond" id="wiwa_form" style="padding-top: 20px; font-size: 1.2em;">
+    <textarea id="user_words" name="user_words" type="text" onfocus="this.value=''" maxlength="120" style="height: 40px; width: 400px; border: solid black;">
+</textarea>
+    <button type="submit" onclick="store_words('user_words')">send</button>
+  </form>
+  <button onclick="clear_storage()">clear</button>
+
+
+</div>
+</font>
+
+</body>
+<!-- Github link and remove/add background image buttons -->
+<div class="banner" style="margin-top: relative; margin-bottom: 100px; position: auto; background-color: white; opacity: 0.85;">
+
+    <font size="3">
+    <a href="https://github.com/nelliesnoodles" target="_blank"> <i><u>Whispering Wall in Github</u></i></a>
+    <h5> Github version may be more advanced then online version </h5>
+    </font>
+    <form method="GET" action="rm_background" id="remove_background"></form>
+    <button form="remove_background" class="btn btn-primary btn-lg btn-block" type='submit'>
+        remove  -(image)
+    </button>
+    <form method="GET" action="add_image" id="add_image"></form>
+    <button form="add_image" class="btn btn-primary btn-lg btn-block" type='submit'>
+        add +(image)
+    </button>
+
+
+</div>
+
+</html>

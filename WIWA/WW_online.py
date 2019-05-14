@@ -37,13 +37,21 @@ import nltk as nltk
 
 class Wiwa(object):
     def __init__(self): # added a initiated value for session to access (line_numb) 1-9-18
-        self.nounscript = "/home/NelliesNoodles/nelliesnoodles_mysite/nouns.txt"
-        self.verbscript = "/home/NelliesNoodles/nelliesnoodles_mysite/verbs.txt"
-        self.simplescript = "/home/NelliesNoodles/nelliesnoodles_mysite/yes_no.txt"
-        self.questionable = "/home/NelliesNoodles/nelliesnoodles_mysite/queries.txt"
-        self.adjectives = "/home/NelliesNoodles/nelliesnoodles_mysite/adjectives.txt"
-        self.error_script = "/home/NelliesNoodles/nelliesnoodles_mysite/to_err.txt"
-        self.adverbs = "/home/NelliesNoodles/nelliesnoodles_mysite/adverbs.txt"
+      #Personal CPU path: /home/nellie/MYSITE/my-first-blog-master/wiwa
+      #Website path to files:"/home/NelliesNoodles/nelliesnoodles_mysite/WIWA"
+      # script file path is also in the  ~~~~~get_script_line()~~~~~
+
+
+        self.nounscript = "/home/NelliesNoodles/nelliesnoodles_mysite/WIWA/nouns.txt"
+        self.verbscript = "/home/NelliesNoodles/nelliesnoodles_mysite/WIWA/verbs.txt"
+        self.simplescript = "/home/NelliesNoodles/nelliesnoodles_mysite/WIWA/yes_no.txt"
+        self.questionable = "/home/NelliesNoodles/nelliesnoodles_mysite/WIWA/queries.txt"
+        self.adjectives = "/home/NelliesNoodles/nelliesnoodles_mysite/WIWA/adjectives.txt"
+        self.error_script ="/home/NelliesNoodles/nelliesnoodles_mysite/WIWA/to_err.txt"
+        self.adverbs = "/home/NelliesNoodles/nelliesnoodles_mysite/WIWA/adverbs.txt"
+
+
+
         self.dictionary = enchant.Dict("en_US")
         self.line_get = 1
 
@@ -226,7 +234,7 @@ class Wiwa(object):
         # is often not random *sad face*
         #print(self.line_get)
         #return "getting line"
-        if arg.startswith("/home/NelliesNoodles/nelliesnoodles_mysite/"):
+        if arg.startswith("/home/NelliesNoodles/nelliesnoodles_mysite/WIWA"):   ####   Script file path  ####
             if self.line_get > 22:
                 self.line_get = 0
             with open(arg) as f:
@@ -249,7 +257,7 @@ class Wiwa(object):
         'above', 'before', 'across', 'against', 'almost', 'along', 'aslo',
         'although', 'always', 'am', 'among', 'amongst', 'amount', 'and',
         'another', 'any', 'anyhow', 'anyone', 'anything', 'around', 'as',
-        'be', 'maybe', 'being', 'beside', 'besides', 'between', 'beyond', 'both',
+        'be', "n't", 'being', 'beside', 'besides', 'between', 'beyond', 'both',
         'but', 'by', 'can', 'could', 'done', 'during', 'each', 'either',
         'else', 'even', 'every', 'everyone', 'everything', 'everywhere',
         'except', 'few', 'for', 'had', 'has', 'hence', 'here', 'in', 'into', 'is',
@@ -322,7 +330,7 @@ class Wiwa(object):
         return x
 
     def check_question(self, arg):
-        questions = ['why', '?']
+        questions = ['why', '?', 'maybe']
         if questions[0] in arg or questions[1] in arg:
           return True
         else:
@@ -398,4 +406,3 @@ def WW_test():
         except:
             print("Whispering wall failed to process sentence at index= ", index)
             index += 1
-
