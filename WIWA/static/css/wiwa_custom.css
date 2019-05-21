@@ -1,4 +1,4 @@
-/* static custom css -- Nellie Tobey -- nelliesnoodles */
+/* static custom css -- Nellie Tobey -- nelliesnoodles --Whispering Wall*/
 
 
 
@@ -79,8 +79,11 @@ h1, h2 {
   height: 200px;
   width: 100%;
   overflow: auto;
+  font-size: 1.5em;
 
 }
+
+
 
 a {
   color: #553b6c;

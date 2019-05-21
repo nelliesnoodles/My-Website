@@ -8,7 +8,7 @@
     <title>Nellie's Noodles</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static '/css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/wiwa_custom.css' %}">
     <!-- from buttons.github.io github button  -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script type="text/JavaScript" src="{% static 'js/chat_box.js' %}"></script>
@@ -18,9 +18,6 @@
 
 <body id="wiwa_bg"  style = "{{ bg_preference }}">
 
-
-
- <!-- Intro title -->
  <div style="margin: auto; padding: auto;">
    <!-- NAVBAR -->
    <div id="nav_bar" class="banner">
@@ -31,6 +28,7 @@
      <p style="float: right; padding-right: 10px; padding-bottom: 10px;"> Created by Nellie Tobey </p>
    </div>
    <!-- Intro title -->
+   <div id="line"></div>
   <div id="gradient2" class="banner">
 
     <h3>Whispering Wall</h3>
@@ -54,8 +52,8 @@
     <input type="hidden" id="wiwa_words" name="wiwa_words" value="{{ wiwa_answer }}">
 <!--            -->
 <!--   CHATBOX  -->
-<!--            -->
-    <div id="chatbox" style="border:solid black; background: #c7d1cf; height: 200px; width: 90%; overflow: auto; font-size: 1.5em;">
+<!--  style="border:solid black; background: #c7d1cf; height: 200px; width: 90%; overflow: auto; font-size: 1.5em;"          -->
+    <div id="chatbox">
       Chat Log:
    </div>
 
