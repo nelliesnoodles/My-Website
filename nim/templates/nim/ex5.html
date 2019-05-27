@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+<title>Nim two player game</title>
+
+ <script type="text/javascript" src="{% static 'js/ex5.js' %}"></script>
+ <link rel="stylesheet" href="{% static 'css/ex5.css' %}">
+  </head>
+  <!-- #91cac5 == greyish teal-->
+  <!-- #413647 == dark grey violet -->
+  <!-- #edc488 == Peach -->
+  <body id="Main_Body" style="background: #413647; font-color: ">
+
+  <div id="nav_bar" class="banner">
+    <a href="/blog"><button type="button"class="btn btn-outline-primary" style="float: left;">Blog</button></a>
+    <!--  change made for wiwa update 5-14-19 -->
+       <a href="/"><button type="button"class="btn btn-outline-primary" style="float: left;">Home</button></a>
+       <a href="jstests"><button type="button"class="btn btn-outline-primary" style="float: left;">Learning JS</button></a>
+       <a href="blog/word_finder"><button type="button" class="btn btn-outline-primary" style="float: left;">Word Finder</button></a>
+        <a href="WIWA"><button type="button"class="btn btn-outline-primary" style="float: left;">Chatbot</button></a>
+    <p style="float: right; padding-right: 10px;"> Created by Nellie Tobey </p>
+  </div>
+
+<h4 style="text-align: center; color: white;"> <button id="instructions" onclick="instructions()">Game Instructions</button> </h4>
+  <br>
+
+
+<h2 class="banner"> NIM </h3>
+<button style="float:center" onclick="cpu_turn();"> END TURN </button>
+  <div class="cards">
+
+    <div class="card1" id="one"><div class="nim" onclick='get_row("one")'></div></div>
+    <div class="card2" id="two"><div class="nim"  onclick='get_row("two")'></div></div>
+    <div class="card3" id="three"><div class="nim"  onclick='get_row("three")'></div></div>
+    <div class="card4" id="four"><div class="nim"  onclick='get_row("four")'></div></div>
+    <div class="card5"  id="five"><div class="nim" onclick='get_row("five")'></div></div>
+    <div class="card6" id="six"><div class="nim"  onclick='get_row("six")'></div></div>
+    <div class="card7" id="seven"><div class="nim"  onclick='get_row("seven")'></div></div>
+    <div class="card8" id="eight"><div class="nim"  onclick='get_row("eight")'></div></div>
+    <div class="card9" id="nine"><div class="nim"  onclick='get_row("nine")'></div></div>
+    <div class="card10" id="ten"><div class="nim"  onclick='get_row("ten")'></div></div>
+    <div class="card11"  id="eleven"><div class="nim" onclick='get_row("eleven")'></div></div>
+    <div class="card12" id="twelve"><div class="nim"  onclick='get_row("twelve")'></div></div>
+    <div class="card13" id="thirteen"><div class="nim"  onclick='get_row("thirteen")'></div></div>
+    <div class="card14" id="fourteen"><div class="nim"  onclick='get_row("fourteen")'></div></div>
+    <div class="card15"  id="fifteen"><div class="nim"  onclick='get_row("fifteen")'></div></div>
+    <div class="card16" id="sixteen"><div class="nim"  onclick='get_row("sixteen")'></div></div>
+
+
+  </div>
+  </body>
+  </html>

@@ -1,0 +1,210 @@
+/* css for NIM game */
+
+.cards {
+display: grid;
+grid-template-columns: repeat(7, 10%);
+grid-template-rows: 10%;
+grid-auto-rows: auto;
+grid-template-areas:
+". . . item1 . . ."
+". . item2 item3 item4 . ."
+". item5 item6 item7 item8 item9 ."
+"item10 item11 item12 item13 item14 item15 item16";
+justify-content: center;
+}
+/* row 1 */
+.card1 {
+  visibility: visible;
+  grid-area: item1;
+  border: solid 5px black;
+  background-color:  #bd087e;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 20px;
+  height:100%;
+  width: 100%;
+  margin: 5px;
+}
+/* row2 3 cards (2-4)*/
+.card2 {
+  visibility: visible;
+  grid-area: item2;
+  border: solid 5px black;
+  background-color: #882766;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 20px;
+  height:100%;
+  width: 100%;
+}
+.card3 {
+  visibility: visible;
+  grid-area: item3;
+  border: solid 5px black;
+  background-color: #882766;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 20px;
+  height:100%;
+  width: 100%;
+}
+
+.card4 {
+  visibility: visible;
+  grid-area: item4;
+  border: solid 5px black;
+  background-color: #882766;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 20px;
+  height:100%;
+  width: 100%;
+}
+/* row3 5 cards (5-9) */
+.card5 {
+  visibility: visible;
+  grid-area: item5;
+  border: solid 5px black;
+  background-color: #5f314f;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 20px;
+  height:100%;
+  width: 100%;
+}
+.card6 {
+  visibility: visible;
+  grid-area: item6;
+  border: solid 5px black;
+  background-color: #5f314f;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 20px;
+  height:100%;
+  width: 100%;
+}
+.card7 {
+  visibility: visible;
+  grid-area: item7;
+  border: solid 5px black;
+  background-color: #5f314f;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 20px;
+  height:100%;
+  width: 100%;
+}
+.card8 {
+  visibility: visible;
+  grid-area: item8;
+  border: solid 5px black;
+  background-color: #5f314f;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 20px;
+  height:100%;
+  width: 100%;
+}
+.card9 {
+  visibility: visible;
+  grid-area: item9;
+  border: solid 5px black;
+  background-color: #5f314f;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 20px;
+  height:100%;
+  width: 100%;
+}
+/* row 4  7 cards (10-16) */
+.card10 {
+  visibility: visible;
+  grid-area: item10;
+  border: solid 5px black;
+  background-color: #4a3a44;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 20px;
+  height:100%;
+  width: 100%;
+}
+.card11 {
+  visibility: visible;
+  grid-area: item11;
+  border: solid 5px black;
+  background-color: #4a3a44;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 20px;
+  height:100%;
+  width: 100%;
+}
+.card12 {
+  visibility: visible;
+  grid-area: item12;
+  border: solid 5px black;
+  background-color: #4a3a44;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 20px;
+  height:100%;
+  width: 100%;
+}
+.card13 {
+  visibility: visible;
+  grid-area: item13;
+  border: solid 5px black;
+  background-color: #4a3a44;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 20px;
+  height:100%;
+  width: 100%;
+}
+.card14 {
+  visibility: visible;
+  grid-area: item14;
+  border: solid 5px black;
+  background-color: #4a3a44;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 20px;
+  height:100%;
+  width: 100%;
+}
+.card15 {
+  visibility: visible;
+  grid-area: item15;
+  border: solid 5px black;
+  background-color: #4a3a44;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 20px;
+  height:100%;
+  width: 100%;
+}
+.card16 {
+  visibility: visible;
+  grid-area: item16;
+  border: solid 5px black;
+  background-color: #4a3a44;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 20px;
+  height:100%;
+  width: 100%;
+}
+.banner{
+  background: #ebd4c2;
+  font-size: 2em;
+  text-align: center;
+}
+.nim {
+  background: transparent;
+  border: solid 2px black;
+  width: 100%;
+  height: 100%;
+}
+.nim:hover {
+  background-color:  #100c4b;
+}

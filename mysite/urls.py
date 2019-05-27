@@ -22,8 +22,10 @@ urlpatterns = [
     path('', include('blog.urls')),
     path('', include('jstests.urls')),
     path('', include('WIWA.urls')),
+    path('', include('nim.urls')),
     path('blog/', include('blog.urls')),
     path('language', include('blog.urls')),
     path('jstests/', include('jstests.urls')),
     path('WIWA', include('WIWA.urls')),
+    path('nim', include('nim.urls')),
 ]
