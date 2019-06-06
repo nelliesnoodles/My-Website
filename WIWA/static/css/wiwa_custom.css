@@ -1,6 +1,10 @@
 /* static custom css -- Nellie Tobey -- nelliesnoodles --Whispering Wall*/
 
-
+.btn-outline-primary {
+    color: black;
+    background-color: #DAF7A6;
+    border-color: purple; /*set the color you want here*/
+}
 
 h4 {
   color:  #2d1c44;
@@ -10,9 +14,8 @@ h4 {
 }
 
 #line {
-    padding-top: 5px;
     border-bottom: 5px solid;
-    border-color: white;
+    border-color:   #112711;
     width: 100%;
     height: 8px;
 }
@@ -28,12 +31,14 @@ h1, h2 {
   background-image: linear-gradient(#D7D3DC, #489076);
 }
 #nav_bar.banner{
-  position: absolute;
+  /* absolute means the rest of the content ignores it's placement */
   padding-top: 0px;
+  margin: auto;
   top: 0;
   left: 0;
-  background-color: #DDEEEE; /* pale blue */
+  background: #DDEEEE; /* pale blue */
   width: 100%;
+  height: 40px;
 }
 #text-area.flex-container{
   float: left;
@@ -42,7 +47,7 @@ h1, h2 {
   padding-right: 10px;
   padding-left: 10px;
   width: 100%;
-  background-color: #D7D3DC;
+  background-color: #DAF7A6;
   opacity: 0.95;
   position: fixed;
   }
@@ -69,13 +74,14 @@ h1, h2 {
 }
 #gradiant2.banner {
   background-image: linear-gradient(#CDD9EC, #7C7A76);
+  margin-top: 20px;
 }
 
 
 
 #chatbox {
-  border: solid black;
-  background: #c7d1cf;
+  border: solid  #112711;
+  background: #DAF7A6;
   height: 200px;
   width: 100%;
   overflow: auto;
