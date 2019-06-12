@@ -1,6 +1,12 @@
 /* static custom css -- Nellie Tobey -- nelliesnoodles */
 
+html {
+    min-hieght: 100%;
+}
 
+body {
+    min-height: 100%;
+}
 
 h4 {
   color:  #2d1c44;

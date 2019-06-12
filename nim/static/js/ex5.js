@@ -12,9 +12,8 @@ function instructions(){
   let message2 = "They can choose to remove one, or up to all cards in the row.   ";
   let message3 = "Player only gets to choose from one row on their turn.";
   let message4 = "Once the 'END TURN' button is clicked, the next user can select their choices.";
-  let message5 = "next player follows the same rules.";
-  let message6 = "Player left with last card on board as choice is the loser.  ";
-  alert(message1 + message2 + message3 + "\n" + message4 + "\n" + message5 + message6);
+  let message5 = "Player left with last card on board on their turn is the loser.  ";
+  alert(message1 + message2 + message3 + "\n" + message4 + "\n" + message5);
 };
 
 

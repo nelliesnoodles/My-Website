@@ -211,7 +211,7 @@ display: grid;
 
 }
 .banner{
-  background: #ebd4c2;
+  background: none;
   font-size: 2em;
   text-align: center;
 }
