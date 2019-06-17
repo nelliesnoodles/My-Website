@@ -28,4 +28,5 @@ urlpatterns = [
     path('jstests/', include('jstests.urls')),
     path('WIWA', include('WIWA.urls')),
     path('nim', include('nim.urls')),
+    path('PreWork2019', include('PreWork2019.urls')),
 ]
