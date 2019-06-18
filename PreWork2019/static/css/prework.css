@@ -75,10 +75,7 @@ body {
   transform: scale(1.25, 1.25);
   transition: .3s;
 }
-.star_check {
-  color: blue;
 
-}
 .btn-outline-primary {
     padding:0.3em 1.2em;
     color: black;

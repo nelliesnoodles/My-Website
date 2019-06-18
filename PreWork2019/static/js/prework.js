@@ -176,6 +176,8 @@ function clear_clock(){
 };
 
 function run_game(){
+  star_count = 0;
+  stars();
   clear_clock();
   clear_congrats();
   flipped_card = false;
