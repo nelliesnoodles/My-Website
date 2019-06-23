@@ -8,13 +8,9 @@
 
 img {
   display: block;
-  height: 50%;
-  width: 50%;
-  margin-top: 25%;
-  margin-bottom: 25%;
-  margin-left: 25%;
+  height: 100%;
+  width: 100%;
 }
-
 
 body {
   background-image: radial-gradient(circle, black, purple, grey);
@@ -55,20 +51,23 @@ body {
 .board {
   display: flex;
   flex-wrap: wrap;
-  background: rgba(21, 15, 32, 0.9);
-  width: 440px;
-  height: 440px;
+  background: #073F5D;
+  padding-top: 5vh;
+  width: 70vw;
+  height: 70vh;
   border: solid 5px black;
   margin: auto;
 }
 .card {
+  flex-wrap: nowrap;
   border: solid 5px #a00869;
-  background-color: #cab9ea;
+  background-color: #c060fa;
   border-radius: 10px;
   position: relative;
   height: calc(25% - 10px);
   width: calc(25% - 10px);
   margin: 5px;
+
 }
 
 .card:active {
@@ -76,13 +75,14 @@ body {
   transition: .3s;
 }
 
+
 .btn-outline-primary {
     padding:0.3em 1.2em;
     color: black;
     border-color: purple;
-    border-radius: 5em;
+    border-radius: 3em;
     text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
-    text-align:center;
+    text-align:center;
 }
 
 h4 {
@@ -96,9 +96,19 @@ h4 {
     height: 8px;
 }
 
-h1, h2 {
+h2 {
   color: #073F5D;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #DDEEEE; /* pale blue */
+  width: 100vw;
+  height: 40px;
+}
+
+h1 {
+  color: #DDEEEE;
+  font-size: 1em;
 }
 
 #nav_bar.banner{
@@ -111,16 +121,18 @@ h1, h2 {
   width: 100%;
   height: 40px;
 }
+
 .banner{
   /* absolute means the rest of the content ignores it's placement */
-  padding-top: 0px;
-  margin: auto;
-  top: 0;
-  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #DDEEEE; /* pale blue */
-  width: 100%;
+  width: 100vw;
   height: 40px;
+
 }
+
 
 #github-image.a{
     color: #4a3e54;
@@ -128,14 +140,7 @@ h1, h2 {
 
 }
 
-.banner {
 
-  text-align: center;
-  padding-top: 10px;
-  margin: auto;
-  width: 100%;
-  background-color: #CDD9EC   /* grey blue */
-}
 #gradiant.banner {
   background-image: linear-gradient(#CDD9EC, #A7D9C7);
 }
