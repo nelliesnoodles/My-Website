@@ -8,6 +8,7 @@
     <title>Nellie's Noodles</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static '/css/custom.css' %}">
 
 </head>
@@ -15,31 +16,54 @@
 <body style="background-repeat: no-repeat;  background-position: center; background-size: cover; margin-bottom: 50px; font-family: Tahoma, Verdana, Segoe, sans-serif;">
 
 
-  <div id="nav_bar" class="banner">
-    <a href="/blog"><button type="button"class="btn btn-outline-primary" style="float: left;">Blog</button></a>
+  <div class="custom-nav">
+      <div class="dropdown">
+      <button class="dropdown-button"> My Pages </button>
+    <div class="dropdown-content">
+    <a href="/blog">Info-Blog</a>
     <!--  change made for wiwa update 5-14-19 -->
-       <a href="jstests"><button type="button"class="btn btn-outline-primary" style="float: left;">Learning JS</button></a>
-       <a href="blog/word_finder"><button type="button" class="btn btn-outline-primary" style="float: left;">Word Finder</button></a>
-        <a href="WIWA"><button type="button"class="btn btn-outline-primary" style="float: left;">Chatbot</button></a>
-        <a href="nim"><button type="button"class="btn btn-outline-primary" style="float: left;">NIM game</button></a>
+       <a href="jstests">Learning JS</a>
+       <a href="blog/word_finder">Word Finder</a>
+        <a href="WIWA">Chatbot</a>
+        <a href="nim">NIM game</a>
 
-    <p style="float: right; padding-right: 10px;"> Created by Nellie Tobey </p>
+
+</div>
+</div>
+
+    <h6 id="my_tag"> Created by Nellie Tobey </h6>
 
 
   </div>
-  <div class="banner" style="margin-top: 20px;">
+  <!-- end NEW NAV -->
 
-    <h1 style="text-align: center;">Links to my work</h1>
+    <div class="banner">
+
+    <h1>Noodles:</h1>
     <h3 style="text-align: center;">
     <a href="https://twitter.com/NelliesNoodles?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @NelliesNoodles</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </h3>
   </div>
 
 
+<ul class="link-list">
+<li><a href="https://nelliesnoodles.github.io/" target="_blank"> Chingu Prework Match game </a></li>
+<li><a href="https://camelcasenoodles.blogspot.com/2018/02/graphical-for-my-binary-tree.html" target="_blank"> My coding blog </a></li>
+<li><a href="https://sarahssmiling.blogspot.com/2019/06/a-certain-flavor.html" target="_blank"> My fiction blog </a></li>
+<li><a href="https://www.pinterest.com/nellietobey/my-art/" target="_blank"> My art on Pinterest </a></li>
+<li><a href="https://www.linkedin.com/in/nellie-tobey-creator-michigan/" target="_blank"> My linkedIn Profile </a></li>
+<li><a href="https://github.com/nelliesnoodles" target="_blank"> Github repositories </a></li>
+</ul>
+
+
+
+
+<!--  REMOVE CONTENT AFTER TESTING
+
   <div class="jumbotron" style="opacity: 0.75; margin-bottom: 10px;">
-    <!--<font style="value: initial;">-->
+
     <div id="line"></div>
-     <a href="PreWork2019" target="_blank">PreWork-Chingu memory match</a>
+     <a href="https://nelliesnoodles.github.io/" target="_blank">PreWork-Chingu Match on Github.io</a>
     <br>
     <div id="line"></div>
     <a href="https://camelcasenoodles.blogspot.com/2018/02/graphical-for-my-binary-tree.html" target="_blank">My coding blog:  CamelCaseNoodles</a>
@@ -65,18 +89,9 @@
   </div>
 
 
-
+-->
 
 </body>
 
-<footer style = "text-align: center;
-  background: #DDEEEE;
-  position: bottom;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;"> <!-- color = ligth blue -->
-    <h2> Moving forward, even if it's one step back. </h2>
-</footer>
 
 </html>

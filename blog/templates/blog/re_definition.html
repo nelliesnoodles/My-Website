@@ -11,15 +11,28 @@
     <link rel="stylesheet" href="{% static '/css/custom.css' %}">
 
 </head>
+ <body style="margin-left: 20px; margin-right: 20px; padding: 0px; max-height: 100%; overflow: auto; background-image: none;">
+        <!-- NAVBAR -->
 
-<body style="background-repeat: no-repeat;  background-position: center; background-size: cover; padding-bottom: 50px;">
+  <div class="custom-nav">
+      <div class="dropdown">
+      <button class="dropdown-button"> My Pages </button>
+    <div class="dropdown-content">
+       <a href="/">Home</a>
+       <a href="/blog">Info-Blog</a>
+       <a href="../../jstests">Learning JS</a>
+       <a href="../../WIWA">Chatbot</a>
+       <a href="../../nim">NIM game</a>
 
 
+</div>
+</div>
 
-  <div id="nav_bar" class="banner">
-    <a href="blog/word_finder"><button type="button"class="btn btn-outline-primary" style="float: left;">Back to Word Finder</button></a>'
-    <p style="float: right;"> Created by Nellie Tobey </p>
+    <h6 id="my_tag"> Created by Nellie Tobey </h6>
+
+
   </div>
+
   <div class="banner">
     <h1>Definition returned: {{word}}</h1>
 

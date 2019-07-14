@@ -1,16 +1,97 @@
 /* static custom css -- Nellie Tobey -- nelliesnoodles */
 
-html {
-    min-hieght: 100%;
-}
 
 body {
     min-height: 100%;
+    background: url('../images/caffeine-close-up-coffee-639111.jpg');
 }
 
 h4 {
   color:  #2d1c44;
 }
+
+.blog-font-h1 {
+    color: white;
+}
+
+h1 {
+  color: #073F5D;
+}
+
+h2 {
+  color: #073F5D;
+}
+
+
+button:hover {
+  background-color:  #e8f4f4;
+}
+
+
+.dropdown-content a {
+  color: black;
+  padding: 5px 5px;
+  display: block;
+  background: #DDEEEE;
+  font-size: 20px;
+}
+
+a {
+  color: black;
+  font-size: 30px;
+}
+
+.dropdown-content a:hover {
+    background: rgba(200, 190, 200, 1);
+}
+
+li {
+  border-bottom: 2px solid purple;
+  color: inherit;
+  background: rgba(200, 200, 200, 0.85);
+  padding-left: 2vw;
+
+}
+
+.dropdown {
+  display: inline-block;
+  background: ;
+  float: left;
+  height: 100%;
+  width: 10vw;
+  border: none;
+  box-shadow: 1px 1px -2px -2px #e5dcee;
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: bold;
+  font-size: 100%;
+}
+
+.dropdown-button {
+  background: inherit;
+  height: 100%;
+  width: 10vw;
+  border: none;
+  box-shadow: 1px 1px -2px -2px #e5dcee;
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: bold;
+  font-size: 100%;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.jumbotron {
+    width: 80vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+
 #wiwa {
     font-size: 1.5em;
 }
@@ -26,13 +107,24 @@ h4 {
     background-image: url('/static/images/unicorn4_12-22-18.png');
 }
 
-h1, h2 {
-  color: #073F5D;
-}
 #image.container{
   /*border-style: solid;*/
   background-image: linear-gradient(#D7D3DC, #489076);
 }
+
+.custom-nav{
+  background-color: rgba(221, 242, 243, 0.85); /* pale blue */
+  padding-top: 0;
+  top: 0;
+  width: 100%;
+  height: 10vh;
+  display: block;
+}
+
+#my_tag {
+  float: right;
+}
+
 #nav_bar.banner{
   position: absolute;
   padding-top: 0px;
@@ -40,6 +132,7 @@ h1, h2 {
   left: 0;
   background-color: #DDEEEE; /* pale blue */
   width: 100%;
+  height: 10vh;
 }
 #text-area.flex-container{
   float: left;
@@ -57,18 +150,20 @@ h1, h2 {
   background-image: url('/static/images/unicorn2_12-22-18.png');
 
 }
+
 #github-image.a{
     color: #4a3e54;
     font-size: initial;
-
 }
 
 .banner {
+  position: relative;
   text-align: center;
-  padding-top: 30px;
-  margin: auto;
-  width: 100%;
-  background-color: #CDD9EC   /* grey blue */
+  width: 90vw;
+  margin-left: 5vw;
+  margin-right:5vw;
+  background-color: rgba(176, 221, 219, 0.5);
+  /* grey blue */
 }
 #gradiant.banner {
   background-image: linear-gradient(#CDD9EC, #A7D9C7);
@@ -77,8 +172,14 @@ h1, h2 {
   background-image: linear-gradient(#CDD9EC, #7C7A76);
 }
 
-
-a {
-  color: #553b6c;
-  font-size: 30px;
+.link-list {
+  list-style: none;
+  align-content: left;
+  left: 0;
+  padding-left: 0;
+  width: 80vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: bold;
 }

@@ -82,7 +82,7 @@ body {
     border-color: purple;
     border-radius: 3em;
     text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
-    text-align:center;
+    text-align:center;
 }
 
 h4 {
@@ -103,7 +103,7 @@ h2 {
   justify-content: center;
   background: #DDEEEE; /* pale blue */
   width: 100vw;
-  height: 40px;
+  font-size: 1em;
 }
 
 h1 {
@@ -122,6 +122,18 @@ h1 {
   height: 40px;
 }
 
+.banner_foot{
+  /* absolute means the rest of the content ignores it's placement */
+  display: inline-block;
+  text-align: center;
+  margin: auto;
+  padding: auto;
+  background-color: #DDEEEE; /* pale blue */
+  width: 100vw;
+  height: 40px;
+  font-size: .8em;
+}
+
 .banner{
   /* absolute means the rest of the content ignores it's placement */
   display: flex;
@@ -129,7 +141,7 @@ h1 {
   justify-content: center;
   background: #DDEEEE; /* pale blue */
   width: 100vw;
-  height: 40px;
+  font-size: .8em;
 
 }
 
@@ -150,6 +162,7 @@ h1 {
 }
 
 a {
-  color: #553b6c;
-  font-size: 1.5em;
+  color: black;
+  padding: 10px;
+
 }

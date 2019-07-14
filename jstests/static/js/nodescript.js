@@ -15,9 +15,9 @@ var text4b = "|" + whsp6 + "|" + whsp6 + "|";
 var text4c = "|" + whsp6 + "|" + whsp6 + "|";
 var text5 = "|______+______|";
 var alist = [text1, text1a, text1b, text2, text3, text4, text4a, text4b, text4c, text5];
-var topmarginlist = ['50px', '100px', '150px', '200px', '300px'];
+var topmarginlist = ['5vh', '10vh', '15vh', '20vh', '25vh'];
 var place_of_margin_top = 0;
-var leftpaddinglist = ['100px', '200px', '300px', '400px', '500px'];
+var leftpaddinglist = ['5vw', '10vw', '20vw', '30vw', '40vw', '50vw', '60vw', '70vw'];
 var place_of_padding_left = 0;
 
 function doSomething(){
@@ -34,6 +34,7 @@ function doSomething(){
   document.getElementById("tardisbox").style.paddingLeft = y;
   document.getElementById("tardisbox").innerHTML = texta;
   //alert("function doSomething() activated");
+  console.log(place_of_padding_left);
 
 }
 
@@ -56,11 +57,7 @@ function move_down(){
 
 function move_right(){
   start = document.getElementById("tardisbox").style.paddingLeft;
-  if(start == "10px"){
-    //start point, doSomething handles move/render
-    //pass
-  }
-  else if (place_of_padding_left > 4){
+  if (place_of_padding_left > 7){
     //pass -- no move
   }
   else{
@@ -74,10 +71,8 @@ function move_right(){
 
 function move_up(){
   start = document.getElementById("tardisbox").style.marginTop;
-  if(start == "10px"){
-    //pass
-  }
-  else if (place_of_margin_top > 0){
+
+ if (place_of_margin_top > 0){
     //increment margin back
     place_of_margin_top -= 1;
   }
@@ -91,11 +86,8 @@ function move_up(){
 
 function move_left(){
   start = document.getElementById("tardisbox").style.paddingLeft;
-  if(start == "10px"){
+  if(place_of_padding_left <= 0){
     //pass
-  }
-  else if (place_of_padding_left <= 0){
-    // pass no move
   }
   else{
     place_of_padding_left -= 1;
