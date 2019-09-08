@@ -15,6 +15,8 @@ import nltk as nltk
     Manual setup:
     install - nltk
     install - python3
+    !!! GitHub version of Whispering wall does not use enchant.
+    !!! python's Enchant did not pip install properly with Windows.
     install - PyEnchant
     In your python3 shell type these to download needed data sets:
     >>>import nltk
@@ -28,6 +30,8 @@ import nltk as nltk
     adjectives -- adjectives.txt
     Interject -- interjections.txt <-- not used yet
     Adverbs -- adverbs.txt
+    script8 -- about Nellie
+    script9 -- about Wiwa
 
     Testing
         >>> import WW_online
@@ -49,8 +53,15 @@ class Wiwa(object):
         self.adjectives = "/home/NelliesNoodles/nelliesnoodles_mysite/WIWA/adjectives.txt"
         self.error_script ="/home/NelliesNoodles/nelliesnoodles_mysite/WIWA/to_err.txt"
         self.adverbs = "/home/NelliesNoodles/nelliesnoodles_mysite/WIWA/adverbs.txt"
+        self.aboutNellie = "/home/NelliesNoodles/nelliesnoodles_mysite/WIWA/script8.txt"
+        self.aboutWiwa = "/home/NelliesNoodles/nelliesnoodles_mysite/WIWA/script9.txt"
+        self.about_index = 0
+        self.about_list = []
+        self.about_W_index = 0
+        self.about_W_list = []
 
-
+##  GitHub version of Whispering wall does not use enchant.
+##  python's Enchant did not pip install properly with Windows.
 
         self.dictionary = enchant.Dict("en_US")
         self.line_get = 1
@@ -69,13 +80,25 @@ class Wiwa(object):
         make = user_input
         stripped = make.lower()
         newstring = re.sub("[^a-zA-Z| |]+", "", stripped)
+        self.about_list = self.create_about_list()
+        self.about_W_list = self.create_about_W_list()
         if make in ['QUIT', 'EXIT', 'exit', 'quit', 'q']:
+            self.about_index = 0
+            self.about_W_index = 0
             return "Goodbye, thanks for stopping in!"
         else:
             choice = self.pick_response(make)
             #print(choice)
             question = self.check_question(make)
-            if question:
+            about_me = self.check_for_name(make)
+            about_wiwa = self.check_for_name_wiwa(make)
+            if about_me != False:
+                response = self.get_about_line()
+                return response
+            elif about_wiwa != False:
+                response = self.get_about_W_line()
+                return response
+            elif question:
                 discusanswer = self.get_script_line(self.questionable)
                 return discusanswer
             elif newstring in ['yes', 'no', 'maybe']:
@@ -119,6 +142,8 @@ class Wiwa(object):
 
 ##---------------------------------##
 ##    modified for test main run   ##
+##  does not include aboutWiwa,    ##
+## or aboutNellie scripts yet.     ##
 ##---------------------------------##
 
     def _test_response_making(self, test_sentence):
@@ -172,6 +197,114 @@ class Wiwa(object):
                     else:
 
                         return("Wiwa:  ... ... ")
+
+##----------------------------------------------------##
+##  New scripts for responses to my name, or wiwa     ##
+##  script8 -- about me   script9 -- about wiwa       ##
+##----------------------------------------------------##
+    def create_about_list(self):
+        """
+        Get the lines in the text file to respond when input includes creator's name
+        """
+        try:
+            with open(self.aboutNellie) as f:
+                lines = f.readlines()
+
+                for line in lines:
+                    #print(line)
+                    self.about_list.append(line)
+        except:
+            print(f"file at : {self.aboutNellie} could not be opened.")
+
+        finally:
+            return self.about_list
+
+    def create_about_W_list(self):
+        """
+        Get lines from script9 for input that includes reference to Wiwa.
+        """
+        try:
+            with open(self.aboutWiwa) as f:
+                lines = f.readlines()
+
+                for line in lines:
+                    #print(line)
+                    self.about_W_list.append(line)
+        except:
+            print(f"file at : {self.aboutWiwa} could not be opened.")
+
+        finally:
+            return self.about_W_list
+
+    def get_about_line(self):
+        """
+        The about Nellie script is supposed to go in order.
+        It is not randomized and responses are only dependant on the
+        user refering to the words 'nellie', 'tobey' or 'creator' in an input.
+        script lines are to be put in a list, and incremented through.
+        Once the end of the list is reached, we start over.
+        """
+        max = len(self.about_list) - 1
+        if self.about_index > max:
+            self.about_index = 0
+
+        line = self.about_list[self.about_index]
+        self.about_index += 1
+        testline = "about index =" + str(self.about_index)
+        return line
+
+    def get_about_W_line(self):
+        """
+        The about Wiwa script is supposed to go in order.
+        It is not randomized and responses are only dependant on the
+        user refering to the words 'wiwa', 'you' in an input.
+        script lines are to be put in a list, and incremented through.
+        Once the end of the list is reached, we start over.
+        """
+        max = len(self.about_W_list) - 1
+        if self.about_W_index > max:
+            self.about_W_index = 0
+
+        line = self.about_W_list[self.about_W_index]
+        self.about_W_index += 1
+        testline = "about wiwa index =" + str(self.about_W_index)
+        return line
+
+    def check_for_name(self, arg):
+        """
+        check the user input for key words that trigger the about
+        me script.  script8.txt.
+        """
+        if len(arg) == 0:
+            return "I'm just a wall, you can talk to me."
+        else:
+            arg = arg.lower()
+            me = ['nellie', 'creator', 'tobey']
+            found = False
+            for item in me:
+                if item in arg:
+                    found = True
+                else:
+                    pass
+            return found
+
+    def check_for_name_wiwa(self, arg):
+        """
+        check the user input for key words that trigger the about
+        Wiwa script.  script9.txt.
+        """
+        if len(arg) == 0:
+            return "I'm just a wall, you can talk to me."
+        else:
+            arg = arg.lower()
+            me = ['wiwa', 'you', 'your', 'hello']
+            found = False
+            for item in me:
+                if item in arg:
+                    found = True
+                else:
+                    pass
+            return found
 
 
 ##----------------------------------------------------##

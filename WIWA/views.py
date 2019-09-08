@@ -10,10 +10,11 @@ from django.http import HttpResponse
 
 # database not on my CPU
 
+wiwa = Wiwa()
 
 def get_preference(request): #used in Wiwa page
     if 'bg_preference' not in request.session:
-        bg_string = "background-image: url('/static/images/card_3.png'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.85; font-family: Tahoma, Verdana, Segoe, sans-serif;"
+        bg_string = "background-image: url('/static/images/abandoned-arch-architecture-2877112.jpg'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.85; font-family: Tahoma, Verdana, Segoe, sans-serif;"
         request.session['bg_preference'] = bg_string
         bg_preference = bg_string
     else:
@@ -22,10 +23,10 @@ def get_preference(request): #used in Wiwa page
 
 def remove_bg(request):
     if 'bg_preference' not in request.session:
-        bg_string = "background: #c3c2c4;"  #<-- change to something like blue to see definite change
+        bg_string = "background: black;"  #<-- change to something like blue to see definite change
         request.session['bg_preference'] = bg_string
     else:
-        bg_string = 'background: #c3c2c4;' #<-- make sure you have what you want here.
+        bg_string = 'background: black;' #<-- make sure you have what you want here.
         request.session['bg_preference'] = bg_string
 
     bg_preference = request.session['bg_preference']
@@ -34,11 +35,11 @@ def remove_bg(request):
 
 def bg_replace(request):
     if 'bg_preference' not in request.session:
-        bg_string = "background-image: url('/static/images/card_3.png'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.85; font-family: Tahoma, Verdana, Segoe, sans-serif;"
+        bg_string = "background-image: url('/static/images/abandoned-arch-architecture-2877112.jpg'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.85; font-family: Tahoma, Verdana, Segoe, sans-serif;"
         request.session['bg_preference'] = bg_string
         bg_preference = bg_string
     else:
-        bg_string = "background-image: url('/static/images/card_3.png'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.85; font-family: Tahoma, Verdana, Segoe, sans-serif;"
+        bg_string = "background-image: url('/static/images/abandoned-arch-architecture-2877112.jpg'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.85; font-family: Tahoma, Verdana, Segoe, sans-serif;"
         request.session['bg_preference'] = bg_string
         bg_preference = bg_string
 
@@ -80,9 +81,8 @@ def return_answer(arg, request):
         #print('session item retrieved')
         #print('line_numb = ', line_numb)
         try:
-            #print('try block')
-            wiwa = Wiwa()
-            #print('wiwa initiated')
+
+
             wiwa.line_get = new_line
             #print("****  getting wiwa_response *****")
             response = wiwa.run_wiwa(arg)

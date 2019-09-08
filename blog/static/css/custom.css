@@ -172,6 +172,20 @@ li {
   background-image: linear-gradient(#CDD9EC, #7C7A76);
 }
 
+.contact-me {
+    background: rgba(230, 246, 249, 0.80);
+    color: #310932;
+    text-shadow: 1px 1px 2px white;
+    text-align: center;
+    align-content: center;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
 .link-list {
   list-style: none;
   align-content: left;

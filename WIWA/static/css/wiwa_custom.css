@@ -1,4 +1,8 @@
 /* static custom css -- Nellie Tobey -- nelliesnoodles --Whispering Wall*/
+*{
+    margin: 0;
+    padding: 0;
+}
 
 .btn-outline-primary {
     color: black;
@@ -6,12 +10,35 @@
     border-color: purple; /*set the color you want here*/
 }
 
+
+.btn {
+    font-weight: bolder;
+    padding: 5px;
+    border: 1px solid #f4f4f3;
+    border-radius: 5px;
+    margin: 2px;
+    box-shadow: 2px 2px silver;
+    color: #53fb48;
+    background: #803f78;
+}
+
+body {
+    background: black;
+    text-shadow: 1px 1px 2px black;
+}
 h4 {
   color:  #2d1c44;
 }
 #wiwa {
     font-size: 1.5em;
 }
+
+#bigbutton {
+    width: 20vw;
+    text-align: center;
+    justify-content: center;
+}
+
 
 #line {
     border-bottom: 5px solid;
@@ -20,12 +47,9 @@ h4 {
     height: 8px;
 }
 #wiwa_bg  {
-    background-image: url('/static/images/unicorn4_12-22-18.png');
+    background-image: url('/static/images/abandoned-arch-architecture-2877112.jpg');
 }
 
-h1, h2 {
-  color: #073F5D;
-}
 #image.container{
   /*border-style: solid;*/
   background-image: linear-gradient(#D7D3DC, #489076);
@@ -36,7 +60,7 @@ h1, h2 {
   margin: auto;
   top: 0;
   left: 0;
-  background: #DDEEEE; /* pale blue */
+  background: #9c9587; /* pale blue */
   width: 100%;
   height: 40px;
 }
@@ -67,13 +91,25 @@ h1, h2 {
   padding-top: 10px;
   margin: auto;
   width: 100%;
-  background-color: #CDD9EC   /* grey blue */
+  background: rgba(102, 11, 103, 0.8);
+  color: #53fb48;
+  font-family: 'Amatic SC', cursive;
+}
+.banner h3{
+    font-size: 3em;
+}
+.banner h4{
+    color: #53fb48;
+}
+.banner a{
+    color: #53fb48;
+    font-weight: bold;
 }
 #gradiant.banner {
   background-image: linear-gradient(#CDD9EC, #A7D9C7);
 }
 #gradiant2.banner {
-  background-image: linear-gradient(#CDD9EC, #7C7A76);
+  background-color: #56144b;
   margin-top: 20px;
 }
 
@@ -81,17 +117,20 @@ h1, h2 {
 
 #chatbox {
   border: solid  #112711;
-  background: #DAF7A6;
+  background: #524131;
+  color: ;
   height: 200px;
   width: 100%;
   overflow: auto;
   font-size: 1.5em;
+  color: #fdfdfaf7;
 
 }
 
 
 
 a {
-  color: #553b6c;
+  color: black;
+  font-weight: bold;
   font-size: 30px;
 }

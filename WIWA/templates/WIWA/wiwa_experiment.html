@@ -6,8 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nellie's Noodles</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/wiwa_custom.css' %}">
     <!-- from buttons.github.io github button  -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -21,17 +20,17 @@
 
    <!-- NAVBAR -->
    <div id="nav_bar" class="banner">
-     <a href="/"><button type="button"class="btn btn-outline-primary" style="float: left;">Home</button></a>
-     <a href="/blog"><button type="button"class="btn btn-outline-primary" style="float: left;">Blog</button></a>
-     <a href="blog/word_finder"><button type="button" class="btn btn-outline-primary" style="float: left;">Word Finder</button></a>
-     <a href="/jstests"><button type="button"class="btn btn-outline-primary" style="float: left;">Learning JS</button></a>
+     <a href="/"><button type="button"class="btn" style="float: left;">Home</button></a>
+     <a href="/blog"><button type="button"class="btn" style="float: left;">Blog</button></a>
+     <a href="blog/word_finder"><button type="button" class="btn" style="float: left;">Word Finder</button></a>
+     <a href="/jstests"><button type="button"class="btn" style="float: left;">Learning JS</button></a>
 
    </div>
    <!-- Intro title -->
    <div id="line"></div>
 
   <div id="gradient2" class="banner">
-    <p style="float: right; padding-right: 10px; padding-bottom: 10px;"> Created by Nellie Tobey </p>
+    <p style="float: right; padding-right: 10px; padding-bottom: 10px; font-weight: bold;"> Created by Nellie Tobey </p>
     <h3>Whispering Wall</h3>
     <h4>A python chatbot using NLTK</h4>
 
@@ -46,9 +45,6 @@
 <!--     ~~~~~~~~~~~~~~~~~~~   -->
 
 
-    <div style="background: #c7d1cf; padding-left: 10%;">
-    <h3><strong> Talk to the Wall </strong></h3>
-    </div>
     <!--<h4 id="wiwa_words"><strong> {{ wiwa_answer }} </strong></h4>-->
 
     <input type="hidden" id="wiwa_words" name="wiwa_words" value="{{ wiwa_answer }}">
@@ -61,11 +57,12 @@
 
 
   <form method="GET" action="wiwa_respond" id="wiwa_form" style="padding-top: 20px; font-size: 1.2em;">
-    <textarea id="user_words" name="user_words" type="text" onfocus="this.value=''" maxlength="120" style="height: 40px; width: 400px; border: solid black;">
+    <textarea id="user_words" name="user_words" type="text" onfocus="this.value=''" maxlength="120" style="height: 40px; width: 40vw; border: solid black; float: left;">
+
 </textarea>
-    <button type="submit" onclick="store_words('user_words')">send</button>
+<button id="bigbutton" class="btn" type="submit" onclick="store_words('user_words')">submit</button>
   </form>
-  <button onclick="clear_storage()">clear</button>
+  <button id="bigbutton" class="btn" onclick="clear_storage()">clear chat screen--reset</button>
 
 
 </div>
@@ -73,18 +70,18 @@
 
 </body>
 <!-- Github link and remove/add background image buttons -->
-<div class="banner" style="margin-top: relative; margin-bottom: 100px; position: auto; background-color: white; opacity: 0.85;">
+<div class="banner" style="position: static; margin-top: 10vh; margin-bottom: 100px; position: auto; opacity: 0.85;">
 
-    <font size="3">
+
     <a href="https://github.com/nelliesnoodles" target="_blank"> <i><u>Whispering Wall in Github</u></i></a>
     <h5> Github version may be more advanced then online version </h5>
-    </font>
+
     <form method="GET" action="rm_background" id="remove_background"></form>
-    <button form="remove_background" class="btn btn-primary btn-lg btn-block" type='submit'>
+    <button class="btn" form="remove_background" type='submit'>
         remove  -(image)
     </button>
     <form method="GET" action="add_image" id="add_image"></form>
-    <button form="add_image" class="btn btn-primary btn-lg btn-block" type='submit'>
+    <button class="btn" form="add_image" type='submit'>
         add +(image)
     </button>
 
