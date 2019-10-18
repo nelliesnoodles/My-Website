@@ -23,6 +23,7 @@ urlpatterns = [
     path('', include('jstests.urls')),
     path('', include('WIWA.urls')),
     path('', include('nim.urls')),
+    path('', include('SlackMontyBot.urls')),
     path('blog/', include('blog.urls')),
     path('language', include('blog.urls')),
     path('jstests/', include('jstests.urls')),

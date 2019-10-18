@@ -8,6 +8,13 @@ from .WW_online import Wiwa
 from nltk.corpus import wordnet as wn
 from django.http import HttpResponse
 
+import logging
+
+
+log = logging.getLogger('logdna')
+log.setLevel(logging.INFO)
+
+
 # database not on my CPU
 
 wiwa = Wiwa()
@@ -22,6 +29,7 @@ def get_preference(request): #used in Wiwa page
     return bg_preference
 
 def remove_bg(request):
+    log.info("request to remove whispering wall background image")
     if 'bg_preference' not in request.session:
         bg_string = "background: black;"  #<-- change to something like blue to see definite change
         request.session['bg_preference'] = bg_string

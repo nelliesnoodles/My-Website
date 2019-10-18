@@ -8,6 +8,11 @@ import random
 import nltk as nltk
 
 
+import logging
+
+
+log = logging.getLogger('logdna')
+log.setLevel(logging.INFO)
 
 
 """
@@ -76,7 +81,7 @@ class Wiwa(object):
         will respond according to her script.
         If you wish to stop program, type EXIT or QUIT.
         Have fun! *Used in bash run*"""
-
+        log.info("Whispering wall is running through her loop.")
         make = user_input
         stripped = make.lower()
         newstring = re.sub("[^a-zA-Z| |]+", "", stripped)
@@ -94,9 +99,12 @@ class Wiwa(object):
             about_wiwa = self.check_for_name_wiwa(make)
             if about_me != False:
                 response = self.get_about_line()
+
                 return response
             elif about_wiwa != False:
                 response = self.get_about_W_line()
+                log.info("User has used 'wiwa' or 'you' in their message.")
+
                 return response
             elif question:
                 discusanswer = self.get_script_line(self.questionable)
@@ -128,6 +136,8 @@ class Wiwa(object):
                     else:
                         return response
                 elif choice[0] == 'err':
+                    log.info("Wiwa has widdled down all string choices to an error string.")
+                    log.info(choice[1])
                     response = self.get_script_line(self.error_script)
 
                     if '{}' in response:
@@ -137,6 +147,7 @@ class Wiwa(object):
                         return response
 
                 else:
+
 
                     return("Wiwa:  ... ... ")
 
