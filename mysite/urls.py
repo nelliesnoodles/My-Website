@@ -23,11 +23,14 @@ urlpatterns = [
     path('', include('jstests.urls')),
     path('', include('WIWA.urls')),
     path('', include('nim.urls')),
-    path('', include('SlackMontyBot.urls')),
+    path('', include('StatsClass.urls')),
+    path('', include('MontySlackBot.urls')),
     path('blog/', include('blog.urls')),
     path('language', include('blog.urls')),
     path('jstests/', include('jstests.urls')),
     path('WIWA', include('WIWA.urls')),
     path('nim', include('nim.urls')),
     path('PreWork2019', include('PreWork2019.urls')),
-]
+    path('StatsClass', include('StatsClass.urls')),
+    path('MontySlackBot', include('MontySlackBot.urls')),
+   ]

@@ -1,0 +1,33 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #2E173F;
+    font-family: monospace;
+    color: #EEEDEC;
+    padding: 5px;
+}
+
+#intro {
+    margin: 5%;
+    align-content: center;
+    text-align: center;
+    font-weight: bolder;
+}
+h1 {
+    padding-left: 20%;
+    text-shadow: 1px 1px 1px black;
+}
+h2 {
+   padding-left: 20%;
+}
+textarea {
+    margin-left: 20%;
+    min-height: 25%;
+    min-width: 40%;
+    margin-top: 5vh;
+    border: solid double black;
+}
