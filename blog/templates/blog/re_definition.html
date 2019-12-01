@@ -6,12 +6,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nellie's Noodles</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
     <link rel="stylesheet" href="{% static '/css/custom.css' %}">
 
 </head>
- <body style="margin-left: 20px; margin-right: 20px; padding: 0px; max-height: 100%; overflow: auto; background-image: none;">
+ <body style="background: white;">
         <!-- NAVBAR -->
 
   <div class="custom-nav">
@@ -32,19 +31,19 @@
 
 
   </div>
+  <main>
 
-  <div class="banner">
-    <h1>Definition returned: {{word}}</h1>
-
-  </div>
+    <h2>Definition returned: </h2>
+    <h2>{{word}}</h2>
 
 
-  <div class="jumbotron" style="opacity: 0.75; padding-top: 25px; margin-top: 25px;">
-    <font style="value: initial;">
+
+
     <p>
    {{result}}
    </p>
-  </div>
+
+  </main>
 
 
 
@@ -59,7 +58,8 @@
             result = syns[0].definition()<br>
         else:<br>
             result = "no result for word:" + word<br>
-    return render(request, "blog/re_definition.html", {'result': result, 'word': word})<br>
+    return render(request, "blog/re_definition.html",
+                 {'result': result, 'word': word})<br>
     </pre>
       </p>
 </body>

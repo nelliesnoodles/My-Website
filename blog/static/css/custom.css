@@ -13,7 +13,14 @@ h4 {
 .blog-font-h1 {
     color: white;
 }
-
+main {
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
 h1 {
   color: #073F5D;
 }
@@ -34,6 +41,7 @@ button:hover {
   display: block;
   background: #DDEEEE;
   font-size: 20px;
+  width: 27vw;
 }
 
 a {
@@ -41,8 +49,46 @@ a {
   font-size: 30px;
 }
 
+/* Used in blog/ about this site */
+
+.jumbotron {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    width: 80;
+    background: #e0e6e8de;
+    font-family: 'Play', sans-serif;
+    border: solid 5px #271838;
+
+}
+
+.flex_container_row {
+    display: flex;
+    flex-direction: row;
+}
+.flex_containter_column {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.jumbotron p{
+    background: #1f0f2ff2;
+    color: white;
+    padding: 5vh;
+    border: solid 1px #b50bec;
+}
+
 .dropdown-content a:hover {
     background: rgba(200, 190, 200, 1);
+    transform: scale(1.05, 1.05);
+    border: solid 2px transparent;
+    color: white;
+    text-shadow: 1px 1px black, -1px -1px black, -1px 1px black, 1px -1px black;
+
 }
 
 li {
@@ -55,12 +101,10 @@ li {
 
 .dropdown {
   display: inline-block;
-  background: ;
   float: left;
   height: 100%;
-  width: 10vw;
+  width: 30vw;
   border: none;
-  box-shadow: 1px 1px -2px -2px #e5dcee;
   font-family: 'Shadows Into Light', cursive;
   font-weight: bold;
   font-size: 100%;
@@ -69,7 +113,7 @@ li {
 .dropdown-button {
   background: inherit;
   height: 100%;
-  width: 10vw;
+  width: 27.75vw;
   border: none;
   box-shadow: 1px 1px -2px -2px #e5dcee;
   font-family: 'Shadows Into Light', cursive;
@@ -84,12 +128,6 @@ li {
 }
 
 .dropdown:hover .dropdown-content {display: block;}
-
-.jumbotron {
-    width: 80vw;
-    margin-left: 10vw;
-    margin-right: 10vw;
-}
 
 
 #wiwa {
@@ -122,7 +160,11 @@ li {
 }
 
 #my_tag {
-  float: right;
+  margin-left: 70vw;
+  z-index: 3;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
 }
 
 #nav_bar.banner{
@@ -157,13 +199,23 @@ li {
 }
 
 .banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   text-align: center;
   width: 90vw;
   margin-left: 5vw;
   margin-right:5vw;
   background-color: rgba(176, 221, 219, 0.5);
+  border: solid 5px black;
   /* grey blue */
+}
+
+.banner h1{
+    margin: 0;
+    color: #fafefd;
+    text-shadow: 1px 1px black, -1px -1px black, -1px 1px black, 1px -1px aqua;
 }
 #gradiant.banner {
   background-image: linear-gradient(#CDD9EC, #A7D9C7);

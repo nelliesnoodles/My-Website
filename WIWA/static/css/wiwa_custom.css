@@ -10,7 +10,12 @@
     border-color: purple; /*set the color you want here*/
 }
 
-
+.submit-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
 .btn {
     font-weight: bolder;
     padding: 5px;
@@ -29,9 +34,20 @@ body {
 h4 {
   color:  #2d1c44;
 }
+navbar {
+    display: flex;
+    color: white;
+}
+
+form{
+    margin: 0;
+    padding: 5px;
+    display: flex;
+}
 #wiwa {
     font-size: 1.5em;
 }
+
 
 #bigbutton {
     width: 20vw;
@@ -87,22 +103,25 @@ h4 {
 }
 
 .banner {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   padding-top: 10px;
   margin: auto;
   width: 100%;
-  background: rgba(102, 11, 103, 0.8);
-  color: #53fb48;
+  background: rgba(93, 63, 93, 0.8);
+  color: #b9efb6;
   font-family: 'Amatic SC', cursive;
 }
+
 .banner h3{
     font-size: 3em;
 }
 .banner h4{
-    color: #53fb48;
+    color: #b9efb6;
 }
 .banner a{
-    color: #53fb48;
+    color: #b9efb6;
     font-weight: bold;
 }
 #gradiant.banner {

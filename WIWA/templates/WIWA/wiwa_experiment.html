@@ -19,13 +19,13 @@
 
 
    <!-- NAVBAR -->
-   <div id="nav_bar" class="banner">
+   <navbar>
      <a href="/"><button type="button"class="btn" style="float: left;">Home</button></a>
      <a href="/blog"><button type="button"class="btn" style="float: left;">Blog</button></a>
      <a href="blog/word_finder"><button type="button" class="btn" style="float: left;">Word Finder</button></a>
      <a href="/jstests"><button type="button"class="btn" style="float: left;">Learning JS</button></a>
 
-   </div>
+   </navbar>
    <!-- Intro title -->
    <div id="line"></div>
 
@@ -55,15 +55,17 @@
       Chat Log:
    </div>
 
-
+<div class='submit-box'>
   <form method="GET" action="wiwa_respond" id="wiwa_form" style="padding-top: 20px; font-size: 1.2em;">
     <textarea id="user_words" name="user_words" type="text" onfocus="this.value=''" maxlength="120" style="height: 40px; width: 40vw; border: solid black; float: left;">
 
 </textarea>
-<button id="bigbutton" class="btn" type="submit" onclick="store_words('user_words')">submit</button>
-  </form>
-  <button id="bigbutton" class="btn" onclick="clear_storage()">clear chat screen--reset</button>
 
+
+<button id="bigbutton" class="btn" type="submit" onclick="store_words('user_words')">submit</button>
+
+  <button id="bigbutton" class="btn" onclick="clear_storage()">clear chat screen--reset</button>
+</form>
 
 </div>
 </font>
@@ -77,13 +79,18 @@
     <h5> Github version may be more advanced then online version </h5>
 
     <form method="GET" action="rm_background" id="remove_background"></form>
-    <button class="btn" form="remove_background" type='submit'>
+     <button class="btn" form="remove_background" type='submit'>
         remove  -(image)
     </button>
+
     <form method="GET" action="add_image" id="add_image"></form>
     <button class="btn" form="add_image" type='submit'>
         add +(image)
     </button>
+</div>
+<div>
+
+    </div>
 
 
 </div>

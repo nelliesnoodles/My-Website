@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href= "{% static 'css/stats_basic.css' %}" />
+    <script type="text/javascript" src="{% static 'js/stats_basic.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <title>Stats Class: Basic Probability</title>
+</head>
+<body>
+    <!-- find image of marbles spilling out of a bag.-->
+    <h1 class="stats_class_header">Stats Class</h1>
+    <h4 class="stats_class_header">basic probability of x</h4>
+    <image></image>
+    <main>
+        <div class="section_replacement">
+            <h2 class="stats_class_header">Replacement</h2>
+            <div class="expandable">
+                <h5>
+                    When replacement is active (ON), it means once an event occurs, it can happen again and all other events are
+                    NOT dependent on whether or not it occured.
+                </h5>
+            </div>
+            <h4>hover on explanations to display large font.</h4>
+            <div class="expandable">
+                <h5>
+                    Example:  You draw a Queen of Hearts from a deck of cards.  With replacement, you will replace
+                    the Queen back into the deck, in the forthcoming events, she could be drawn again, her being replaced means the probabilities will not change on
+                    the second event. Without replacement, she would be removed from future possiblities because she was not placed back into the deck.  All further events
+                    are altered by her removed status.
+                </h5>
+            </div>
+            <!--Replacement:
+         Are we removing a result/object once it is pulled?
+         this affects the results of our probability
+        See: Independant events
+        -->
+            <div class="Is_there_replacement" id="replacement_bool">
+
+                <div class="checkbox_replacement">
+                    <label for="bool">Replacement</label>
+                    <input class="checkbox_custom" type="checkbox" id="replacement" name="is_replaced" value="false">
+                    <h1 id="on_off">&nbsp&nbsp&nbsp OFF</h1>
+                </div>
+
+            </div>
+        </div>
+        <div class="results" id="results">
+            <ul id="list_results">
+
+            </ul>
+            <button id="go_back_data" class="form_button">Go Back to Data</button>
+        </div>
+        <div class="sample_space_div" id="sample_space_div">
+            <h2 class="stats_class_header">Sample Space</h2>
+            <div class="expandable">
+                <h5>
+                    Example:  There are 4 red marbles, 3 green marbles and 10 blue marbles in a bag.  The sample space
+                    would be along the lines of--  4 red, 3 green, 10 blue, with a total of 17.  A dice has 6 numbered sides,
+                    the sample space would be the numbers 1 - 6.  A survey where the answer is , yes, no, maybe,  3 outcomes, total of
+                    3.  The sample space is the possible outcomes of the trial.  Trial would be, roll of the dice, a selection of a marble,
+                    an answer from a survey.
+                </h5>
+            </div>
+
+
+
+            <button id="add_sample" class="form_button">ADD sample field</button>
+
+            <form id="sample_space_form" name="sample_space_form">
+
+            </form>
+
+            <div class="flex_box_row">
+                <button class="form_button" id="get_my_stats">Get my Stats</button>
+            </div>
+        </div>
+
+
+    </main>
+</body>
+</html>

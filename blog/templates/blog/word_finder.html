@@ -7,8 +7,7 @@
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
       <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="{% static '/css/custom.css' %}">
 
@@ -41,12 +40,13 @@
 
      <!--  Word Finder div  -->
     </div>
-      <h1 style="float: center;  margin-left: 20px; padding-top: 40px;"> Word finder </h1>
+    <main>
+      <h1 style="display: flex; align-items: center; justify-content: center;"> Word finder </h1>
       <!--  color:   light blue =  8caac3   -->
-      <div style="padding-bottom: 20px; margin-left: 20px; border-bottom: solid; border-color: #8caac3; ">
+      <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
         <h5> Using python enchant </h5>
-        <h4><strong> {{ error }} </strong></h4>
-        <h4> {{ correction }} </h4>
+        <h3><strong> {{ error }} </strong></h4>
+        <h3> {{ correction }} </h4>
       </div>
 
       <!--     textarea & form submission -->
@@ -65,8 +65,8 @@
     {% endfor %}
     </div>
 
-
-    <div class="container"  style="bottom: 0;">
+    </main>
+    <div class="flex_containter_row" style="bottom: 0;">
     <h2 style="border-bottom: solid; padding-top: 10px; "> get definition </h2>
     <form method="GET" action="/re_definition" id="defin_form" style="padding-top: 20px;">
 

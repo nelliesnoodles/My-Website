@@ -11,9 +11,6 @@ import nltk as nltk
 import logging
 
 
-log = logging.getLogger('logdna')
-log.setLevel(logging.INFO)
-
 
 """
 
@@ -81,7 +78,7 @@ class Wiwa(object):
         will respond according to her script.
         If you wish to stop program, type EXIT or QUIT.
         Have fun! *Used in bash run*"""
-        log.info("Whispering wall is running through her loop.")
+
         make = user_input
         stripped = make.lower()
         newstring = re.sub("[^a-zA-Z| |]+", "", stripped)
@@ -103,7 +100,7 @@ class Wiwa(object):
                 return response
             elif about_wiwa != False:
                 response = self.get_about_W_line()
-                log.info("User has used 'wiwa' or 'you' in their message.")
+
 
                 return response
             elif question:
@@ -136,8 +133,7 @@ class Wiwa(object):
                     else:
                         return response
                 elif choice[0] == 'err':
-                    log.info("Wiwa has widdled down all string choices to an error string.")
-                    log.info(choice[1])
+
                     response = self.get_script_line(self.error_script)
 
                     if '{}' in response:
@@ -149,7 +145,7 @@ class Wiwa(object):
                 else:
 
 
-                    return("Wiwa:  ... ... ")
+                    return("  ... ... ")
 
 ##---------------------------------##
 ##    modified for test main run   ##
@@ -249,19 +245,17 @@ class Wiwa(object):
 
     def get_about_line(self):
         """
-        The about Nellie script is supposed to go in order.
+        Adding randomization to the about_me script
         It is not randomized and responses are only dependant on the
         user refering to the words 'nellie', 'tobey' or 'creator' in an input.
         script lines are to be put in a list, and incremented through.
         Once the end of the list is reached, we start over.
         """
         max = len(self.about_list) - 1
-        if self.about_index > max:
-            self.about_index = 0
+        line_choice = random.randint(0, max)
 
-        line = self.about_list[self.about_index]
-        self.about_index += 1
-        testline = "about index =" + str(self.about_index)
+        line = self.about_list[line_choice]
+        #testline = "about index =" + str(self.about_index)
         return line
 
     def get_about_W_line(self):
@@ -278,7 +272,7 @@ class Wiwa(object):
 
         line = self.about_W_list[self.about_W_index]
         self.about_W_index += 1
-        testline = "about wiwa index =" + str(self.about_W_index)
+        #testline = "about wiwa index =" + str(self.about_W_index)
         return line
 
     def check_for_name(self, arg):

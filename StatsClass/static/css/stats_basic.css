@@ -1,0 +1,356 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+@media all and (max-width: 799px) and (min-width: 320px) {
+
+    form {
+        font-size: 1em;
+    }
+
+        form input {
+            font-size: 10px !important;
+        }
+        form label {
+            font-size: 10px !important;
+            padding: 0;
+            margin: 0;
+        }
+
+    label {
+        margin: 0;
+    }
+
+    .form_button {
+        font-size: 1em !important;
+    }
+
+
+    .flex_box_row {
+        flex-direction: column !important;
+        margin: 0;
+        padding: 2px;
+    }
+    /* testing */
+    body {
+        background-image: none;
+        background-color: darkblue;
+    }
+    h1{
+        font-size: 1em !important;
+        margin: 0;
+        padding: 0;
+    }
+    .checkbox_replacement {
+        margin: 0;
+        padding: 0;
+        flex-direction: column !important;
+    }
+
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-image: url('../images/close-up-photo-of-brown-leaves-1477171.jpg');
+    background-size:  cover;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font_size: 1em;
+}
+
+h5 {
+    font-size: 0.9em;
+}
+
+h4 {
+    color: white;
+    text-align: center;
+}
+
+form {
+    width: 100%;
+}
+
+    form label {
+        margin: 5px;
+    }
+
+    form input {
+        width: auto;
+        height: 100%;
+        font-size: 2em;
+    }
+
+        form input[type=number] {
+            width: 6em;
+        }
+
+.form_button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid grey;
+    background-color: #634731;
+    color: aliceblue;
+    width: 50vw;
+    font-size: 2em;
+}
+
+.section_replacement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid #662B06;
+    border-top: 3px solid #662B06;
+    background-color: rgba(100, 100, 100, 0.3);
+}
+
+.stats_class_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #eaf0f1;
+    text-shadow: 1px 1px black, -1px -1px black, -1px 1px black, 1px -1px aqua;
+}
+/* An expandable explanation box that can give the user information on
+the data required in the fields below.
+*/
+.checkbox_replacement {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid grey;
+    background-color: aliceblue;
+    color: darkblue;
+}
+
+
+
+.checkbox_custom:checked {
+    border: 5px solid lawngreen;
+    background-color: mediumseagreen;
+}
+
+.checkbox_custom {
+    height: 40px;
+    width: 40px;
+    border: black solid 5px;
+    border-radius: 50%;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    background-color: red;
+}
+
+.expandable {
+    border: 1px solid black;
+    z-index: 1;
+    transition: ease-in-out 2s;
+    width: 80%;
+    margin: 0;
+    padding: 0;
+    title: "hover to display explanations and links.";
+    font-size: 0.5em;
+    background-color: #E6E8ED;
+    align-items: center;
+    justify-content: center;
+}
+
+    .expandable:hover {
+        font-size: 2em;
+        background-color: white;
+    }
+
+    .expandable h5 {
+        display: inherit;
+        padding: 30px;
+        text-align: left;
+    }
+/*------------Maths stuffs -------------*/
+
+/*for python/Django/Javascript manipulation*/
+#replacement_bool {
+    width: 50vw;
+}
+
+/*class="sample_space" id="sample_int"*/
+#sample_space_div {
+    display: flex;
+    z-index: 3;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid #662B06;
+    border-top: 3px solid #662B06;
+    background-color: rgba(100, 100, 100, 0.3);
+    width: 100%;
+    margin-top: 10px;
+}
+
+.sample_space_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid #662B06;
+    border-top: 3px solid #662B06;
+    background-color: rgba(100, 100, 100, 0.3);
+    width: 100%;
+    margin-top: 10px;
+}
+/* results will display over top of the sample space.  Space will get hidden on button click,
+*results will go away on button click and allow user to enter new data.
+*/
+#results {
+    display: none;
+    position: sticky;
+    z-index: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid #662B06;
+    border-top: 3px solid #662B06;
+    background-color: rgba(100, 100, 100, 0.4);
+    width: 100%;
+    margin-top: 10px;
+    height: 25vh;
+}
+
+.results ul {
+    background-color: azure;
+    font-size: 2em;
+    border-bottom: 1px dotted green;
+    width: 100%;
+}
+
+.flex_box_row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid grey;
+    background-color: aliceblue;
+    color: darkblue;
+    width: 100vw;
+}
+/*for python/Django/Javascript manipulation
+#sample_int{
+
+}
+*/
+/*class="possible outcomes" id="possibles_str"*/
+.possible_outcomes {
+    height: 20vh;
+    border: 3px solid purple;
+}
+/*for python/Django/Javascript manipulation*/
+#possibles_str {
+    width: 100vw;
+}
+
+/*class="trial_expectation" id="specific_item_str"*/
+.trial_expectations {
+    height: 10vh;
+    border: 3px solid purple;
+}
+    /* JavaScript will ammend to this div's list the sample space if known. */
+    .trial_expectations ol {
+        display: none;
+    }
+
+    .trial_expectations li {
+        border-bottom: double 1px #4A1908;
+    }
+
+/*This item will be changed by user clicking on the trial_expectations
+    list of items and choosing which outcome they are looking for.
+*/
+#specific_item_str {
+    background: white;
+}
+
+/*class="How_many_trials?" id="trials_int"*/
+.How_many_trials {
+    height: 5vh;
+    border: 1px solid green;
+}
+
+/* For javascript/django python manipulation.*/
+#trials_int {
+    width: 5vw;
+}
+
+/*class="Results" id="result_int_to_str"*
+* Display the results of the math done on the user given data.
+* make sure it has a 'close' tab to remove it's z-index, then user can
+* enter different data into above areas and see new results.
+*/
+
+
+
+
+/*
+*ON click of close button:  change Results z-index to 1.
+*On submit button, change it to 10 to display results over page.
+*/
+
+
+#close_button {
+    top: 0;
+    right: 0;
+}
+
+/* For javascript/django python manipulation.*/
+#results_into_string {
+    width: 100vw;
+}
+
+/*
+class="other_outcomes"
+Display error messages, or incomplete data.
+*/
+.other_outcomes {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 50vh;
+}
+
+
+
+
+
