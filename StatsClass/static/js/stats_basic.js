@@ -319,10 +319,11 @@ function check_integer(value) {
 
 
 function go_back_to_data() {
-    results.style.display = "none";
+    results.style.display = 'none';
     results.style.zIndex = 1;
-    sample_space_div.style.display = "flex";
+    sample_space_div.style.display = 'flex';
     sample_space_div.style.zIndex = 3;
+
 
 
 }
@@ -331,7 +332,7 @@ function Event_listeners() {
     replacement_check.addEventListener('click', get_value);
     get_my_stats.addEventListener('click', get_samples);
     add_sample.addEventListener('click', create_sample_item);
-    go_back_data.addEventListener('click', go_back_to_data());
+    go_back_data.addEventListener('click', go_back_to_data);
 
 
 }

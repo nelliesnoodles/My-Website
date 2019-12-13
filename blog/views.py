@@ -17,7 +17,7 @@ def post_list(request):  #home page
         session_language = request.session['lang']
 
 
-    return render(request, 'blog/under_construction.html',
+    return render(request, 'blog/home.html',
                  {'language': language,
                   'session_language' : session_language }) #<-- session change 8
 

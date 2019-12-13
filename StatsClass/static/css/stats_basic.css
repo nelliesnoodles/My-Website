@@ -46,6 +46,12 @@ html {
         padding: 0;
         flex-direction: column !important;
     }
+    .results li {
+        font-size: 0.5em;
+    }
+    .expandable:hover {
+        font-size: 0.5em;
+    }
 
 }
 
@@ -252,6 +258,9 @@ the data required in the fields below.
     font-size: 2em;
     border-bottom: 1px dotted green;
     width: 100%;
+}
+.results h5 {
+    color: white;
 }
 
 .flex_box_row {

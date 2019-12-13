@@ -1,0 +1,250 @@
+html {
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/cogs_gears.jpg");
+}
+
+body {
+    height: 80%;
+    margin: 10px;
+    padding: 5px;
+    font-family: 'Girassol', cursive;
+    background: rgba(218, 228, 222, 0.9);
+    margin-bottom: 25vh;
+    margin-top: 20px;
+}
+ image{
+     display: flex;
+     flex-direction: row;
+     margin-bottom: 30px;
+     border-bottom: 1px solid #5705EE;
+ }
+main {
+    opactiy: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+    main a {
+        margin-bottom: 5px;
+        text-align: center;
+        width: 100%;
+
+    }
+#my_tag {
+    text-shadow: 1px 1px 1px #f70202;
+}
+.home {
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    flex: 2;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    text-shadow: 2px 1px 2px white;
+}
+ h5 {
+     font-size: 1.5em;
+     color: white;
+     font-weight: 200;
+     text-align: center;
+     text-shadow: 1px 2px 2px black;
+
+ }
+ h6 {
+     font-size: 1em;
+ }
+
+a {
+    color: black;
+    font-size: 30px;
+
+}
+
+    a:hover {
+        color: black;
+        text-shadow: 1px 1px 1px rgba(209, 3, 254, 0.5), -1px -1px 2px white;
+    }
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+/* SHOWCASE IMAGES*/
+.flex_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background: rgba(150, 157, 159, 0.5);
+}
+.showcase1 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 2;
+    height: 40vh;
+
+     background: rgba(53, 5, 130, 0.12);
+    margin-bottom: 40px;
+    border: 2px solid #5705EE;
+}
+.showcase2 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    z-index: 2;
+    height: 40vh;
+
+     background: rgba(53, 5, 130, 0.12);
+    margin-bottom: 40px;
+    border: 2px solid #5705EE;
+}
+
+.showcase3 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 2;
+    height: 40vh;
+
+     background: rgba(53, 5, 130, 0.12);
+    margin-bottom: 40px;
+    border: 2px solid #5705EE;
+}
+
+.showcase4 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 2;
+    height: 40vh;
+
+     background: rgba(53, 5, 130, 0.12);
+    margin-bottom: 40px;
+   border: 2px solid #5705EE;
+}
+
+.showcase5 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 2;
+    height: 40vh;
+
+    background: rgba(53, 5, 130, 0.12);
+    margin-bottom: 40px;
+    border: 2px solid #5705EE;
+}
+
+/* showcase 6 has 3 images */
+.showcase6 {
+    width: 25%;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 2;
+
+}
+
+.showcase7 {
+    width: 25%;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 2;
+}
+
+/*   NAV   BAR    */
+.custom-nav {
+    color: white;
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(65, 5, 132, 0.85); /* pale white/blue */
+}
+
+.right-align {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.left-align {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+button:hover {
+    background-color: #e8f4f4;
+}
+
+.dropdown {
+    display: flex;
+    margin-right: auto;
+    height: 100%;
+    width: 30vw;
+    border: none;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.dropdown-button {
+    color: white;
+    background: inherit;
+    height: 100%;
+    width: 27.75vw;
+    border: none;
+    font-family: 'Girassol', cursive;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    margin-top: 4vh;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 5px 5px;
+    display: block;
+    background: #DDEEEE;
+    font-size: 20px;
+    width: 27vw;
+}
+
+
+
+/* footer  Contact me*/
+
+.contact-me {
+    background: rgba(230, 246, 249, 0.80);
+    color: #310932;
+    text-shadow: 1px 1px 2px white;
+    text-align: center;
+    align-content: center;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
