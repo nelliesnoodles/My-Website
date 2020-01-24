@@ -118,15 +118,19 @@ def wiwa_answer(request):
     bg_preference = get_preference(request)
     if request.method == "GET":
         user_input = request.GET.get('user_words', None)
+        # TODO: stop chatbot from responding to any GET that doesn't have user_input submitted.
         if user_input != None and len(user_input) > 0:
+            #print("user_input ==," , user_input)
             if type(user_input) == list:
                 user_input = ' '.join(user_input)
                 answer = return_answer(user_input, request)
             else:
                 answer = return_answer(user_input, request)
-
-
-            return render(request, 'WIWA/wiwa_experiment.html', {'wiwa_answer' : answer, 'bg_preference': bg_preference})
+            print("answer ==", answer)
+            if answer == 'wiwa: ':
+                pass
+            else:
+                return render(request, 'WIWA/wiwa_experiment.html', {'wiwa_answer' : answer, 'bg_preference': bg_preference})
         else:
             answer = "Not enough input for Whispering Wall to process"
             return render(request, 'WIWA/wiwa_experiment.html', {'wiwa_answer' : answer, 'bg_preference': bg_preference})

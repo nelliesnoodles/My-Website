@@ -1,15 +1,21 @@
 html {
     margin: 0;
     padding: 0;
-    background-image: url("../images/cogs_gears.jpg");
+
 }
 
+@media all and (max-width: 800px) and (min-width: 220px) {
+    .card {
+        width: 90%;
+        padding: 0;
+    }
+}
 body {
-    height: 80%;
+    width: -webkit-fill-available;
     margin: 10px;
     padding: 5px;
     font-family: 'Girassol', cursive;
-    background: rgba(218, 228, 222, 0.9);
+    background: rgba(243, 244, 247, 0.9);
     margin-bottom: 25vh;
     margin-top: 20px;
 }
@@ -54,10 +60,10 @@ h1 {
 }
  h5 {
      font-size: 1.5em;
-     color: white;
+     color: #562390;
      font-weight: 200;
      text-align: center;
-     text-shadow: 1px 2px 2px black;
+     text-shadow: 1px 2px 2px #f6f7f0;
 
  }
  h6 {
@@ -79,13 +85,14 @@ a {
     display: flex;
     flex-direction: column;
     padding: 20px;
+    margin-bottom: 5vh;
 }
 /* SHOWCASE IMAGES*/
 .flex_row {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    background: rgba(150, 157, 159, 0.5);
+    background: rgb(233, 246, 248);
 }
 .showcase1 {
     padding-top: 10px;
@@ -120,15 +127,21 @@ a {
     border: 2px solid #5705EE;
 }
 
+/* favorite fonts */
 .showcase4 {
     padding-top: 10px;
     padding-bottom: 10px;
+    background: rgba(53, 5, 130, 0.12);
     z-index: 2;
     height: 40vh;
-
-     background: rgba(53, 5, 130, 0.12);
     margin-bottom: 40px;
-   border: 2px solid #5705EE;
+    border: 2px solid #5705EE;
+}
+
+
+.card:hover .showcase4{
+    background-image: url("../images/darkmode_favFonts.JPG");
+
 }
 
 .showcase5 {
@@ -213,7 +226,7 @@ button:hover {
 .dropdown-content {
     display: none;
     position: absolute;
-    margin-top: 4vh;
+    margin-top: 3vh;
     z-index: 1;
 }
 

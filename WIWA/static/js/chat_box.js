@@ -20,8 +20,13 @@ function store_words(which){
     }
     if(which === 'wiwa_words'){
       var user_words = document.getElementById("wiwa_words").value;
-      let words = "<b>wiwa</b>:<i>" + wiwa_words + "<br></i>";
-      localStorage.setItem('chat_log', chat_log + words);
+      //console.log("which=wiwa, words=", user_words)
+      //If wiwa response is an empty string, she is not sending a response, GET was not intended for her.
+      //TODO: fix the Django views to ignore GET requests not involving user_input sumbit clicks.
+      if (user_words != ''){
+          let words = "<b>wiwa</b>:<i>" + wiwa_words + "<br></i>";
+          localStorage.setItem('chat_log', chat_log + words);
+      }
     }
   }
 };

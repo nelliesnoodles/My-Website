@@ -23,8 +23,9 @@
     border-radius: 5px;
     margin: 2px;
     box-shadow: 2px 2px silver;
-    color: #53fb48;
+    color: #b9efb6;
     background: #803f78;
+    text-shadow: 1px 1px 1px black;
 }
 
 body {
