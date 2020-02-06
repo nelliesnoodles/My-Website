@@ -44,6 +44,8 @@ Settings.py file has been set to gitignore.
 
 > ### NIM game
 > web app directory: nim
+>
+> #### Description:
 > First vanilla JavaScript experiment used to create a game I found interesting from a mathmatical twitter post link.
 > [Youtube video of mathmatical explanation of NIM](https://www.youtube.com/watch?v=niMjxNtiuu8)
 > 
@@ -54,14 +56,17 @@ Settings.py file has been set to gitignore.
 
 > ### Testing JavaScript Files
 > web app directory: jstests
+> #### Description:
+>
 > A simple experiment used to test how javascript interacts with the page, and changing object orientation 
 > on the page through styling  of an element. 
 
 > ### StatsClass
 > web app directory: StatsClass
-> Not yet fully published, work in progress. 
-> 
 > #### Description:
+>
+> Not yet fully published, work in progress. 
+>
 > This will be a place for people studying statistics to play with changing, getting, and analyzing statistical data.
 > 
 > At this time, it accepts ten fields and will tell you the probability within those ten what each event has to happen.
