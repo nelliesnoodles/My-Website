@@ -1,12 +1,14 @@
 /* css for NIM game */
 
 .cards {
-display: grid;
- grid-row-gap: 20px;
- grid-column-gap: 2px;
- grid-template-columns: auto; /*repeat(7, 1fr);*/
- grid-template-rows: auto;  /*repeat(4, 1fr);*/
- grid-template-areas:
+  display: grid;
+  width: 50vw;
+  margin-left: -3vw;
+  grid-row-gap: 5vh;
+  grid-column-gap: 2vw;
+  grid-template-columns: auto; /*repeat(7, 1fr);*/
+  grid-template-rows: auto;  /*repeat(4, 1fr);*/
+  grid-template-areas:
 ". . . item1 . . ."
 ". . item2 item3 item4 . ."
 ". item5 item6 item7 item8 item9 ."
@@ -23,7 +25,7 @@ display: grid;
   font-size: 20px;
   height:100%;
   width: 100%;
-  padding: 5px 5px 5px 5px;
+  padding: 1vw;
   margin-bottom: 10%;
 
 }
@@ -37,7 +39,7 @@ display: grid;
   font-size: 20px;
   height:100%;
   width: 100%;
-  padding: 5px 5px 5px 5px;
+  padding: 1vw;
 
 
 }
@@ -50,7 +52,7 @@ display: grid;
   font-size: 20px;
   height:100%;
   width: 100%;
-  padding: 5px 5px 5px 5px;
+  padding: 1vw;
 }
 
 .card4 {
@@ -62,7 +64,7 @@ display: grid;
   font-size: 20px;
   height:100%;
   width: 100%;
-  padding: 5px 5px 5px 5px;
+  padding: 1vw;
 
 }
 /* row3 5 cards (5-9) */
@@ -75,7 +77,7 @@ display: grid;
   font-size: 20px;
   height:100%;
   width: 100%;
-  padding: 5px 5px 5px 5px;
+  padding: 1vw;
 
 }
 .card6 {
@@ -87,7 +89,7 @@ display: grid;
   font-size: 20px;
   height:100%;
   width: 100%;
-  padding: 5px 5px 5px 5px;
+  padding: 1vw;
 
 }
 .card7 {
@@ -99,7 +101,7 @@ display: grid;
   font-size: 20px;
   height:100%;
   width: 100%;
-  padding: 5px 5px 5px 5px;
+  padding: 1vw;
 
 }
 .card8 {
@@ -111,7 +113,7 @@ display: grid;
   font-size: 20px;
   height:100%;
   width: 100%;
-  padding: 5px 5px 5px 5px;
+  padding: 1vw;
 
 }
 .card9 {
@@ -123,7 +125,7 @@ display: grid;
   font-size: 20px;
    height:100%;
   width: 100%;
-  padding: 5px 5px 5px 5px;
+  padding: 1vw;
 
 }
 /* row 4  7 cards (10-16) */
@@ -136,7 +138,7 @@ display: grid;
   font-size: 20px;
   height:100%;
   width: 100%;
-  padding: 5px 5px 5px 5px;
+  padding: 1vw;
 
 }
 .card11 {
@@ -148,7 +150,7 @@ display: grid;
   font-size: 20px;
   height:100%;
   width: 100%;
-  padding: 5px 5px 5px 5px;
+  padding: 1vw;
 
 }
 .card12 {
@@ -160,7 +162,7 @@ display: grid;
   font-size: 20px;
   height:100%;
   width: 100%;
-  padding: 5px 5px 5px 5px;
+  padding: 1vw;
 
 }
 .card13 {
@@ -172,7 +174,7 @@ display: grid;
   font-size: 20px;
   height:100%;
   width: 100%;
-  padding: 5px 5px 5px 5px;
+  padding: 1vw;
 
 }
 .card14 {
@@ -184,7 +186,7 @@ display: grid;
   font-size: 20px;
   height:100%;
   width: 100%;
-  padding: 5px 5px 5px 5px;
+  padding: 1vw;
 }
 .card15 {
   visibility: visible;
@@ -195,7 +197,7 @@ display: grid;
   font-size: 20px;
   height:100%;
   width: 100%;
-  padding: 5px 5px 5px 5px;
+  padding: 1vw;
 
 }
 .card16 {
@@ -207,7 +209,7 @@ display: grid;
   font-size: 20px;
   height:100%;
   width: 100%;
-  padding: 5px 5px 5px 5px;
+  padding: 1vw;
 
 }
 .banner{

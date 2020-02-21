@@ -20,22 +20,30 @@
 
    <!-- NAVBAR -->
    <navbar>
-     <a href="/"><button type="button"class="btn" style="float: left;">Home</button></a>
-     <a href="/blog"><button type="button"class="btn" style="float: left;">Blog</button></a>
-     <a href="blog/word_finder"><button type="button" class="btn" style="float: left;">Word Finder</button></a>
-     <a href="/jstests"><button type="button"class="btn" style="float: left;">Learning JS</button></a>
+       <div class="link_div">
+     <a href="/"><span class="noodles">Noodles</span></a>
+     </div>
+      <div class="link_div">
+     <a href="/blog">Blog</a>
+     </div>
+      <div class="link_div">
+     <a href="blog/word_finder">Word Finder</a>
+     </div>
+      <div class="link_div">
+     <a href="/jstests">Learning JS</a>
+     </div>
 
    </navbar>
    <!-- Intro title -->
-   <div id="line"></div>
+
 
   <div id="gradient2" class="banner">
-    <p style="float: right; padding-right: 10px; padding-bottom: 10px; font-weight: bold;"> Created by Nellie Tobey </p>
+    <p> Created by Nellie Tobey </p>
     <h3>Whispering Wall</h3>
     <h4>A python chatbot using NLTK</h4>
 
 <a id="github-image" class="github-button" href="https://github.com/nelliesnoodles" aria-label="Follow @nelliesnoodles on GitHub">Follow @nelliesnoodles</a>
- <div id="line"></div>
+
 </div>
 
 
@@ -56,8 +64,8 @@
    </div>
 
 <div class='submit-box'>
-  <form method="GET" action="wiwa_respond" id="wiwa_form" style="padding-top: 20px; font-size: 1.2em;">
-    <textarea id="user_words" name="user_words" type="text" onfocus="this.value=''" maxlength="120" style="height: 40px; width: 40vw; border: solid black; float: left;">
+  <form method="GET" action="wiwa_respond" id="wiwa_form">
+    <textarea id="user_words" name="user_words" type="text" onfocus="this.value=''" maxlength="120" >
 
 </textarea>
 
@@ -72,7 +80,7 @@
 
 </body>
 <!-- Github link and remove/add background image buttons -->
-<div class="banner" style="position: static; margin-top: 10vh; margin-bottom: 100px; position: auto; opacity: 0.85;">
+<div class="banner" style="position: static; margin-top: 10vh; position: auto; opacity: 0.85;">
 
 
     <a href="https://github.com/nelliesnoodles" target="_blank"> <i><u>Whispering Wall in Github</u></i></a>
@@ -88,11 +96,6 @@
         add +(image)
     </button>
 </div>
-<div>
 
-    </div>
-
-
-</div>
 
 </html>

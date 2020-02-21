@@ -9,17 +9,44 @@
    <title> Testing JavaScript Files</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+     <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Girassol&display=swap" rel="stylesheet">
+    <!-- font awesome kit -->
+    <script src="https://kit.fontawesome.com/b570a31fd0.js" crossorigin="anonymous"></script>
+
+    <!-- javascript -->
+     <script type="text/JavaScript" src="{% static '/js/noodle_nav.js' %}"></script>
+
+    <!-- stylesheets -->
+
+    <link rel="stylesheet" href="{% static '/css/noodle_nav.css' %}">
+    <link rel="stylesheet" href="{% static '/css/custom_wordfinder.css' %}">
+
     <script type="text/JavaScript" src="{% static 'js/nodescript.js' %}"> </script>
 
  </head>
 <body>
     <!-- NAVBAR -->
-      <div id="nav_bar" class="banner">
-          <a href="/"><button type="button"class="btn btn-outline-primary" style="float: left;">Home</button></a>
-          <a href="/blog"><button type="button"class="btn btn-outline-primary" style="float: left;">Blog</button></a>
-         <a href="WIWA"><button type="button"class="btn btn-outline-primary" style="float: left;">Chatbot</button></a>
-          <a href="blog/word_finder"><button type="button"class="btn btn-outline-primary" style="float: left;">Word Finder</button></a>
-      </div>
+     <nav class='noodle_nav'>
+
+        <a class="noodle_home_link" href="/">Noodles</a>
+        <div class="nav_link_menu" id="nav_link_menu">
+                <a class="noodle_link" href="/blog">Info-Blog</a>
+                <a class="noodle_link" href="jstests">Learning JS</a>
+                <a class="noodle_link" href="blog/word_finder">Word Finder</a>
+                <a class="noodle_link" href="WIWA">Chatbot</a>
+                <a class="noodle_link" href="nim">NIM game</a>
+        </div>
+        <i class="fas fa-hamburger" id="hamburg" value="ON"></i>
+
+
+
+
+    </nav>
+
+    <!-- end NEW NAV -->
+
 <div style="padding-top: 50px;">
 <h1> Time and Relative Dimension in Space </h1>
 <button id="clickme"> click me </button>

@@ -22,29 +22,42 @@
     border: 1px solid #f4f4f3;
     border-radius: 5px;
     margin: 2px;
-    box-shadow: 2px 2px silver;
-    color: #b9efb6;
+    color: white;
     background: #803f78;
     text-shadow: 1px 1px 1px black;
+    font-family: inherit;
+    font-size: 1.5em;
 }
 
 body {
-    background: black;
-    text-shadow: 1px 1px 2px black;
+    background:  black;
+    font-family: 'Amatic SC', cursive;
+    font-weight: 1000;
 }
+
 h4 {
-  color:  #2d1c44;
-}
-navbar {
-    display: flex;
-    color: white;
+  color: white;
 }
 
 form{
     margin: 0;
     padding: 5px;
     display: flex;
+    padding-top: 20px;
+    font-size: 1.2em;
 }
+
+form textarea{
+
+    width: 40vw;
+    border: solid black;
+    float: left;
+}
+
+p {
+    color: white;
+}
+
 #wiwa {
     font-size: 1.5em;
 }
@@ -54,8 +67,10 @@ form{
     width: 20vw;
     text-align: center;
     justify-content: center;
+    font-family: inherit;
+    font-size: 1.2em;
+    color: white;
 }
-
 
 #line {
     border-bottom: 5px solid;
@@ -64,7 +79,7 @@ form{
     height: 8px;
 }
 #wiwa_bg  {
-    background-image: url('/static/images/abandoned-arch-architecture-2877112.jpg');
+    background-image: url('/static/images/pexels-brick.jpg');
 }
 
 #image.container{
@@ -110,16 +125,17 @@ form{
   padding-top: 10px;
   margin: auto;
   width: 100%;
-  background: rgba(93, 63, 93, 0.8);
+  background: rgba(93, 63, 93, 0.95);
   color: #b9efb6;
   font-family: 'Amatic SC', cursive;
 }
 
 .banner h3{
     font-size: 3em;
+    text-shadow: 1px 1px red;
 }
 .banner h4{
-    color: #b9efb6;
+    color: white;
 }
 .banner a{
     color: #b9efb6;
@@ -136,21 +152,41 @@ form{
 
 
 #chatbox {
-  border: solid  #112711;
-  background: #524131;
-  color: ;
+  border: solid  #b8e3b0;
+  background: #dfd8e3;
+  margin-top: 2vh;
   height: 200px;
   width: 100%;
   overflow: auto;
   font-size: 1.5em;
-  color: #fdfdfaf7;
+  color: black;
 
 }
 
 
+/*---  NAV ---*/
 
+navbar {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    color: white;
+    background-color: #e4dbea;
+}
+
+.noodles {
+    color: purple;
+    text-shadow: 1px 1px #b9e5b3;
+    margin-right: 5vw;
+}
+
+.link_div {
+    background: transparent;
+    border-radius: 10%;
+    padding: 10px;
+    margin-right: 2vw;
+}
 a {
+  text-decoration: none;
   color: black;
-  font-weight: bold;
-  font-size: 30px;
 }

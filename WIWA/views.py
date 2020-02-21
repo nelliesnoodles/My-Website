@@ -21,7 +21,7 @@ wiwa = Wiwa()
 
 def get_preference(request): #used in Wiwa page
     if 'bg_preference' not in request.session:
-        bg_string = "background-image: url('/static/images/abandoned-arch-architecture-2877112.jpg'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.85; font-family: Tahoma, Verdana, Segoe, sans-serif;"
+        bg_string = "background-image: url('/static/images/pexels-brick.jpg'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.95;"
         request.session['bg_preference'] = bg_string
         bg_preference = bg_string
     else:
@@ -43,11 +43,11 @@ def remove_bg(request):
 
 def bg_replace(request):
     if 'bg_preference' not in request.session:
-        bg_string = "background-image: url('/static/images/abandoned-arch-architecture-2877112.jpg'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.85; font-family: Tahoma, Verdana, Segoe, sans-serif;"
+        bg_string = "background-image: url('/static/images/pexels-brick.jpg'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.95;"
         request.session['bg_preference'] = bg_string
         bg_preference = bg_string
     else:
-        bg_string = "background-image: url('/static/images/abandoned-arch-architecture-2877112.jpg'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.85; font-family: Tahoma, Verdana, Segoe, sans-serif;"
+        bg_string = "background-image: url('/static/images/pexels-brick.jpg'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.95;"
         request.session['bg_preference'] = bg_string
         bg_preference = bg_string
 

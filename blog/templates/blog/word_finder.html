@@ -7,39 +7,44 @@
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- font -->
+       <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css?family=Girassol&display=swap" rel="stylesheet">
+      <!-- stylesheet -->
+      <link rel="stylesheet" href="{% static '/css/custom_wordfinder.css' %}">
+      <link rel="stylesheet" href="{% static '/css/noodle_nav.css' %}">
+      <!-- Javascript -->
+       <script type="text/JavaScript" src="{% static '/js/noodle_nav.js' %}"></script>
 
-      <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="{% static '/css/custom.css' %}">
 
       <title>Word Finder</title>
 
     </head>
-    <body style="margin-left: 20px; margin-right: 20px; padding: 0px; max-height: 100%; overflow: auto; background-image: none;">
+    <body>
         <!-- NAVBAR -->
 
-  <div class="custom-nav">
-      <div class="dropdown">
-      <button class="dropdown-button"> My Pages </button>
-    <div class="dropdown-content">
-       <a href="/">Home</a>
-       <a href="/blog">Info-Blog</a>
-       <a href="../../jstests">Learning JS</a>
-       <a href="../../WIWA">Chatbot</a>
-       <a href="../../nim">NIM game</a>
+   <nav class='noodle_nav' style="color: black;">
+
+        <a class="noodle_home_link" href="/">Noodles</a>
+        <div class="nav_link_menu" id="nav_link_menu">
+                <a class="noodle_link" href="/blog">Info-Blog</a>
+                <a class="noodle_link" href="blog/word_finder">Word Finder</a>
+                <a class="noodle_link" href="../WIWA">Chatbot</a>
+                <a class="noodle_link" href="../nim">NIM game</a>
+        </div>
+        <i class="fas fa-hamburger" id="hamburg" value="ON"></i>
 
 
-</div>
-</div>
-
-    <h6 id="my_tag"> Created by Nellie Tobey </h6>
 
 
-  </div>
+    </nav>
+
+
 
 
 
      <!--  Word Finder div  -->
-    </div>
+
     <main>
       <h1 style="display: flex; align-items: center; justify-content: center;"> Word finder </h1>
       <!--  color:   light blue =  8caac3   -->
@@ -66,8 +71,10 @@
     </div>
 
     </main>
-    <div class="flex_containter_row" style="bottom: 0;">
-    <h2 style="border-bottom: solid; padding-top: 10px; "> get definition </h2>
+    <div class="flex_containter_row">
+    <h2> Fetch a Definition </h2>
+    </div>
+    <div class="flex_containter_row">
     <form method="GET" action="/re_definition" id="defin_form" style="padding-top: 20px;">
 
          retrieve this = <input type="text" maxlength="27" name="get_word"><br>

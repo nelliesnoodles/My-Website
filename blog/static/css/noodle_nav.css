@@ -1,0 +1,74 @@
+
+
+/* nav colors can be set by page template css  */
+nav {
+    display: flex;
+    flex-direction: row;
+    background: inherit;
+    border-bottom: 2px solid purple;
+    color: aliceblue;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+/* a : hover can be set by page template css  */
+
+.noodle_home_link {
+    align-content: flex-start;
+    padding: 10px;
+    border: solid 1px silver;
+    border-radius: 10%;
+}
+
+.nav_link_menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+
+}
+
+.noodle_nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: azure;
+}
+
+.noodle_nav a{
+    text-decoration: none;
+    font-weight: bold;
+    width: auto;
+    padding: 2vw;
+}
+
+.Content_view {
+    color: white;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#hamburg {
+    color: black;
+    align-content: flex-end;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: solid 1px silver;
+    border-radius: 10%;
+}
+
+
+/* MOBILE */
+@media all and (max-width: 799px) and (min-width: 220px) {
+   .nav_link_menu {
+       flex-direction: column;
+
+   }
+}
