@@ -42,16 +42,20 @@
 
     </nav>
     <main>
-  <div class="banner">
-      <h1 class="blog-font-h1"> Info about this site </h1>
-  </div>
+        <header class="banner">
+
+             <h1 class="blog-font-h1"> Info about this site </h1>
+
+        </header>
 
 {% for post in posts %}
-    <div class='jumbotron'>
-        <p>published: {{ post.publish_date }}</p>
-        <h2><a href="">{{ post.title }}</a></h2>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
+    <article>
+
+        <p class="center_text">published: {{ post.publish_date }}</p>
+        <h2>{{ post.title }}</h2>
+        <p class="rounded_border">{{ post.text|linebreaksbr }}</p>
+
+    </article>
 {% endfor %}
 
 <br>
@@ -60,6 +64,10 @@
 
 
 </main>
+<hr>
+<a class="center_text white_text" href="#">Back to top</a>
+<footer>&copy; 2020 Nellie F. Tobey</footer>
+<hr>
 </body>
 
 </html>

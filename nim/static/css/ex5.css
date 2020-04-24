@@ -1,5 +1,8 @@
 /* css for NIM game */
 
+main {
+    background: linear-gradient(25turn, transparent, #def8f9, transparent);
+}
 .cards {
   display: grid;
   width: 50vw;

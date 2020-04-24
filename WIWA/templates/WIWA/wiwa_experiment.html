@@ -6,6 +6,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nellie's Noodles</title>
+
+     <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Girassol&display=swap" rel="stylesheet">
+    <!-- font awesome kit -->
+    <script src="https://kit.fontawesome.com/b570a31fd0.js" crossorigin="anonymous"></script>
+
+    <!-- stylesheet -->
+
+    <link rel="stylesheet" href="{% static '/css/noodle_nav.css' %}">
+
+    <!-- javascript -->
+    <script type="text/JavaScript" src="{% static '/js/noodle_nav.js' %}"></script>
+
+
+    <!-- Wiwa specific -->
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/wiwa_custom.css' %}">
     <!-- from buttons.github.io github button  -->
@@ -18,33 +34,34 @@
 <body id="wiwa_bg"  style = "{{ bg_preference }}">
 
 
-   <!-- NAVBAR -->
-   <navbar>
-       <div class="link_div">
-     <a href="/"><span class="noodles">Noodles</span></a>
-     </div>
-      <div class="link_div">
-     <a href="/blog">Blog</a>
-     </div>
-      <div class="link_div">
-     <a href="blog/word_finder">Word Finder</a>
-     </div>
-      <div class="link_div">
-     <a href="/jstests">Learning JS</a>
-     </div>
 
-   </navbar>
+    <!-- NAVBAR -->
+        <nav class='noodle_nav'>
+
+        <a class="noodle_home_link" href="/">Noodles</a>
+        <div class="nav_link_menu" id="nav_link_menu">
+                <a class="noodle_link" href="/blog">Info-Blog</a>
+                <a class="noodle_link" href="../jstests">Learning JS</a>
+                <a class="noodle_link" href="blog/word_finder">Word Finder</a>
+                <a class="noodle_link" href="../nim">NIM game</a>
+        </div>
+        <i class="fas fa-hamburger" id="hamburg" value="ON"></i>
+
+
+
+
+    </nav>
    <!-- Intro title -->
 
 
-  <div id="gradient2" class="banner">
+  <header id="gradient2" class="banner">
     <p> Created by Nellie Tobey </p>
-    <h3>Whispering Wall</h3>
-    <h4>A python chatbot using NLTK</h4>
+    <h1>Whispering Wall</h1>
+    <h2>A python chatbot using NLTK</h2>
 
 <a id="github-image" class="github-button" href="https://github.com/nelliesnoodles" aria-label="Follow @nelliesnoodles on GitHub">Follow @nelliesnoodles</a>
 
-</div>
+</header>
 
 
 </div>
@@ -96,6 +113,9 @@
         add +(image)
     </button>
 </div>
+<hr>
+<footer>&copy; 2020 Nellie F. Tobey</footer>
+<hr>
 
 
 </html>

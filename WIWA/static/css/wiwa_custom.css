@@ -10,6 +10,11 @@
     border-color: purple; /*set the color you want here*/
 }
 
+.noodle_nav {
+    font-family: 'Girassol', cursive;
+    background: rgba(243, 244, 247, 0.9);
+}
+
 .submit-box {
     display: flex;
     flex-direction: row;
@@ -58,6 +63,21 @@ p {
     color: white;
 }
 
+footer {
+    background: linear-gradient(0.25turn, transparent, black, transparent);
+    color: white;
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    font-size: 2em;
+}
+header h1 {
+    font-size: 3.5em;
+    text-shadow: 1px 1px 1px white, -1px -2px 2px #5c1c26;
+
+}
 #wiwa {
     font-size: 1.5em;
 }
@@ -125,7 +145,7 @@ p {
   padding-top: 10px;
   margin: auto;
   width: 100%;
-  background: rgba(93, 63, 93, 0.95);
+  background: linear-gradient(0.25turn, transparent, #765862, transparent);
   color: #b9efb6;
   font-family: 'Amatic SC', cursive;
 }
@@ -141,13 +161,7 @@ p {
     color: #b9efb6;
     font-weight: bold;
 }
-#gradiant.banner {
-  background-image: linear-gradient(#CDD9EC, #A7D9C7);
-}
-#gradiant2.banner {
-  background-color: #56144b;
-  margin-top: 20px;
-}
+
 
 
 

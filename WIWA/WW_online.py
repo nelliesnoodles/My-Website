@@ -8,7 +8,7 @@ import random
 import nltk as nltk
 
 
-import logging
+
 
 
 
@@ -84,6 +84,7 @@ class Wiwa(object):
         newstring = re.sub("[^a-zA-Z| |]+", "", stripped)
         self.about_list = self.create_about_list()
         self.about_W_list = self.create_about_W_list()
+
         if make in ['QUIT', 'EXIT', 'exit', 'quit', 'q']:
             self.about_index = 0
             self.about_W_index = 0
@@ -94,21 +95,22 @@ class Wiwa(object):
             question = self.check_question(make)
             about_me = self.check_for_name(make)
             about_wiwa = self.check_for_name_wiwa(make)
+            greet = self.is_greeting(make)
             if about_me != False:
                 response = self.get_about_line()
-
                 return response
-            elif about_wiwa != False:
-                response = self.get_about_W_line()
 
+            elif greet:
+                return 'Greetings human!'
 
-                return response
             elif question:
                 discusanswer = self.get_script_line(self.questionable)
                 return discusanswer
+
             elif newstring in ['yes', 'no', 'maybe']:
                 response = self.get_script_line(self.simplescript)
                 return response
+
             else:
                 if choice[0] == 'noun':
                     response = self.get_script_line(self.nounscript)
@@ -132,6 +134,11 @@ class Wiwa(object):
                         return adjective
                     else:
                         return response
+
+                elif about_wiwa != False:
+                    response = self.get_about_W_line()
+                    return response
+
                 elif choice[0] == 'err':
 
                     response = self.get_script_line(self.error_script)
@@ -204,6 +211,28 @@ class Wiwa(object):
                     else:
 
                         return("Wiwa:  ... ... ")
+
+##---------------------------------##
+##    added a simple greeting      ##
+##---------------------------------##
+
+    def is_greeting(self, user_input):
+            greetings = [
+            'hiya', 'howdy', 'hello', 'greetings',
+            'aloha', 'yo', 'salutations', 'hi'
+            ]
+            if len(user_input) == 0:
+                return True
+
+            else:
+                if type(user_input) == str:
+                    alist = user_input.split()
+                    for word in alist:
+                        if word in greetings:
+                            return True
+                        else:
+                            pass
+            return False
 
 ##----------------------------------------------------##
 ##  New scripts for responses to my name, or wiwa     ##
@@ -312,6 +341,7 @@ class Wiwa(object):
             return found
 
 
+
 ##----------------------------------------------------##
 ##   send back random choice of response tuples       ##
 ##----------------------------------------------------##
@@ -389,31 +419,53 @@ class Wiwa(object):
 ##        input processing, cleaning            ##
 ##----------------------------------------------##
 
+
     def strip_stop_words(self, arg):
-        stops = ['i', 'me', 'you', 'of', 'he', 'she', 'it', 'some', 'all', 'a', 'lot',
-        'have', 'about', 'been', 'to', 'too', 'from', 'an', 'at',
-        'above', 'before', 'across', 'against', 'almost', 'along', 'aslo',
-        'although', 'always', 'am', 'among', 'amongst', 'amount', 'and',
-        'another', 'any', 'anyhow', 'anyone', 'anything', 'around', 'as',
-        'be', "n't", 'being', 'beside', 'besides', 'between', 'beyond', 'both',
-        'but', 'by', 'can', 'could', 'done', 'during', 'each', 'either',
-        'else', 'even', 'every', 'everyone', 'everything', 'everywhere',
-        'except', 'few', 'for', 'had', 'has', 'hence', 'here', 'in', 'into', 'is',
-        'it', 'its', "it's", 'keep', 'last', 'latter', 'many', 'may', 'more', 'most',
-        'much', 'name', 'next', 'none', 'not', 'nothing', 'now', 'nowhere',
-        'often', 'other', 'others', 'over', 'rather', 'perhaps', 'seems', 'then',
-        'there', 'these', 'they', 'though', 'the', 'this', 'thru', 'too', 'to', 'under', 'until',
-        'upon', 'very', 'was', 'were' 'which', 'while', 'will', 'with', "'s"]
+        """
+        error fix: 02-26-2020
+        arg is passed in as a list, and as a string.
+        Once while checking for errors as a string, and once again
+        as a list when removing stop words from the list.
+        """
+
+        stops = [' ', 'i','the', 'of', 'he', 'she', 'it', 'some', 'all', 'a', 'lot',
+                'have', 'about', 'been', 'to', 'too', 'from', 'an', 'at', 'do', 'go'
+                'above', 'are', 'before', 'across', 'against', 'almost', 'along', 'aslo',
+                'although', 'always', 'am', 'among', 'amongst', 'amount', 'and',
+                'another', 'any', 'anyhow', 'anyone', 'anything', 'around', 'as',
+                'be', 'maybe', 'being', 'beside', 'besides', 'between', 'beyond', 'both',
+                'but', 'by', 'can', 'could', 'done', 'during', 'each', 'either',
+                'else', 'even', 'every', 'everyone', 'everything', 'everywhere',
+                'except', 'few', 'for', 'had', 'has', 'hence', 'here', 'in', 'into', 'is',
+                'it', 'its', 'keep', 'last', 'latter', 'many', 'may', 'more', 'most',
+                'much', 'name', 'next', 'none', 'not', 'nothing', 'now', 'nowhere',
+                'often', 'other', 'others', 'over', 'rather', 'perhaps', 'seems', 'then',
+                'there', 'these', 'they', 'though', 'thru', 'too', 'under', 'until',
+                'upon', 'very', 'was', 'were' 'which', 'while', 'will', 'with', 'ill', 'lets']
         new_arg = []
-        for item in arg:
-            item_list = list(item)
-            if item in stops:
-                pass
-            elif "'" in item_list:  # 1-12-19  removing contractions
-                pass                # can not get it to ignore/remove contractions.  Might have to fiddle with NLTK
-            else:
-                new_arg.append(item)
-        #print(new_arg)
+
+        if type(arg) == str:
+            arg = arg.split()
+            for item in arg:
+                if item in stops:
+                    pass
+                else:
+                    new_arg.append(item)
+
+
+
+        elif type(arg) == list:
+            i = 0
+            for item in arg:
+                word = arg[i]
+                if word in stops:
+                    pass
+                else:
+                    new_arg.append(word)
+                i += 1
+        else:
+            new_arg = ['ERROR-stopwords']
+
         return new_arg
 
     def make_tag_lists(self, arg):
@@ -421,6 +473,7 @@ class Wiwa(object):
            Use nltk to tag the input, then clean up the lists to return
            A mechanism that will chose one of the items at random to return to
            Whispering walls response loop.
+           Change in remove_bad_tags => strip_stop_words
         """
         tokens = nltk.word_tokenize(arg)
         tags = nltk.pos_tag(tokens)
@@ -442,6 +495,7 @@ class Wiwa(object):
             adv.append(item[0])
           else:
             pass
+
         nouns = self.strip_stop_words(nouns)
         verbs = self.strip_stop_words(verbs)
         adj = self.strip_stop_words(adj)

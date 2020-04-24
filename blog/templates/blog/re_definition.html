@@ -44,7 +44,7 @@
 
   <main>
 
-    <h2>Definition returned: </h2>
+    <h1>Definition returned: </h1>
     <h2>{{word}}</h2>
 
 
@@ -58,24 +58,11 @@
    </div>
 
   </main>
+<hr>
+<a class="center_text" href="#">Back to top</a>
+<footer>&copy; 2020 Nellie F. Tobey</footer>
+<hr>
 
-
-
-    <h2> Code: </h2>
-    <p>
-    <pre>
-    result = "No result"<br>
-    if request.method == "GET":<br>
-        word = request.GET.get("get_word", None)<br>
-        syns = wn.synsets(word)<br>
-        if len(syns) > 0:<br>
-            result = syns[0].definition()<br>
-        else:<br>
-            result = "no result for word:" + word<br>
-    return render(request, "blog/re_definition.html",
-                 {'result': result, 'word': word})<br>
-    </pre>
-      </p>
 </body>
 
 </html>

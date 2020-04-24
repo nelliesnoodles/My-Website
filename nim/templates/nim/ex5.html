@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nellies Noodles NIM</title>
 
- <script type="text/javascript" src="{% static 'js/ex5.js' %}"></script>
- <link rel="stylesheet" href="{% static 'css/ex5.css' %}">
-  <!-- font -->
+
+    <!-- font -->
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Girassol&display=swap" rel="stylesheet">
     <!-- font awesome kit -->
@@ -22,12 +21,18 @@
 
     <link rel="stylesheet" href="{% static '/css/noodle_nav.css' %}">
     <link rel="stylesheet" href="{% static '/css/custom_wordfinder.css' %}">
+
+    <!-- Game renders -->
+    <script type="text/javascript" src="{% static 'js/ex5.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/ex5.css' %}">
+
+
   </head>
   <!-- #91cac5 == greyish teal-->
   <!-- #413647 == dark grey violet -->
   <!-- #edc488 == Peach -->
   <!--  #e2e0e3 == light lilac -->
-  <body id="Main_Body" style="background:  #e2e0e3;">
+  <body id="Main_Body">
          <!-- NAVBAR -->
 
    <nav class='noodle_nav' style="color: black;">
@@ -36,14 +41,17 @@
         <div class="nav_link_menu" id="nav_link_menu">
                 <a class="noodle_link" href="/blog">Info-Blog</a>
                 <a class="noodle_link" href="blog/word_finder">Word Finder</a>
+                <a class="noodle_link" href="../jstests">Learning JS</a>
                 <a class="noodle_link" href="../WIWA">Chatbot</a>
-                <a class="noodle_link" href="../nim">NIM game</a>
+                <a class="noodle_link" href="#">NIM game</a>
         </div>
         <i class="fas fa-hamburger" id="hamburg" value="ON"></i>
     </nav>
 
 <!-- END NAV -->
-
+<header>
+    <h1 class="banner"> NIM (2-player version) </h1>
+</header>
 
 <main>
 
@@ -52,8 +60,6 @@
 <h4 style="text-align: center; color: white;"> <button id="instructions" onclick="instructions()">Game Instructions</button> </h4>
   <br>
 
-
-<h3 class="banner"> NIM (2-player version) </h3>
 
 
 <button style="float:center" onclick="cpu_turn();"> END TURN </button>
@@ -79,5 +85,8 @@
 
   </div>
   </main>
+  <hr>
+<footer>&copy; 2020 Nellie F. Tobey</footer>
+<hr>
   </body>
   </html>

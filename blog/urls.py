@@ -1,7 +1,9 @@
 from django.urls import path, re_path, include
+from django.contrib import admin
 from . import views
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', views.post_list, name='post_list'),
     path('language', views.language, name='SET_language'),  #<-- session change 6
     path('blog', views.blog_list, name='blogger'),

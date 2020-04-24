@@ -1,11 +1,10 @@
 /* static custom css -- Nellie Tobey -- nelliesnoodles */
-/* FOR PAGE:  word_finder*/
+/* FOR PAGE:  word_finder && retrieve definition*/
 
 body {
     width: -webkit-fill-available;
     font-family: 'Girassol', cursive;
     background: rgba(243, 244, 247, 0.9);
-    margin-bottom: 25vh;
 }
 
 h4 {
@@ -25,11 +24,13 @@ form button{
 }
 textarea {
     font-size: 2em;
+    width: 50vw;
 }
 
 form input{
     font-size: 1.5em;
     margin-right: 10px;
+    width: 30vw;
 }
 
 main {
@@ -39,6 +40,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 25vh;
 }
 
 h1 {

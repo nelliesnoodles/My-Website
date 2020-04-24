@@ -7,7 +7,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Nellie Tobey's personal website project. Some python, django, css, vanilla javascript, and a chatbot named Wiwa. ">
     <title>Nellie's Noodles</title>
+    <!-- Favicon  image conversions by: https://favicon.io/favicon-converter/-->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static '/images/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static '/images/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/images/favicon-16x16.png' %}">
+    <link rel="manifest" href="/site.webmanifest">
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Girassol&display=swap" rel="stylesheet">
@@ -29,7 +35,7 @@
 
    <nav class='noodle_nav'>
 
-        <a class="noodle_home_link">Noodles</a>
+        <a class="noodle_home_link colorful_link">Noodles</a>
         <div class="nav_link_menu" id="nav_link_menu">
                 <a class="noodle_link" href="/blog">Info-Blog</a>
                 <a class="noodle_link" href="jstests">Learning JS</a>
@@ -47,8 +53,9 @@
     <!-- end NEW NAV -->
 
 
-
+        <header>
         <h1>Nellie's Noodles:</h1>
+
         <h5> Experiments and learning Python, Django, Javascript, CSS.</h5>
 
         <h3 style="text-align: center;">
@@ -57,6 +64,8 @@
             <a id="github-image" class="github-button" href="https://github.com/nelliesnoodles" aria-label="Follow @nelliesnoodles on GitHub">Follow @nelliesnoodles</a>
 
         </h3>
+        <hr>
+        </header>
 
 
 
@@ -67,6 +76,13 @@
 
                 </image>
             </div>
+
+            <div class="card">
+            <a href="WIWA">Python NLTK Chatbot</a>
+            <image class="showcase4" src="static/images/wall_2-20-20.JPG" alt="Screenshot image of the whispering wall, a chatbot built with NLTK and python, running in this website with Django."></image>
+
+                </div>
+
             <div class="card">
             <a href="https://github.com/nelliesnoodles/StatsClass" target="_blank">Python and Statistics on GitHub</a>
             <image class="showcase1" src="static/images/ace_of_spades.JPG" alt="A screen shot of the current 'stats class' basic probabilities page.  The probability of getting the Ace of spades, a different ace, and any other card is displayed.">
@@ -74,11 +90,22 @@
             </image>
             </div>
 
+
             <div class="card">
             <a href="https://chingu-voyages.github.io/v10-geckos-team-01/index.html" target="_blank"> Learn, Quiz && have fun! </a>
             <image class="showcase2" src="static/images/github_prev2.JPG" alt="A combination of three screenshots showing three different quiz sections to the Voyage 10 project Code Quiz.">
 
             </image>
+            </div>
+
+            <div class="card">
+            <a href="https://codequizplus.pythonanywhere.com/" target="_blank"> New Code Quiz Plus </a>
+            <image class="showcase2" src="static/images/code_quiz_plus_home.JPG" alt="screen shot of the new Code Quiz Plus app based on Voyage 10 project Code Quiz.">
+
+            </image>
+
+
+
             </div>
 
 
@@ -96,11 +123,6 @@
                 </div>
 
 
-            <div class="card">
-            <a href="WIWA">Python NLTK Chatbot</a>
-            <image class="showcase4" src="static/images/wall_2-20-20.JPG" alt="Screenshot image of the whispering wall, a chatbot built with NLTK and python, running in this website with Django."
-            </image>
-                </div>
 
     <div class="card">
     <a href="https://camelcasenoodles.blogspot.com/2019/09/reverse-python-linked-list.html" target="_blank"> My coding blog </a>
@@ -108,12 +130,20 @@
 
     </div>
 
-    <a href="https://www.pinterest.com/nellietobey/my-art/" target="_blank"> My art on Pinterest </a>
-            <div class="flex_row">
-            <image class="showcase6" src="static/images/dads_face.jpg" alt="A marker and ink drawing of my dad studying. A part of my 2019 faces collection of ink drawings."></image>
-            <image class="showcase6" src="static/images/rufusvsundead.png" alt="A digital drawing of a samoyed floof dog licking the face of a crawling zombie."></image>
-            <image class="showcase6" src="static/images/lady_in_dark.jpg" alt="An undressed woman, abstract shape, oil paint on canvas"></image>
-                </div>
+           <div class="card">
+            <a href="https://dev.to/nelliesnoodles_90" target="_blank">Lessons from Blue Collar: on dev.to</a>
+            <image class="showcase5" src="static/images/caffeine-close-up-coffee-639111.jpg" alt="Image from Pexels, A dark background with a coffee cup and writing tools.">
+
+            </image>
+            </div>
+             <div class="card">
+            <a href="https://codepen.io/nelliesnoodles" target="_blank">CodePen Profile</a>
+            <image class="showcase5" src="static/images/codepen_profile.JPG" alt="Screen shot of the open CodePen.io dashboard with a registration page created for FreeCodeCamp project.">
+
+            </image>
+            </div>
+
+
     <a href="https://www.linkedin.com/in/nellie-tobey-creator-michigan/" target="_blank"> My linkedIn Profile </a>
             <image class="showcase7" src="static/images/selfie.jpg" alt="Picture of me last spring, out in the sunshine after a long cold icy winter."></image>
 
@@ -121,11 +151,13 @@
 
         </main>
 
-
-
+    <hr>
+<footer>&copy; 2020 Nellie F. Tobey
+    <hr>
     <div class="contact-me">
         <p> Currently seeking employment.  Contact me:  nelliesnoodles42@gmail.com </p>
     </div>
+    </footer>
 
 </body>
 

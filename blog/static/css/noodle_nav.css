@@ -1,4 +1,11 @@
+a {
+    color: black;
+}
 
+ a:hover {
+        color: black;
+        text-shadow: 1px 1px 1px rgba(209, 3, 254, 0.5), -1px -1px 2px white;
+    }
 
 /* nav colors can be set by page template css  */
 nav {
@@ -6,9 +13,9 @@ nav {
     flex-direction: row;
     background: inherit;
     border-bottom: 2px solid purple;
-    color: aliceblue;
     padding-top: 2vh;
     padding-bottom: 2vh;
+    color: black;
 }
 
 /* a : hover can be set by page template css  */
@@ -19,6 +26,28 @@ nav {
     border: solid 1px silver;
     border-radius: 10%;
 }
+
+
+.noodle_home_link:hover {
+    animation-name: background-color;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  }
+  @keyframes background-color {
+      0% {
+          color: rgb(100, 100, 100);
+          background-color: rgb(255, 255, 255);
+      }
+      50% {
+          color: rgb(200, 0, 200);
+          background-color: rgb(100, 100, 100);
+      }
+    100% {
+      color: white;
+      background-color: black;
+      transform: scale(1.1);
+    }
+  }
 
 .nav_link_menu {
     display: flex;
@@ -42,7 +71,10 @@ nav {
     font-weight: bold;
     width: auto;
     padding: 2vw;
+    color: black;
 }
+
+
 
 .Content_view {
     color: white;
