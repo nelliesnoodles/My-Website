@@ -55,16 +55,16 @@
       </div>
 
       <!--     textarea & form submission -->
-      <div class="container" style="padding: 25px 25px 25px 25px;">
+      <div class="container">
       <form method="GET" action="find_word" id="check_form" style="padding-top: 20px;">
            <textarea form="check_form" rows="1" cols="40" maxlength="27" name="user_input"></textarea>
         <button type="submit">check your word</button>
       </form>
     </div>
-    <h3 style="margin-left: 20px; border-bottom: solid; border-color: #8caac3; ">Other suggestions</h3>
-    <div style="text-align: center; float: left; padding-left: 20px; padding-bottom: 10px;">
+    <h3 class="flex-text">Other suggestions</h3>
+    <div class="flex-text">
     {% for word in args %}
-    <div style="text-align: center; float: left; padding-left: 20px;">
+    <div class="flex-text">
     <h4><strong>{{word}}</strong></h4>
     </div>
     {% endfor %}
@@ -75,9 +75,10 @@
     </div>
     <div class="flex_containter_row">
     <form method="GET" action="/re_definition" id="defin_form" style="padding-top: 20px;">
-
-         retrieve this = <input type="text" maxlength="27" name="get_word"><br>
+         <div class="input_container">
+         <h4>retrieve this = </h4><input type="text" maxlength="27" name="get_word"><br>
          <input type="submit" value="SUBMIT">
+         </div>
        </form>
      </div>
 

@@ -68,6 +68,8 @@ def spell_checker(request):
 
        if arg != '' and valid:
            error, correction, alist = wf.get_suggestions(arg)
+           if len(alist) > 10:
+               alist = alist[::9]
        else:
            correction = " Invalid input from user into text field. "
 

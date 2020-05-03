@@ -35,23 +35,32 @@ main a {
 
     }
 
+.enlarge {
+    transition: all .2s ease-in-out;
+}
 
+.enlarge:hover{
+    transform: scale(1.2);
+}
 #my_tag {
     text-shadow: 1px 1px 1px #f70202;
 }
 .home {
     height: 100%;
     width: 100%;
-    flex-direction: row;
-    flex: 2;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-evenly;
+    text-align: center;
+    background: linear-gradient(45deg, #fefefe, #e9f6f8);
 }
 
 h1 {
     font-size: 3em;
     text-align: center;
     text-shadow: 2px 1px 2px white;
+}
+h2, h3, h4 {
+    text-align: center;
 }
  h5 {
      font-size: 1.5em;
@@ -77,6 +86,7 @@ a {
     }
 
 .card {
+    width: 100vw;
     display: flex;
     flex-direction: column;
     padding: 20px;
