@@ -94,7 +94,8 @@ def return_answer(arg, request):
             wiwa.line_get = new_line
             #print("****  getting wiwa_response *****")
             response = wiwa.run_wiwa(arg)
-            #print("response =", response)
+
+            print("response =", response)
             if response:
                 request.session['line_numb'] += 1
                 return response

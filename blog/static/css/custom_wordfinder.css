@@ -25,6 +25,10 @@ form {
 
 form button{
     margin-left: 10px;
+    padding: 1ch;
+    border-radius: 10%;
+    border: none;
+    box-shadow: 3px 6px #c3a6c38c;
 }
 textarea {
     font-size: 2em;
@@ -50,13 +54,22 @@ main {
 }
 
 h1 {
+    text-align: center;
+    width: 100vw;
     color: #073F5D;
+    font-size: 3em;
 }
 
 h2 {
+    text-align: center;
+    width: 100vw;
+
     color: #073F5D;
 }
 
+.frame-text {
+    text-shadow: 1px 1px 2px violet, -1px -1px white;
+}
 
 button:hover {
     background-color: #e8f4f4;
@@ -92,6 +105,13 @@ button:hover {
     align-content: center;
 }
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+}
+
 .flex-text {
     display: flex;
     flex-direction: row;
@@ -116,8 +136,27 @@ button:hover {
     padding-bottom: 10px;
 }
 
+.top-border {
+    border-top: 3px double purple;
+}
 /*  --Definition retrieval page specific--  */
 
 .definition {
     font-size: 2em;
 }
+@media all and (max-width: 800px) and (min-width: 220px) {
+    form {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
+    .input_container{
+        display: flex;
+        flex-direction: column;
+    }
+    .flex-text {
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+    }
+    }

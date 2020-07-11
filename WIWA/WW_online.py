@@ -3,7 +3,7 @@
 
 import enchant
 import re
-#from nltk.corpus import wordnet
+from nltk.corpus import wordnet
 import random
 import nltk as nltk
 
@@ -91,11 +91,15 @@ class Wiwa(object):
             return "Goodbye, thanks for stopping in!"
         else:
             choice = self.pick_response(make)
-            #print(choice)
+
+            reject = self.unacceptable(make)
             question = self.check_question(make)
             about_me = self.check_for_name(make)
             about_wiwa = self.check_for_name_wiwa(make)
             greet = self.is_greeting(make)
+            if reject:
+                response = "That language is not acceptable here."
+                return response
             if about_me != False:
                 response = self.get_about_line()
                 return response
@@ -161,56 +165,57 @@ class Wiwa(object):
 ##---------------------------------##
 
     def _test_response_making(self, test_sentence):
-            make = test_sentence
-            stripped = make.lower()
-            newstring = re.sub("[^a-zA-Z| |]+", "", stripped)
-            if make in ['QUIT', 'EXIT', 'exit', 'quit', 'q']:
-                return "Goodbye, thanks for stopping in!"
+        print('RUNNING TEST RESPONSE')
+        make = test_sentence
+        stripped = make.lower()
+        newstring = re.sub("[^a-zA-Z| |]+", "", stripped)
+        if make in ['QUIT', 'EXIT', 'exit', 'quit', 'q']:
+            return "Goodbye, thanks for stopping in!"
+        else:
+            choice = self.pick_response(make)
+
+            question = self.check_question(make)
+            if question:
+                discusanswer = self.get_script_line(self.questionable)
+                return discusanswer
+            elif newstring in ['yes', 'no', 'maybe']:
+                response = self.get_script_line(self.simplescript)
+                return response
             else:
-                choice = self.pick_response(make)
-                #print(choice)
-                question = self.check_question(make)
-                if question:
-                    discusanswer = self.get_script_line(self.questionable)
-                    return discusanswer
-                elif newstring in ['yes', 'no', 'maybe']:
-                    response = self.get_script_line(self.simplescript)
-                    return response
-                else:
-                    if choice[0] == 'noun':
-                        response = self.get_script_line(self.nounscript)
-                        return response.format(choice[1])
-                    elif choice[0] =='verb':
-                        response = self.get_script_line(self.verbscript)
-                        verbasity = response.format(choice[1])
-                        return verbasity
-                    elif choice[0] == 'adv':
-                        response = self.get_script_line(self.adverbs)
-                        if '{}' in response:
-                            adverb = response.format(choice[1])
-                            return adverb
-                        else:
-                            return response
-                    elif choice[0] == 'adj':
-                        response = self.get_script_line(self.adjectives)
-
-                        if '{}' in response:
-                            adjective = response.format(choice[1])
-                            return adjective
-                        else:
-                            return response
-                    elif choice[0] == 'err':
-                        response = self.get_script_line(self.error_script)
-
-                        if '{}' in response:
-                            too_error = response.format(choice[1])
-                            return too_error
-                        else:
-                            return response
-
+                if choice[0] == 'noun':
+                    response = self.get_script_line(self.nounscript)
+                    return response.format(choice[1])
+                elif choice[0] =='verb':
+                    response = self.get_script_line(self.verbscript)
+                    verbasity = response.format(choice[1])
+                    return verbasity
+                elif choice[0] == 'adv':
+                    response = self.get_script_line(self.adverbs)
+                    if '{}' in response:
+                        adverb = response.format(choice[1])
+                        return adverb
                     else:
+                        return response
+                elif choice[0] == 'adj':
+                    response = self.get_script_line(self.adjectives)
 
-                        return("Wiwa:  ... ... ")
+                    if '{}' in response:
+                        adjective = response.format(choice[1])
+                        return adjective
+                    else:
+                        return response
+                elif choice[0] == 'err':
+                    response = self.get_script_line(self.error_script)
+
+                    if '{}' in response:
+                        too_error = response.format(choice[1])
+                        return too_error
+                    else:
+                        return response
+
+                else:
+
+                    return("Wiwa:  ... ... ")
 
 ##---------------------------------##
 ##    added a simple greeting      ##
@@ -233,6 +238,26 @@ class Wiwa(object):
                         else:
                             pass
             return False
+
+##----------------------------------------------------##
+##    Creating a filter for words that shall not      ##
+## be accepted or processed by Wiwa.  She thinks      ##
+## This language is not acceptable.                   ##
+## If I missed any feel free to let me know, I will   ##
+## add it to her doNOTPARSE list.                     ##
+##----------------------------------------------------##
+
+    def unacceptable(self, astring):
+        stripped = astring.lower()
+        newstring = re.sub("[^a-zA-Z| |]+", "", stripped)
+        checking_list = newstring.split(' ')
+        print(checking_list)
+        doNOTPARSE = ['cunt', 'whore', 'chink', 'bootlip', 'coon', 'nigger', 'niger', 'niglet', 'slut', 'redneck']
+        for word in checking_list:
+            if word in doNOTPARSE:
+                return True
+
+        return False
 
 ##----------------------------------------------------##
 ##  New scripts for responses to my name, or wiwa     ##
@@ -356,42 +381,62 @@ class Wiwa(object):
         aj = len(adj)
         av = len(adv)
         er = len(errors)
+
         words_found = False
         options = {'noun': [], 'verb': [], 'adj': [], 'adv': [], 'err': []}
+
         if n > 0:
             words_found = True
             for item in nouns:
+
                 options['noun'].append(item)
+
         if v > 0:
             words_found = True
             for item in verbs:
+
                 options['verb'].append(item)
+
         if aj > 0:
             words_found = True
             for item in adj:
+
                 options['adj'].append(item)
+
         if av > 0:
             words_found = True
             for item in adv:
+
                 options['adv'].append(item)
+
         if er > 0:
             words_found = True
             for item in errors:
+
                 options['err'].append(item)
+
 
         done = False
         if words_found == True:
+
             while not done:
                 # it might be bad to trust random.choice to not run idle while finding a choice in the list
                 # the options dict is tiny so it shouldn't get stuck picking one
-                word_type = random.choice(list(options.keys()))
+                dict_key_list =[]
+
+                #print(list(options))
+                word_type = random.choice(list(options))
+
                 word_list = options[word_type]
+
+
                 if len(word_list) > 0:
                     choice_tup = (word_type, word_list[0])
                     done = True
                     return choice_tup
         else:
-            return ('error', 'not identified')
+            choice_tup = ('error', 'not identified')
+            return choice_tup
 
 ##----------------------------------------------##
 ##       open script, return line from script   ##
@@ -587,8 +632,10 @@ def WW_test():
     index = 0
     fails = ["Wiwa: ... ... ", "script file could not be found"]
     for data in test_sentences:
+        #print('data loop through test sentences')
         try:
             response = WW._test_response_making(data)
+            #print(response)
             if response not in fails:
                 print("successful sentence response, index= ", index)
                 index += 1
@@ -596,5 +643,28 @@ def WW_test():
                 print("Unsuccessful test sentence response, index= ", index)
                 index += 1
         except:
+            print(data)
             print("Whispering wall failed to process sentence at index= ", index)
             index += 1
+
+def newtest():
+    test_sentences = [
+        "Where are the goats?", #questionable.txt
+        "The goats are jumping", #Noun, verb
+        "The frog jumped.", #noun, verb
+        "No", #simpleScript.txt
+        "Tree.", #Noun
+        "Kill it", # Verb
+        "Pretty Octopus.", #Adjective
+        "Edible button.", #adjective
+        "Beautifully done.", #adverb
+        "It is simply magnificent.", #adverb
+        "fjskdflskjdflsjjslkfj", #error script
+        ]
+    WW = Wiwa()
+    try:
+        WW.run_wiwa('new word')
+        print('wiwa did not fail')
+    except:
+        print('wiwa failed to run.')
+

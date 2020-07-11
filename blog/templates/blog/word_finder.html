@@ -10,6 +10,8 @@
       <!-- font -->
        <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
        <link href="https://fonts.googleapis.com/css?family=Girassol&display=swap" rel="stylesheet">
+       <!-- font awesome kit-->
+        <script src="https://kit.fontawesome.com/b570a31fd0.js" crossorigin="anonymous"></script>
       <!-- stylesheet -->
       <link rel="stylesheet" href="{% static '/css/custom_wordfinder.css' %}">
       <link rel="stylesheet" href="{% static '/css/noodle_nav.css' %}">
@@ -29,7 +31,7 @@
         <div class="nav_link_menu" id="nav_link_menu">
                 <a class="noodle_link" href="/blog">Info-Blog</a>
                 <a class="noodle_link" href="blog/word_finder">Word Finder</a>
-                <a class="noodle_link" href="../WIWA">Chatbot</a>
+                <a class="noodle_link" href="{% url 'WIWA' %}">Chatbot</a>
                 <a class="noodle_link" href="../nim">NIM game</a>
         </div>
         <i class="fas fa-hamburger" id="hamburg" value="ON"></i>
@@ -46,10 +48,10 @@
      <!--  Word Finder div  -->
 
     <main>
-      <h1 style="display: flex; align-items: center; justify-content: center;"> Word finder </h1>
+      <h1> Word finder </h1>
       <!--  color:   light blue =  8caac3   -->
-      <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-        <h5> Using python enchant </h5>
+      <div class="flex-column">
+        <h3 class="frame-text"> Using python enchant </h3>
         <h3><strong> {{ error }} </strong></h4>
         <h3> {{ correction }} </h4>
       </div>
@@ -57,8 +59,8 @@
       <!--     textarea & form submission -->
       <div class="container">
       <form method="GET" action="find_word" id="check_form" style="padding-top: 20px;">
-           <textarea form="check_form" rows="1" cols="40" maxlength="27" name="user_input"></textarea>
-        <button type="submit">check your word</button>
+           <input form="check_form" maxlength="27" name="user_input"></textarea>
+        <button type="submit">spell check</button>
       </form>
     </div>
     <h3 class="flex-text">Other suggestions</h3>
@@ -69,18 +71,19 @@
     </div>
     {% endfor %}
     </div>
-
-    <div class="flex_containter_row">
+    <hr>
+    <div class="flex-column top-border">
     <h2> Fetch a Definition </h2>
+    <h3 class="frame-text">Using Python NLTK</h3>
     </div>
-    <div class="flex_containter_row">
+
     <form method="GET" action="/re_definition" id="defin_form" style="padding-top: 20px;">
          <div class="input_container">
-         <h4>retrieve this = </h4><input type="text" maxlength="27" name="get_word"><br>
-         <input type="submit" value="SUBMIT">
+         <input type="text" maxlength="27" name="get_word" placeholder="retrieve this word">
+         <button type="submit" value="get">Retrieve</button>
          </div>
        </form>
-     </div>
+
 
     </main>
 

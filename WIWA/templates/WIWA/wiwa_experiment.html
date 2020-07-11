@@ -17,8 +17,7 @@
 
     <link rel="stylesheet" href="{% static '/css/noodle_nav.css' %}">
 
-    <!-- javascript -->
-    <script type="text/JavaScript" src="{% static '/js/noodle_nav.js' %}"></script>
+
 
 
     <!-- Wiwa specific -->
@@ -45,7 +44,8 @@
                 <a class="noodle_link" href="blog/word_finder">Word Finder</a>
                 <a class="noodle_link" href="../nim">NIM game</a>
         </div>
-        <i class="fas fa-hamburger" id="hamburg" value="ON"></i>
+
+        <i class="fas fa-hamburger" id="hamburg" onclick="listen_click()" value='OFF'></i>
 
 
 
@@ -68,50 +68,43 @@
 <!--     ~~~~~~~~~~~~~~~~~~~   -->
 <!--       Whispering Wall     -->
 <!--     ~~~~~~~~~~~~~~~~~~~   -->
-
-
-    <!--<h4 id="wiwa_words"><strong> {{ wiwa_answer }} </strong></h4>-->
+<main>
+    <!-- for testing javascript file -->
+    <!--<h4 id='wiwa_words1><strong> {{ wiwa_answer }} </strong></h4>-->
 
     <input type="hidden" id="wiwa_words" name="wiwa_words" value="{{ wiwa_answer }}">
 <!--            -->
 <!--   CHATBOX  -->
-<!--  style="border:solid black; background: #c7d1cf; height: 200px; width: 90%; overflow: auto; font-size: 1.5em;"          -->
+        -->
     <div id="chatbox">
       Chat Log:
    </div>
 
 <div class='submit-box'>
   <form method="GET" action="wiwa_respond" id="wiwa_form">
-    <textarea id="user_words" name="user_words" type="text" onfocus="this.value=''" maxlength="120" >
+    <textarea id="user_words" name="user_words" type="text" onfocus="this.value=''" maxlength="120" label="type here and click submit to activate new Wiwa text response.">
 
 </textarea>
 
 
-<button id="bigbutton" class="btn" type="submit" onclick="store_words('user_words')">submit</button>
+<button id="bigbutton" class="btn" type="submit" onclick="store_user()" label="send message to Wiwa">submit</button>
 
-  <button id="bigbutton" class="btn" onclick="clear_storage()">clear chat screen--reset</button>
+  <button id="bigbutton2" class="btn" onclick="clear_storage()" label="clear the chat log of conversation text.">clear chat screen--reset</button>
 </form>
 
 </div>
+</main>
 </font>
-
+<!-- javascript -->
+    <script type="text/JavaScript" src="{% static '/js/wiwa_nav.js' %}"></script>
 </body>
-<!-- Github link and remove/add background image buttons -->
-<div class="banner" style="position: static; margin-top: 10vh; position: auto; opacity: 0.85;">
+<!-- Github link -->
+<div class="wiwa_foot">
 
 
     <a href="https://github.com/nelliesnoodles" target="_blank"> <i><u>Whispering Wall in Github</u></i></a>
     <h5> Github version may be more advanced then online version </h5>
 
-    <form method="GET" action="rm_background" id="remove_background"></form>
-     <button class="btn" form="remove_background" type='submit'>
-        remove  -(image)
-    </button>
-
-    <form method="GET" action="add_image" id="add_image"></form>
-    <button class="btn" form="add_image" type='submit'>
-        add +(image)
-    </button>
 </div>
 <hr>
 <footer>&copy; 2020 Nellie F. Tobey</footer>

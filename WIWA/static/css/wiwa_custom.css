@@ -40,6 +40,11 @@ body {
     font-weight: 1000;
 }
 
+main {
+    width: 90vw;
+    margin: auto;
+}
+
 h4 {
   color: white;
 }
@@ -63,6 +68,19 @@ p {
     color: white;
 }
 
+.wiwa_foot{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px;
+    padding: 0;
+    color: #85467d;
+    text-shadow: 1px -1px #ded3db;
+    background: #ded5df;
+}
+
 footer {
     background: linear-gradient(0.25turn, transparent, black, transparent);
     color: white;
@@ -74,9 +92,13 @@ footer {
     font-size: 2em;
 }
 header h1 {
-    font-size: 3.5em;
+    font-size: 2.5em;
     text-shadow: 1px 1px 1px white, -1px -2px 2px #5c1c26;
 
+}
+
+h2 {
+    font-size: 1em;
 }
 #wiwa {
     font-size: 1.5em;
@@ -84,11 +106,20 @@ header h1 {
 
 
 #bigbutton {
-    width: 20vw;
+
     text-align: center;
     justify-content: center;
     font-family: inherit;
-    font-size: 1.2em;
+    font-size: 1em;
+    color: white;
+}
+
+#bigbutton2 {
+
+    text-align: center;
+    justify-content: center;
+    font-family: inherit;
+    font-size: 1em;
     color: white;
 }
 
@@ -142,13 +173,15 @@ header h1 {
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding-top: 10px;
+  align-items: center;
+  justify-content: center;
   margin: auto;
   width: 100%;
   background: linear-gradient(0.25turn, transparent, #765862, transparent);
   color: #b9efb6;
   font-family: 'Amatic SC', cursive;
 }
+
 
 .banner h3{
     font-size: 3em;
@@ -168,9 +201,7 @@ header h1 {
 #chatbox {
   border: solid  #b8e3b0;
   background: #dfd8e3;
-  margin-top: 2vh;
-  height: 200px;
-  width: 100%;
+  height: 30vh;
   overflow: auto;
   font-size: 1.5em;
   color: black;
