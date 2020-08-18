@@ -18,6 +18,7 @@
 
     <!-- javascript -->
     <script type="text/JavaScript" src="{% static '/js/noodle_nav.js' %}"></script>
+    <script type="text/JavaScript" src="{% static '/js/speak_word.js' %}"></script>
 
 
 </head>
@@ -33,6 +34,7 @@
                 <a class="noodle_link" href="../WIWA">Chatbot</a>
                 <a class="noodle_link" href="../nim">NIM game</a>
         </div>
+
         <i class="fas fa-hamburger" id="hamburg" value="ON"></i>
 
 
@@ -45,19 +47,33 @@
   <main>
 
     <h1>Definition returned: </h1>
-    <h2>{{word}}</h2>
+    <h2 id="word_to_say">{{word}}</h2>
+     <div id="speak-word">
+         <button id="js_say_word" aria-label="Click to hear the word">
+       <i class="fas fa-volume-up"></i>
+       </button>
+
+   </div>
 
 
 
 
 <div class="flex_containter_row">
-    <p class="definition">
+    <p class="definition" id="definition_to_say">
    {{result}}
    </p>
 
    </div>
+   <div id="speak-word">
+       <button aria-label="Click to hear the word definition" id="js_say_definition">
+       <i class="fas fa-volume-up"></i>
+       </button>
+
+   </div>
 
   </main>
+  <hr>
+  <p class="definition-sm">Internet Explorer, Android(Webview), and Android(Opera) do not support the SpeechSynthesis provided by JavaScript.</p>
 <hr>
 <a class="center_text" href="#">Back to top</a>
 <footer>&copy; 2020 Nellie F. Tobey</footer>
