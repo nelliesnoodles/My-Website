@@ -5,8 +5,17 @@
 
 <head>
   <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title> Testing JavaScript Files</title>
+   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="author" content="Nellie Tobey">
+    <meta name="description" content="The power of Vanilla JavaScript. Coming soon, games with JavaScript on Django!">
+    <!-- Favicon  image conversions by: https://favicon.io/favicon-converter/-->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static '/images/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static '/images/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/images/favicon-16x16.png' %}">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@1,100&family=Texturina:wght@100&display=swap" rel="stylesheet">
+   <title>JavaScript</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
      <!-- font -->
@@ -22,8 +31,8 @@
 
     <link rel="stylesheet" href="{% static '/css/noodle_nav.css' %}">
     <link rel="stylesheet" href="{% static '/css/custom_wordfinder.css' %}">
+    <link rel="stylesheet" href="{% static '/css/games.css' %}">
 
-    <script type="text/JavaScript" src="{% static 'js/nodescript.js' %}"> </script>
 
  </head>
 <body>
@@ -33,10 +42,10 @@
         <a class="noodle_home_link" href="/">Noodles</a>
         <div class="nav_link_menu" id="nav_link_menu">
                 <a class="noodle_link" href="/blog">Info-Blog</a>
-                <a class="noodle_link" href="jstests">Learning JS</a>
+                <a class="noodle_link" href="jstests">JavaScript</a>
                 <a class="noodle_link" href="blog/word_finder">Word Finder</a>
                 <a class="noodle_link" href="WIWA">Chatbot</a>
-                <a class="noodle_link" href="nim">NIM game</a>
+
         </div>
         <i class="fas fa-hamburger" id="hamburg" value="ON"></i>
 
@@ -46,24 +55,25 @@
     </nav>
 
     <!-- end NEW NAV -->
+<main>
+    <header>Games!</header>
+    <div class="flex-box">
+        <h2>Angular Firebase game:</h2>
+        <h3>Snake: Desktop only for now</h3>
+        <a class="noodle_link" target="_blank" href="https://snake-c2d51.web.app/"> S N A K E</a>
+        <img src="{% static '/images/s_n_a_k_e.JPG' %}" alt="screenshot of the snake game. I used tardis blue and a space theme for this tiny traveling green square."></img>
+    <h2>(Github pages) Offsite games:</h2>
+    <a class="noodle_link" target="_blank" href="https://nelliesnoodles.github.io/Minesweeper/">MineSweeper</a>
+    <img src="{% static '/images/minesweeperV5.JPG' %}" alt="Screenshot of the minesweeper game I made. It has a classic and easy mode."></img>
 
-<div style="padding-top: 50px;">
-<h1> Time and Relative Dimension in Space </h1>
-<button id="clickme"> click me </button>
-<button id="moveright">move right </button>
-<button id="moveleft">move left </button>
-<button id="movedown">move down </button>
-<button id="moveup">move up </button>
-<button id="reset"> reset ascii </button>
-</div>
+    <a class="noodle_link" target="_blank" href="https://nelliesnoodles.github.io/JS_Snake/">Snake</a>
+     <img src="{% static '/images/demo_pic.JPG' %}" alt="screenshot of the snake game. A tiny tribute to the British television show, Doctor Who."></img>
 
-<div style="marginTop: 10px; padding-left: 10px; color: blue;">
-<font face="'Courier New', courier, monospace" color="blue">
-    <pre id="tardisbox">
-Tardis
-</pre>
-</font>
-</div>
+    <a class="noodle_link" href="https://nelliesnoodles.github.io/project_css2/" target="_blank">Critical Space Strike</a>
+     <img src="{% static '/images/CSS_2_screenshot.JPG' %}" alt="screenshot of the CSS game. The goal is to shoot the antibodies up toward the viruses and destroy them all."></img>
+    </div>
+
+</main>
 
 <footer>&copy Nellie Tobey 2019</footer>
 </body>

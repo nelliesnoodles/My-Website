@@ -16,13 +16,19 @@
     <!-- stylesheet -->
 
     <link rel="stylesheet" href="{% static '/css/noodle_nav.css' %}">
+    <!-- Favicon  image conversions by: https://favicon.io/favicon-converter/-->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static '/images/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static '/images/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/images/favicon-16x16.png' %}">
 
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5fe3642f0ebbe0001127a753&product=inline-share-buttons" async="async"></script>
 
 
 
     <!-- Wiwa specific -->
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/wiwa_custom.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@1,100&family=Texturina:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/custom_chatbot.css' %}">
     <!-- from buttons.github.io github button  -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script type="text/JavaScript" src="{% static 'js/chat_box.js' %}"></script>
@@ -40,9 +46,9 @@
         <a class="noodle_home_link" href="/">Noodles</a>
         <div class="nav_link_menu" id="nav_link_menu">
                 <a class="noodle_link" href="/blog">Info-Blog</a>
-                <a class="noodle_link" href="../jstests">Learning JS</a>
+                <a class="noodle_link" href="../jstests">JavaScript</a>
                 <a class="noodle_link" href="blog/word_finder">Word Finder</a>
-                <a class="noodle_link" href="../nim">NIM game</a>
+
         </div>
 
         <i class="fas fa-hamburger" id="hamburg" onclick="listen_click()" value='OFF'></i>
@@ -55,7 +61,7 @@
 
 
   <header id="gradient2" class="banner">
-    <p> Created by Nellie Tobey </p>
+
     <h1>Whispering Wall</h1>
     <h2>A python chatbot using NLTK</h2>
 
@@ -98,17 +104,17 @@
 <!-- javascript -->
     <script type="text/JavaScript" src="{% static '/js/wiwa_nav.js' %}"></script>
 </body>
-<!-- Github link -->
+
+
+<footer><h5>&copy; 2020 Nellie F. Tobey</h5>
 <div class="wiwa_foot">
 
 
-    <a href="https://github.com/nelliesnoodles" target="_blank"> <i><u>Whispering Wall in Github</u></i></a>
-    <h5> Github version may be more advanced then online version </h5>
+    <a href="https://github.com/nelliesnoodles/Whispering-Wall" target="_blank"> <i><u>Whispering Wall in Github</u></i></a>
+
 
 </div>
-<hr>
-<footer>&copy; 2020 Nellie F. Tobey</footer>
-<hr>
-
+<div class="sharethis-inline-share-buttons"></div>
+</footer>
 
 </html>

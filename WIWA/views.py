@@ -8,11 +8,6 @@ from .WW_online import Wiwa
 from nltk.corpus import wordnet as wn
 from django.http import HttpResponse
 
-import logging
-
-
-log = logging.getLogger('logdna')
-log.setLevel(logging.INFO)
 
 
 # database not on my CPU
@@ -21,7 +16,7 @@ wiwa = Wiwa()
 
 def get_preference(request): #used in Wiwa page
     if 'bg_preference' not in request.session:
-        bg_string = "background-image: url('/static/images/pexels-brick.jpg'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.95;"
+        bg_string = "background-image: url('/static/images/pexels-tim-mossholder-1708852.jpg'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.95;"
         request.session['bg_preference'] = bg_string
         bg_preference = bg_string
     else:
@@ -29,12 +24,12 @@ def get_preference(request): #used in Wiwa page
     return bg_preference
 
 def remove_bg(request):
-    log.info("request to remove whispering wall background image")
+
     if 'bg_preference' not in request.session:
-        bg_string = "background: black;"  #<-- change to something like blue to see definite change
+        bg_string = "background: rgba(243, 244, 247, 0.9);"
         request.session['bg_preference'] = bg_string
     else:
-        bg_string = 'background: black;' #<-- make sure you have what you want here.
+        bg_string = "background: rgba(243, 244, 247, 0.9);"
         request.session['bg_preference'] = bg_string
 
     bg_preference = request.session['bg_preference']
@@ -43,20 +38,20 @@ def remove_bg(request):
 
 def bg_replace(request):
     if 'bg_preference' not in request.session:
-        bg_string = "background-image: url('/static/images/pexels-brick.jpg'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.95;"
+        bg_string = "background-image: url('/static/images/pexels-tim-mossholder-1708852.jpg'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.95;"
         request.session['bg_preference'] = bg_string
         bg_preference = bg_string
     else:
-        bg_string = "background-image: url('/static/images/pexels-brick.jpg'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.95;"
+        bg_string = "background-image: url('/static/images/pexels-tim-mossholder-1708852.jpg'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.95;"
         request.session['bg_preference'] = bg_string
         bg_preference = bg_string
 
     bg_preference = request.session['bg_preference']
-    #print("bg preference changed to:", bg_preference)
+
     return render(request, 'WIWA/wiwa_experiment.html', {'bg_preference': bg_preference})
 
 def reset_session(request):
-    #print("setting session wiwa keys")
+
     a_list = []
     session_keys = list(request.session.keys())
     if len(session_keys) > 1:
@@ -83,11 +78,9 @@ def return_answer(arg, request):
     if arg != None and arg != '':
         line_numb = request.session['line_numb']
         the_list = request.session['list_index']
-        #print('line_numb =', line_numb)
-        #print('the_list = ', the_list)
+
         new_line = the_list[line_numb]
-        #print('session item retrieved')
-        #print('line_numb = ', line_numb)
+
         try:
 
 

@@ -7,9 +7,10 @@ html {
 
 body {
     width: -webkit-fill-available;
-    font-family: 'Girassol', cursive;
+    font-family: 'Josefin Slab', serif;
     background: rgba(243, 244, 247, 0.9);
     margin-bottom: 25vh;
+    color: #4e0682;
 }
  image{
      display: flex;
@@ -32,7 +33,9 @@ main a {
         font-size: 1.5em;
         padding-top: 0.5em;
         padding-bottom: 0.5em;
-        background: linear-gradient(45deg, transparent, #ecf7f9, transparent);
+        background: linear-gradient(45deg, transparent, white, transparent);
+        font-weight: 600;
+        color: #695473;
 
     }
 
@@ -66,7 +69,7 @@ h2, h3, h4 {
  h5 {
      font-size: 1.5em;
      color: #562390;
-     font-weight: 200;
+     font-weight: 600;
      text-align: center;
      text-shadow: 1px 2px 2px #f6f7f0;
 
@@ -108,7 +111,7 @@ img:hover {
 }
 
 .double-border{
-    background-color: white;
+
     border-bottom: 2px double silver;
     border-top: 2px double silver;
 }
@@ -276,6 +279,14 @@ button:hover {
 
 
 /* footer  Contact me*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
 
 .contact-me {
     background: rgba(230, 246, 249, 0.80);

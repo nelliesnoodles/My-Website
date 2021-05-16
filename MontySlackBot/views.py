@@ -42,7 +42,7 @@ def get_life_of_brian():
         picked_line = monty_list[random_line]
         return picked_line
     except:
-        print(f"file at : {LIFE_OF_BRIAN_SCRIPT} could not be opened.")
+        #print(f"file at : {LIFE_OF_BRIAN_SCRIPT} could not be opened.")
         return 'but it has FAAANNNGGsss'
 
 
@@ -64,11 +64,11 @@ def get_monty_script():
         picked_line = monty_list[random_line]
         return picked_line
     except:
-        print(f"file at : {MONTY_SCRIPT} could not be opened.")
+        #print(f"file at : {MONTY_SCRIPT} could not be opened.")
         return 'but it has FAAANNNGGsss'
 
 def post(request, *callback_args, **callback_kwargs):
-    print("post in MontySlackBot/views active")
+    #print("post in MontySlackBot/views active")
 
     if request.method == 'POST':
         payload = request.body
@@ -83,12 +83,12 @@ def post(request, *callback_args, **callback_kwargs):
         # verification challenge
         if type_of_post == 'url_verification':
             challenge = json_object.get("challenge")
-            print("THIS IS A URL VERIFICATION")
+            #print("THIS IS A URL VERIFICATION")
             return HttpResponse(challenge)
 
 
         if type_of_post == 'event_callback':
-            print("EVENT RECIEVED.")
+            #print("EVENT RECIEVED.")
             event_message = json_object.get('event')
 
             # ignore bot's own message

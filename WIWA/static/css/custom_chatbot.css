@@ -1,0 +1,220 @@
+/* static custom css -- Nellie Tobey -- nelliesnoodles --Whispering Wall*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.btn-outline-primary {
+    color: black;
+    background-color: #DAF7A6;
+    border-color: purple; /*set the color you want here*/
+}
+
+
+.submit-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.btn {
+    font-weight: bolder;
+    padding: 5px;
+    border: 1px solid #f4f4f3;
+    border-radius: 5px;
+    margin: 2px;
+    color: white;
+    background: #803f78;
+    text-shadow: 1px 1px 1px black;
+    font-family: inherit;
+    font-size: 1.5em;
+}
+
+body {
+    width: -webkit-fill-available;
+    font-family: 'Josefin Slab', serif;
+    font-weight: 600;
+}
+
+h4 {
+  color: white;
+}
+
+form{
+    margin: 0;
+    padding: 5px;
+    display: flex;
+    padding-top: 20px;
+    font-size: 1.2em;
+}
+
+form textarea{
+
+    width: 40vw;
+    border: solid black;
+    float: left;
+}
+
+p {
+    color: black;
+}
+
+footer {
+    background: #6d3397;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    padding: 1ch;
+    margin-top: 10vh;
+    bottom: 0;
+    font-size: 1.5em;
+}
+
+footer a {
+    color: white;
+}
+footer h5 {
+    margin-top: 2ch;
+}
+header h1 {
+    font-size: 3.5em;
+    text-shadow: 1px 1px 1px white, -1px -2px 2px #5c1c26;
+
+}
+#wiwa {
+    font-size: 1.5em;
+}
+
+
+#bigbutton {
+    width: 20vw;
+    text-align: center;
+    justify-content: center;
+    font-family: inherit;
+    font-size: 1.2em;
+    color: white;
+}
+
+#line {
+    border-bottom: 5px solid;
+    border-color:   #112711;
+    width: 100%;
+    height: 8px;
+}
+#wiwa_bg  {
+    background-image: url('/static/images/pexels-tim-mossholder-1708852.jpg');
+}
+
+#image.container{
+  /*border-style: solid;*/
+  background-image: linear-gradient(#D7D3DC, #489076);
+}
+#nav_bar.banner{
+  /* absolute means the rest of the content ignores it's placement */
+  padding-top: 0px;
+  margin: auto;
+  top: 0;
+  left: 0;
+  background: #9c9587; /* pale blue */
+  width: 100%;
+  height: 40px;
+}
+#text-area.flex-container{
+  float: left;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 100%;
+  background-color: #DAF7A6;
+  opacity: 0.95;
+  position: fixed;
+  }
+
+#grey-image.div {
+  background-image: url('/static/images/unicorn2_12-22-18.png');
+
+}
+#github-image.a{
+    color: #4a3e54;
+    font-size: initial;
+
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 10px;
+  margin: auto;
+  width: 100%;
+  background: linear-gradient(0.25turn, transparent, #dad1db, transparent);
+  color: black;
+  font-family: 'Josefin Slab', serif;
+}
+
+.banner h3{
+    font-size: 3em;
+    text-shadow: 1px 1px red;
+}
+.banner h4{
+    color: black;
+}
+.banner a{
+    color: #b9efb6;
+    font-weight: bold;
+}
+
+.wiwa_foot {
+    display: flex;
+    margin-top: 5vh;
+    border-top: 1px solid silver;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+
+#chatbox {
+  border: 5px solid #81453b;
+  background: #dfd8e3;
+  margin-top: 2vh;
+  height: 200px;
+  margin-right: 50px;
+  margin-left: 50px;
+  overflow: auto;
+  font-size: 1.5em;
+  color: black;
+
+}
+
+
+/*---  NAV ---*/
+
+navbar {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+
+}
+
+.noodles {
+    color: purple;
+    text-shadow: 1px 1px #b9e5b3;
+    margin-right: 5vw;
+}
+
+.link_div {
+    background: transparent;
+    border-radius: 10%;
+    padding: 10px;
+    margin-right: 2vw;
+}
+a {
+  text-decoration: none;
+  color: black;
+}

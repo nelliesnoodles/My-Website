@@ -39,8 +39,8 @@ nav {
           background-color: rgb(255, 255, 255);
       }
       50% {
-          color: rgb(200, 0, 200);
-          background-color: rgb(100, 100, 100);
+          color: rgb(150, 150, 150);
+          background-color: silver
       }
     100% {
       color: white;
@@ -63,7 +63,7 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    color: azure;
+    background: #672a94;
 }
 
 .noodle_nav a{
@@ -71,7 +71,7 @@ nav {
     font-weight: bold;
     width: auto;
     padding: 2vw;
-    color: black;
+    color: #f4f5f7;
 }
 
 
@@ -87,7 +87,7 @@ nav {
 }
 
 #hamburg {
-    color: black;
+    color: white;
     align-content: flex-end;
     justify-content: center;
     align-items: center;

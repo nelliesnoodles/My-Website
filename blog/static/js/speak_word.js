@@ -49,7 +49,7 @@ recognition.onerror = function(event) {
 */
 
 function addEventlistener_topage() {
-    console.log("adding event listeners");
+    //console.log("adding event listeners");
     let element = document.getElementById("js_say_word");
     let word_val = document.getElementById("word_to_say").innerHTML
     if(!word_val){
