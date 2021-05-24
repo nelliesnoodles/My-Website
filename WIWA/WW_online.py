@@ -475,12 +475,7 @@ class Wiwa(object):
 
 
     def strip_stop_words(self, arg):
-        """
-        error fix: 02-26-2020
-        arg is passed in as a list, and as a string.
-        Once while checking for errors as a string, and once again
-        as a list when removing stop words from the list.
-        """
+
 
         stops = [' ', 'i','the', 'of', 'he', 'she', 'it', 'some', 'all', 'a', 'lot',
                 'have', 'about', 'been', 'to', 'too', 'from', 'an', 'at', 'do', 'go'
@@ -496,15 +491,16 @@ class Wiwa(object):
                 'often', 'other', 'others', 'over', 'rather', 'perhaps', 'seems', 'then',
                 'there', 'these', 'they', 'though', 'thru', 'too', 'under', 'until',
                 'upon', 'very', 'was', 'were' 'which', 'while', 'will', 'with', 'ill', 'lets'
-                'wo', 'would', 'b', 'c', 'd', 'e', 'f', 'g', 'x', 'y', 'z']
+                'wo', 'would', 'b', 'c', 'd', 'e', 'f', 'g', 'x', 'y', 'z', "'s"]
         new_arg = []
 
         if type(arg) == str:
-            arg = arg.split()
+            arg = arg.split(' ')
             for item in arg:
                 if item in stops:
                     pass
                 else:
+                    item += ' '
                     new_arg.append(item)
 
 
@@ -522,6 +518,7 @@ class Wiwa(object):
             new_arg = ['ERROR-stopwords']
 
         return new_arg
+
 
     def make_tag_lists(self, arg):
         """
@@ -559,12 +556,13 @@ class Wiwa(object):
 
     def remove_bad_tags(self, tags_list):
         """ Use pyEnchant to remove unidentifiable words from tags list"""
+        conjunctions = ["'s", "n't"]
         new_tags = []
         errors = []
         for item in tags_list:
             word = item[0]
 
-            if self.enchant_check(word):
+            if self.enchant_check(word) and word not in conjunctions:
                 new_tags.append(item)
             else:
                 errors.append(word)
@@ -577,11 +575,12 @@ class Wiwa(object):
         return x
 
     def check_question(self, arg):
-        questions = ['why', '?', 'maybe']
-        if questions[0] in arg or questions[1] in arg:
-          return True
-        else:
-          return False
+        questions = ['why', 'when', 'maybe', 'where', 'who', 'what']
+        for item in questions:
+            if item in arg:
+                return True
+
+        return False
 
 ##----------------------------------##
 ##  testing WW class attributes     ##

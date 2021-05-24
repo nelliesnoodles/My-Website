@@ -5,6 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Author" content="Nellie Tobey">
+    <meta name="description" content="A simple chatbot meant for entertainment purposes; Slightly better than talking to a physical wall.">
     <title>Nellie's Noodles</title>
 
      <!-- font -->
@@ -29,8 +31,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@1,100&family=Texturina:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/custom_chatbot.css' %}">
+    <link rel="stylesheet" href="{% static 'css/toggle_voice.css' %}" >
     <!-- from buttons.github.io github button  -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script type="text/JavaScript" src="{% static 'js/toggle_voice.js' %}"></script>
     <script type="text/JavaScript" src="{% static 'js/chat_box.js' %}"></script>
 
 
@@ -71,18 +75,32 @@
 
 
 </div>
-<!--     ~~~~~~~~~~~~~~~~~~~   -->
-<!--       Whispering Wall     -->
-<!--     ~~~~~~~~~~~~~~~~~~~   -->
+
+
+<div class="center-toggle">
+
+<div class="onoffswitch">
+    <button
+    class='btn active-btn'
+    aria-label="Turn javascript generated voice on or off"
+    id="myonoffswitch"
+    value="OFF"
+    title="Click to toggle Wiwa's voice ON or OFF"
+    onclick="toggle()">
+        Voice: OFF
+    </button>
+
+</div>
+</div>
 <main>
     <!-- for testing javascript file -->
     <!--<h4 id='wiwa_words1><strong> {{ wiwa_answer }} </strong></h4>-->
 
     <input type="hidden" id="wiwa_words" name="wiwa_words" value="{{ wiwa_answer }}">
-<!--            -->
+
 <!--   CHATBOX  -->
-        -->
-    <div id="chatbox">
+
+    <div id="chatbox" aria-live="polite">
       Chat Log:
    </div>
 
@@ -114,7 +132,6 @@
 
 
 </div>
-<div class="sharethis-inline-share-buttons"></div>
 </footer>
 
 </html>

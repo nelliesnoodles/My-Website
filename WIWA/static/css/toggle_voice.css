@@ -1,0 +1,23 @@
+
+
+
+/* added css for layout */
+.active-btn {
+    cursor: pointer;
+}
+.center-toggle {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.toggle-label {
+    margin-right: 2em;
+    font-size: 2em;
+    background: #e5dfe9b8;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
